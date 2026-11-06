@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study — Flywheel rotor design</title>
+<meta name="description" content="Engineering portfolio of Hamza Houir Alami — Arts et Métiers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#0A0A0A}
+@keyframes hx-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hx-up{animation:hx-up .8s cubic-bezier(.2,.8,.2,1) both}
+.hx-link{background-image:linear-gradient(currentColor,currentColor);background-size:0 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .3s ease}
+.hx-link:hover{background-size:100% 1.5px}
+.hx-zoom{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.hx-media:hover .hx-zoom{transform:scale(1.02)}
+@keyframes hx-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.hx-bar{transform-origin:left center;animation:hx-grow 1s cubic-bezier(.2,.8,.2,1) both}
+.hx-step{transition:transform .25s ease,border-color .25s ease}
+.hx-step:hover{transform:translateY(-4px);border-color:#2B4EFF}
+.hx-dl{transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.hx-dl:hover{transform:translateY(-3px);border-color:#2B4EFF;background:#F7F8FF}
+.fw-wrap{max-width:1160px;margin:0 auto;padding:96px 24px}
+.fw-h2{margin:0;font-weight:600;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-0.035em}
+.fw-p{margin:0;color:#3A3F47;max-width:680px}
+.fw-fig{margin:0;display:flex;flex-direction:column;gap:12px}
+.fw-frame{border-radius:18px;overflow:hidden;border:1px solid #ECEDEF;background:#FFFFFF}
+.fw-frame img,.fw-frame video{display:block;width:100%;height:auto}
+.fw-cap{font-size:14px;color:#6A6F78;line-height:1.5}
+.fw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;align-items:start}
+.fw-table{width:100%;border-collapse:collapse;font-size:15px}
+.fw-table th{text-align:left;font-weight:600;color:#6A6F78;font-size:13px;padding:10px 12px;border-bottom:1px solid #E3E5E8}
+.fw-table td{padding:12px;border-bottom:1px solid #ECEDEF;font-variant-numeric:tabular-nums}
+.fw-table td.num,.fw-table th.num{text-align:right}
+.fw-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+@media print{
+  @page{size:A4;margin:14mm}
+  .fw-noprint{display:none!important}
+  .fw-wrap{padding:36px 0}
+  section,figure,table,.fw-keep{break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;animation:none!important}
+}
+</style>
+<style>html,body{overflow-x:clip}</style>
+</head>
+<body>
+<div style="background: #FFFFFF; color: #0A0A0A; font-family: 'Geist', system-ui, sans-serif; font-size: 18px; line-height: 1.65; -webkit-font-smoothing: antialiased">
+
+  <header class="fw-noprint" style="border-bottom: 1px solid #ECEDEF">
+    <nav aria-label="Case study" style="max-width: 1160px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px">
+      <a class="hx-link" href="index.html#projects" style="text-decoration: none; font-size: 16px; font-weight: 500; padding: 10px 0">← All projects</a>
+      <a href="index.html" style="text-decoration: none; font-weight: 600; font-size: 17px; letter-spacing: -0.01em">Hamza Houir Alami</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 40px; display: flex; flex-direction: column; gap: 22px">
+    <span class="hx-up" style="font-size: 15px; font-weight: 600; color: #2B4EFF">TIPE 2024–2025 → personal research · Mechanical design &amp; optimization</span>
+    <h1 class="hx-up" style="margin: 0; font-weight: 600; font-size: clamp(40px, 6vw, 76px); line-height: 1.02; letter-spacing: -0.045em; max-width: 900px">Flywheel rotor design</h1>
+    <p class="hx-up" style="margin: 0; font-size: 22px; line-height: 1.45; color: #3A3F47; max-width: 680px">From the inertia-optimal ring to a stress-limited rotor you can 3D-print — with every claim split into what was measured and what was computed.</p>
+    <div class="hx-up fw-noprint" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px">
+      <a href="downloads/Flywheel_report_EN.pdf" download style="display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 26px; background: #0A0A0A; color: #FFFFFF; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 16px">Download the report <span style="opacity: .6; font-size: 14px">PDF · 13 p.</span></a>
+      <a href="#downloads" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; border: 1px solid #D5D8DD; color: #0A0A0A; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 16px">All files ↓</a>
+    </div>
+  </section>
+
+  <section aria-label="The three rotors" style="max-width: 1160px; margin: 0 auto; padding: 0 24px">
+    <figure class="fw-fig hx-up">
+      <div class="hx-media" style="border-radius: 24px; overflow: hidden; background: #F4F5F7; padding: clamp(20px, 5vw, 64px) clamp(12px, 3vw, 40px)">
+        <img class="hx-zoom" src="assets/3cfa9f5ae3f5cf28996359c729accded.jpg" alt="Three 3D-printable rotors: a flat uniform disk and two profiled disks" style="display: block; width: 100%; height: auto; mix-blend-mode: multiply">
+      </div>
+      <figcaption class="fw-cap">The three printable rotors, Ø100 mm: uniform reference (4 mm), 1 mm web, 2 mm web.</figcaption>
+    </figure>
+  </section>
+
+  <!-- KEY FIGURES -->
+  <section aria-label="Key figures" style="max-width: 1160px; margin: 0 auto; padding: 56px 24px 0">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: #ECEDEF; border: 1px solid #ECEDEF; border-radius: 20px; overflow: hidden">
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05">0.67</span><span style="font-size: 15px; color: #4A4F57">energy-per-kg shape factor of the 1 mm web (thin ring: 0.5)</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05">2.2×</span><span style="font-size: 15px; color: #4A4F57">a uniform disk with a bore (0.31), stable over 5 meshes</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05">0.4–0.8%</span><span style="font-size: 15px; color: #4A4F57">gap between my 2D FE code and CalculiX</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; color: #2B4EFF">≈9σ</span><span style="font-size: 15px; color: #4A4F57">separation of the two profiles on the trifilar pendulum I designed</span></div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section aria-label="How the project evolved">
+    <div class="fw-wrap" style="padding-bottom: 24px; display: flex; flex-direction: column; gap: 28px">
+      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">How the project evolved</span>
+      <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px">
+        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">Before</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Arduino bench</span><span style="font-size: 14px; color: #4A4F57">Is a rotating mass even visible?</span></li>
+        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">TIPE</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Shape &amp; braking</span><span style="font-size: 14px; color: #4A4F57">Best shape, ramp experiment.</span></li>
+        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">Part 1</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Proofs</span><span style="font-size: 14px; color: #4A4F57">Circle and annulus, proved.</span></li>
+        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">Part 2</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Stress limit</span><span style="font-size: 14px; color: #4A4F57">Most energy before failure.</span></li>
+        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px; border-color: #C9D3FF"><span style="font-size: 13px; font-weight: 600; color: #2B4EFF">Part 3</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Printable parts</span><span style="font-size: 14px; color: #4A4F57">CAD, FE, print files, test rig.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 01 QUESTION + EXPERIMENT -->
+  <section style="background: #F6F7F9">
+    <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
+        <div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 16px">
+          <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">01 — The question</span>
+          <h2 class="fw-h2">Can a flywheel store the energy a car loses when braking?</h2>
+          <p class="fw-p">And without making braking worse. In the TIPE I split it in two: which shape stores the most energy, and what happens to braking. To test the second, a 34 g truck rolls down a ramp and is tracked frame by frame with Tracker.</p>
+        </div>
+        <figure class="fw-fig" style="flex: 1 1 440px; min-width: 0">
+          <div class="fw-frame"><img src="assets/86501dca7665a3ba0336ba44ef180433.jpg" alt="Hamza releasing the toy truck at the top of the ramp"></div>
+          <figcaption class="fw-cap">Running the braking test, February 2025.</figcaption>
+        </figure>
+      </div>
+      <figure class="fw-fig">
+        <div class="fw-frame"><img src="assets/48fbf8a55e54b3cd70179a5bcd72522d.jpg" alt="Three frames of the truck descending the ramp"></div>
+        <figcaption class="fw-cap">Release, descent, braking on the flat section.</figcaption>
+      </figure>
+      <div class="fw-grid">
+        <figure class="fw-fig">
+          <div class="fw-frame"><img src="assets/679dae867c244abe5377a69f038a8c2a.jpg" alt="Arduino motor bench with geared motor, driver and battery pack"></div>
+          <figcaption class="fw-cap">First try, an Arduino motor bench: a wheel lengthened spin-up by about 64%, but the gearbox dissipated everything in 0.2–0.3 s. Too lossy to be a flywheel.</figcaption>
+        </figure>
+        <figure class="fw-fig">
+          <div class="fw-frame"><img src="assets/390518487772f9d8b30114e6c7e9b5ec.jpg" alt="Underside of the toy truck with a torsion spring and gear train"></div>
+          <figcaption class="fw-cap">On the truck, a torsion spring and gear train stand in for the flywheel.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 RE-ANALYSIS -->
+  <section>
+    <div class="fw-wrap" style="display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">02 — Re-reading my own data</span>
+        <h2 class="fw-h2">The braking result I presented did not hold up.</h2>
+      </div>
+      <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+        <p class="fw-p">In the TIPE, the truck went 0.82 m without the spring and 1.08 m with it, and I presented that as a validation. Going back to the Tracker files later:</p>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; color: #3A3F47; max-width: 680px">
+          <li>Both trucks were still moving in the last frame: these were not stopping distances.</li>
+          <li>The run with the spring started with 28–47% more kinetic energy — enough to explain the gap.</li>
+          <li>Decelerations are equal within uncertainty: 0.922 ± 0.020 vs 0.896 ± 0.015 m/s².</li>
+        </ul>
+        <div class="fw-keep" style="display: flex; flex-wrap: wrap; gap: 12px">
+          <div style="flex: 1 1 240px; border: 1px solid #CDE7D8; background: #F3FAF6; border-radius: 14px; padding: 16px 18px"><div style="font-size: 13px; font-weight: 600; color: #1E7A4C">Holds</div><div style="font-size: 16px">The deceleration model matches the measurement (f ≈ 0.09–0.10).</div></div>
+          <div style="flex: 1 1 240px; border: 1px solid #F1D9C9; background: #FCF6F2; border-radius: 14px; padding: 16px 18px"><div style="font-size: 13px; font-weight: 600; color: #A4501E">Not established</div><div style="font-size: 16px">Any effect of the flywheel on braking.</div></div>
+        </div>
+        <figure class="fw-fig">
+          <div class="fw-frame"><img src="assets/81f017d0fd52923677a7e4f4a1802934.png" alt="Tracker position and speed curves for both runs"></div>
+          <figcaption class="fw-cap">Re-analysis of the Tracker data: position, and speed still non-zero at the last point.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 PROOFS -->
+  <section style="background: #F6F7F9">
+    <div class="fw-wrap" style="display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">03 — Part 1 · Proofs</span>
+        <h2 class="fw-h2">At a fixed speed, put the mass as far out as you can.</h2>
+      </div>
+      <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+        <p class="fw-p">The TIPE found the circle numerically, with Fourier-parametrised curves and a constrained optimizer. The fixed-area case never converged. Both results are now proved — and the proof explains why: without a maximum radius, there is no optimum.</p>
+        <div class="fw-keep" style="background: #0A0A0A; color: #FFFFFF; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 16px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.7; overflow-x: auto">
+          <div><span style="color: #8FA2FF">Fixed perimeter L, centred</span><br>M ≤ L³ / 4π²   — equality for the circle (Wirtinger)</div>
+          <div><span style="color: #8FA2FF">Fixed area A inside radius R</span><br>J ≤ A·R² − A² / 2π   — the outer annulus (radial rearrangement)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 STRESS LIMIT -->
+  <section>
+    <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">04 — Part 2 · The missing constraint</span>
+        <h2 class="fw-h2">A real flywheel breaks before it runs out of speed.</h2>
+        <p class="fw-p">In a thin ring the stress is ρω²R², whatever its thickness. So the right target is the energy per kilogram at the allowable stress, E/m = K·σ/ρ, where K depends only on the shape. With that objective, the TIPE optimum — the ring — is beaten by a profiled disk.</p>
+      </div>
+      <figure class="fw-keep" style="margin: 0; border: 1px solid #ECEDEF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 18px">
+        <figcaption style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Energy per kilogram before failure</span><span style="font-size: 15px; color: #6A6F78">Shape factor K, isotropic material, ν = 0.3</span></figcaption>
+        <div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+          <div style="display: grid; grid-template-columns: minmax(0, 250px) minmax(0, 1fr) 52px; align-items: center; gap: 12px"><span>Upper bound (constant-stress disk)</span><div style="height: 14px; background: #ECEDEF; border-radius: 4px"><div class="hx-bar" style="width: 100%; height: 100%; background: #C9CCD2; border-radius: 4px"></div></div><span style="text-align: right; font-weight: 600">1.00</span></div>
+          <div style="display: grid; grid-template-columns: minmax(0, 250px) minmax(0, 1fr) 52px; align-items: center; gap: 12px"><span style="font-weight: 600; color: #2B4EFF">Optimised, 1 mm web</span><div style="height: 14px; background: #ECEDEF; border-radius: 4px"><div class="hx-bar" style="width: 67%; height: 100%; background: #2B4EFF; border-radius: 4px"></div></div><span style="text-align: right; font-weight: 600; color: #2B4EFF">0.67</span></div>
+          <div style="display: grid; grid-template-columns: minmax(0, 250px) minmax(0, 1fr) 52px; align-items: center; gap: 12px"><span style="font-weight: 600; color: #2B4EFF">Optimised, 2 mm web</span><div style="height: 14px; background: #ECEDEF; border-radius: 4px"><div class="hx-bar" style="width: 57%; height: 100%; background: #2B4EFF; opacity: .7; border-radius: 4px"></div></div><span style="text-align: right; font-weight: 600; color: #2B4EFF">0.57</span></div>
+          <div style="display: grid; grid-template-columns: minmax(0, 250px) minmax(0, 1fr) 52px; align-items: center; gap: 12px"><span>Thin ring (TIPE optimum)</span><div style="height: 14px; background: #ECEDEF; border-radius: 4px"><div class="hx-bar" style="width: 50%; height: 100%; background: #0A0A0A; border-radius: 4px"></div></div><span style="text-align: right; font-weight: 600">0.50</span></div>
+          <div style="display: grid; grid-template-columns: minmax(0, 250px) minmax(0, 1fr) 52px; align-items: center; gap: 12px"><span>Uniform disk with bore</span><div style="height: 14px; background: #ECEDEF; border-radius: 4px"><div class="hx-bar" style="width: 31%; height: 100%; background: #0A0A0A; border-radius: 4px"></div></div><span style="text-align: right; font-weight: 600">0.31</span></div>
+        </div>
+      </figure>
+      <div class="fw-grid">
+        <figure class="fw-fig">
+          <div class="fw-frame"><img src="assets/82a8505893a020d0f6ca9abb0c7b8496.png" alt="Regime map of the optimal shape factor versus the speed limit"></div>
+          <figcaption class="fw-cap">Three regimes: ring when speed limits, constant-stress disk when strength limits. Bounds K ≤ Λ/2 and K ≤ 1 (Berger &amp; Porat, 1988).</figcaption>
+        </figure>
+        <figure class="fw-fig">
+          <div class="fw-frame"><img src="assets/4969a1fffaa4faaa6162d436162cdec8.png" alt="Comparison of 1D and 2D shape factors versus slope limit"></div>
+          <figcaption class="fw-cap">1D optima fail in 2D: near-vertical hub steps concentrate stress. A slope limit (dh/dr ≈ 0.25–0.5) recovers K = 0.70–0.82.</figcaption>
+        </figure>
+      </div>
+      <div class="fw-keep" style="display: flex; flex-direction: column; gap: 14px">
+        <h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Checked with an industrial solver</h3>
+        <p class="fw-p" style="font-size: 16px">Abaqus input files for four steel rotors (CAX8R, centrifugal load), run with CalculiX 2.21. Maximum von Mises stress, MPa:</p>
+        <div class="fw-scroll"><table class="fw-table" style="min-width: 560px">
+          <thead><tr><th>Rotor</th><th class="num">1D model</th><th class="num">My 2D FE</th><th class="num">CalculiX</th></tr></thead>
+          <tbody>
+            <tr><td>Uniform disk with bore</td><td class="num">574.7</td><td class="num">572.7</td><td class="num">570.2</td></tr>
+            <tr><td>Slope-limited, Λ = ∞</td><td class="num">574.7</td><td class="num">635.3</td><td class="num">630.4</td></tr>
+            <tr><td>Slope-limited, Λ = 2</td><td class="num">574.7</td><td class="num">620.0</td><td class="num">616.8</td></tr>
+            <tr><td>1D optimum, no slope limit</td><td class="num">574.7</td><td class="num">1397.7</td><td class="num" style="color: #A4501E; font-weight: 600">931 → 1405*</td></tr>
+          </tbody>
+        </table></div>
+        <span class="fw-cap">* The peak grows with the mesh: a singularity at the hub, which is why the printed parts are slope-limited.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 PRINTABLE -->
+  <section style="background: #F6F7F9">
+    <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">05 — Part 3 · Design for printing</span>
+        <h2 class="fw-h2">Does the shape survive manufacturing?</h2>
+        <p class="fw-p">Three rotors of radius 50 mm, printed flat as half-profiles so they need no supports: same inertia ratio as the symmetric rotor. Webs of at least 1 mm, slope ≤ 0.5, profiles smoothed so no corner re-enters. Built from the optimised profiles by a Fusion 360 script (volume within 0.05% of the Python model).</p>
+      </div>
+      <div class="fw-grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr))">
+        <figure class="fw-fig"><div class="fw-frame" style="padding: 12px"><img src="assets/2eaf52f50370ea171f200c0ed97067c2.jpg" alt="Quarter-cut of the uniform reference rotor"></div><figcaption class="fw-cap"><strong style="color: #0A0A0A">Uniform reference</strong> · 4 mm · 38.6 g · K = 0.31</figcaption></figure>
+        <figure class="fw-fig"><div class="fw-frame" style="padding: 12px"><img src="assets/38fff945ac62f636a4e22e9b5ff211e5.jpg" alt="Quarter-cut of the 1 mm web rotor"></div><figcaption class="fw-cap"><strong style="color: #0A0A0A">1 mm web</strong> · 14.5 g · K = 0.67</figcaption></figure>
+        <figure class="fw-fig"><div class="fw-frame" style="padding: 12px"><img src="assets/94b57180b478c4daa0240482012c78e0.jpg" alt="Quarter-cut of the 2 mm web rotor"></div><figcaption class="fw-cap"><strong style="color: #0A0A0A">2 mm web</strong> · 27.7 g · K = 0.57</figcaption></figure>
+      </div>
+      <figure class="fw-fig">
+        <div class="fw-frame" style="padding: clamp(12px, 3vw, 32px)"><img src="assets/2bc09cdf55e4fec238228b5d68fd7eab.jpg" alt="Von Mises stress maps of the three rotors at 10,000 rpm"></div>
+        <figcaption class="fw-cap" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+          <span>Von Mises stress at 10,000 rpm in PLA (1D model)</span>
+          <span style="display: inline-flex; align-items: center; gap: 8px"><span>0</span><span style="display: inline-block; width: 140px; height: 10px; border-radius: 3px; background: linear-gradient(90deg, #30307a, #2f6fd6, #3fc1c9, #9be15d, #f2d43b, #e8512c, #a51d1d)"></span><span>2.81 MPa</span></span>
+          <span>— far below the strength of PLA.</span>
+        </figcaption>
+      </figure>
+      <div class="fw-grid">
+        <figure class="fw-fig">
+          <div class="fw-frame"><img src="assets/c2e152b27a1b49ef292d2516a4884aae.png" alt="Thickness profiles and stress along the radius for the three rotors"></div>
+          <figcaption class="fw-cap">Profiles and stress along the radius; dashed lines: 2D maximum.</figcaption>
+        </figure>
+        <figure class="fw-fig">
+          <div class="fw-frame"><img src="assets/99243e4ae4cd0261c26d9a061a1a9e79.png" alt="Effective shape factor versus printed thickness error"></div>
+          <figcaption class="fw-cap">Which web to print? Beyond ≈0.13 mm of thickness error, the 2 mm web wins.</figcaption>
+        </figure>
+      </div>
+      <div class="fw-keep" style="display: flex; flex-direction: column; gap: 14px">
+        <h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">The criterion changes the ranking</h3>
+        <div class="fw-scroll"><table class="fw-table" style="min-width: 560px">
+          <thead><tr><th>Rotor</th><th class="num">Mass</th><th class="num">Energy / kg (K)</th><th class="num">Total energy before failure</th><th class="num">Energy at equal speed</th></tr></thead>
+          <tbody>
+            <tr><td>Uniform reference</td><td class="num">38.6 g</td><td class="num">0.31</td><td class="num">100%</td><td class="num">100%</td></tr>
+            <tr><td>1 mm web</td><td class="num">14.5 g</td><td class="num" style="color: #2B4EFF; font-weight: 600">0.67</td><td class="num">84%</td><td class="num">31%</td></tr>
+            <tr><td>2 mm web</td><td class="num">27.7 g</td><td class="num">0.57</td><td class="num" style="color: #2B4EFF; font-weight: 600">134%</td><td class="num">66%</td></tr>
+          </tbody>
+        </table></div>
+        <span class="fw-cap">Best per kilogram is not best in total. The right choice depends on the use: on-board, fixed envelope, or fixed speed.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 TEST RIG + LIMITS -->
+  <section>
+    <div class="fw-wrap" style="display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">06 — What comes next</span>
+        <h2 class="fw-h2">Predictions written down before the measurement.</h2>
+      </div>
+      <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px; color: #3A3F47">
+        <p class="fw-p">The parts are measurement pieces, not spinning rotors: they check geometry and mass distribution. I designed a trifilar pendulum, calibrated on the uniform part, that should separate the two profiles (j = 0.420 vs 0.462) by about 9 standard uncertainties with a stopwatch, 34 with 60 fps video. The predictions were frozen before any measurement.</p>
+        <div class="fw-keep" style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; font-weight: 500">
+          <span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Printed flat, no supports</span>
+          <span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">0.2 mm layers</span>
+          <span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">100% infill</span>
+          <span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">PLA, one spool</span>
+          <span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Bore Ø10 mm</span>
+          <span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">≈120 g in total</span>
+        </div>
+        <div class="fw-keep" style="border-left: 3px solid #D5D8DD; padding: 4px 0 4px 18px; display: flex; flex-direction: column; gap: 6px">
+          <span style="font-size: 15px; font-weight: 600; color: #0A0A0A">Limits of the model</span>
+          <span style="font-size: 16px">Isotropic, homogeneous material; printed PLA is not. No composites, fatigue or rotor dynamics; bearing and air losses not modelled; typical, not measured, material data.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAKEAWAY -->
+  <section style="background: #0A0A0A; color: #FFFFFF">
+    <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 20px">
+      <span style="font-size: 15px; font-weight: 600; color: #8FA2FF">What I take away</span>
+      <p style="margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.35; letter-spacing: -0.02em; max-width: 920px">The most useful step was re-reading my own data. The braking effect I once presented was not there. Since then, every report I write separates what is measured from what is computed.</p>
+    </div>
+  </section>
+
+  <!-- DOWNLOADS -->
+  <section id="downloads" class="fw-noprint">
+    <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 32px">
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">Files</span>
+        <h2 class="fw-h2">Download the project</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 14px">
+        <a class="hx-dl" href="downloads/Flywheel_report_EN.pdf" download style="text-decoration: none; border: 1px solid #E3E5E8; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #2B4EFF">PDF · 13 pages · 3.3 MB</span><span style="font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Full report</span><span style="font-size: 15px; color: #4A4F57">Every step, with equations, tables and references.</span></a>
+        <a class="hx-dl" href="downloads/Flywheel_one-page_EN.pdf" download style="text-decoration: none; border: 1px solid #E3E5E8; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #2B4EFF">PDF · 1 page · 1.8 MB</span><span style="font-size: 19px; font-weight: 600; letter-spacing: -0.015em">One-page summary</span><span style="font-size: 15px; color: #4A4F57">The project at a glance.</span></a>
+                                <div style="border: 1px dashed #D5D8DD; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 13px; font-weight: 600; color: #6A6F78">Version française</span><a class="hx-link" href="downloads/Volant_rapport_FR.pdf" download style="align-self: flex-start; text-decoration: none; font-size: 16px; font-weight: 500">Rapport complet (PDF) ↓</a><a class="hx-link" href="downloads/Volant_une-page_FR.pdf" download style="align-self: flex-start; text-decoration: none; font-size: 16px; font-weight: 500">Synthèse une page (PDF) ↓</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section aria-label="Tools" style="max-width: 1160px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+    <span style="font-size: 15px; font-weight: 600; margin-right: 8px">Tools</span>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; font-weight: 500">
+      <span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Python · NumPy · SciPy</span>
+      <span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">scikit-fem</span>
+      <span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">CalculiX · Abaqus format</span>
+      <span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Fusion 360</span>
+      <span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">CATIA 3DEXPERIENCE</span>
+      <span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Monte Carlo</span>
+      <span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Tracker</span>
+      <span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Arduino</span>
+      <span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">3D printing</span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section style="max-width: 1160px; margin: 0 auto; padding: 80px 24px 40px">
+    <div class="fw-noprint" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding-top: 32px; border-top: 1px solid #ECEDEF">
+      <a class="hx-link" href="index.html#projects" style="text-decoration: none; font-size: 17px; font-weight: 500; padding: 10px 0">← All projects</a>
+      <a href="UM6P.html" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; background: #0A0A0A; color: #FFFFFF; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 16px">Next: UM6P decision support →</a>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 40px; font-size: 15px; color: #6A6F78">
+      <span>© 2026 Hamza Houir Alami</span>
+      <span>Arts et Métiers · Lille → Paris</span>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>

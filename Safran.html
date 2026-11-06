@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study — Safran Nacelles</title>
+<meta name="description" content="Engineering portfolio of Hamza Houir Alami — Arts et Métiers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#0A0A0A}a:hover{color:#2B4EFF}
+@keyframes hx-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hx-up{animation:hx-up .8s cubic-bezier(.2,.8,.2,1) both}
+.hx-link{background-image:linear-gradient(currentColor,currentColor);background-size:0 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .3s ease}
+.hx-link:hover{background-size:100% 1.5px}
+.hx-zoom{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.hx-media:hover .hx-zoom{transform:scale(1.03)}
+@keyframes hx-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.hx-bar{transform-origin:left center;animation:hx-grow 1s cubic-bezier(.2,.8,.2,1) both}
+.hx-step{transition:transform .25s ease,border-color .25s ease}
+.hx-step:hover{transform:translateY(-4px);border-color:#2B4EFF}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>html,body{overflow-x:clip}</style>
+</head>
+<body>
+<div style="background: #FFFFFF; color: #0A0A0A; font-family: 'Geist', system-ui, sans-serif; font-size: 18px; line-height: 1.65; -webkit-font-smoothing: antialiased">
+
+  <header style="border-bottom: 1px solid #ECEDEF">
+    <nav aria-label="Case study" style="max-width: 1160px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px">
+      <a class="hx-link" href="index.html#projects" style="text-decoration: none; font-size: 16px; font-weight: 500; padding: 10px 0">← All projects</a>
+      <a href="index.html" style="text-decoration: none; font-weight: 600; font-size: 17px; letter-spacing: -0.01em">Hamza Houir Alami</a>
+    </nav>
+  </header>
+
+  <section style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 48px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+    <div class="hx-up" style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">Safran Nacelles · Casablanca, Morocco · Jun — Jul 2026</span>
+      <h1 style="margin: 0; font-weight: 600; font-size: clamp(38px, 5vw, 64px); line-height: 1.04; letter-spacing: -0.045em">Taking two hours out of a Gulfstream G700 nacelle line</h1>
+      <p style="margin: 0; font-size: 21px; line-height: 1.5; color: #3A3F47; max-width: 620px">A four-week industrial internship in tooling methods. The line had a routing-time target to hit; I built a model that says where the time should come from, and how sure we can be that the plan holds.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; color: #6A6F78"><span>Industrial internship · 4 weeks</span><span>Tooling methods, then process</span><span>Python · SAP · CAD</span></div>
+    </div>
+    <div class="hx-up hx-media" style="flex: 1 1 340px; max-width: 480px; aspect-ratio: 4 / 5; border-radius: 22px; overflow: hidden; background: #E9EBEF; animation-delay: .1s">
+      <img class="hx-zoom" src="assets/d1ba9adb07464d34ac947f4209f34277.jpg" alt="Aircraft engine nacelle" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%">
+    </div>
+  </section>
+  <section aria-label="Key figures" style="max-width: 1160px; margin: 0 auto; padding: 0 24px 72px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: #ECEDEF; border: 1px solid #ECEDEF; border-radius: 20px; overflow: hidden">
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">148 → 146 h</span><span style="font-size: 15px; color: #4A4F57">routing-time target per nacelle</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">36</span><span style="font-size: 15px; color: #4A4F57">line operations modeled</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">5,000</span><span style="font-size: 15px; color: #4A4F57">Monte Carlo runs</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; color: #2B4EFF;">≈20%</span><span style="font-size: 15px; color: #4A4F57">lower cost than the rule-of-thumb split</span></div>
+    </div>
+  </section>
+  <section style="background: #F6F7F9">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">01 — The problem</span>
+        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">A target is a number. A plan says who gives up which minutes.</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; max-width: 680px; display: flex; flex-direction: column; gap: 18px; color: #3A3F47">
+        <p style="margin: 0">The G700 nacelle line had to go from 148 to 146 hours of routing time per nacelle. Two hours sounds small, but it has to be taken from 36 operations that do not have the same margin: some are already tight, others have slack, some are cheap to speed up and some are not.</p><p style="margin: 0">The usual approach is to spread the cut evenly or by share of time. I wanted a split that respects what each operation can really give, and a way to check that the plan still holds when real times vary.</p><figure style="margin: 0"><div class="hx-media" style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #FFFFFF"><img class="hx-zoom" src="assets/9fe53bb7f426e5b8f2e4610f47da6852.jpg" alt="Nacelle assembly line" style="display: block; width: 100%; height: auto"></div><figcaption style="padding: 12px 4px 0; font-size: 14px; color: #6A6F78">The nacelle line I observed during the internship.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+  <section style="">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">02 — Approach</span>
+        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">From shop-floor data to a plan you can defend</h2>
+        <p style="margin: 0; color: #3A3F47">Real routing data stays confidential, so the model was built and tested on a synthetic replica of the line with the same structure (36 operations, same order of magnitude of times).</p>
+      </div>
+      <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+      <li class="hx-step" style="border: 1px solid #E3E5E8; background: #FFFFFF; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #2B4EFF">1</span><h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Map the operations</h3><p style="margin: 0; font-size: 15px; color: #4A4F57">36 operations with nominal time, minimum achievable time and a cost of reduction, from SAP routings and shop-floor observation.</p></li>
+      <li class="hx-step" style="border: 1px solid #E3E5E8; background: #FFFFFF; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #2B4EFF">2</span><h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Write the allocation</h3><p style="margin: 0; font-size: 15px; color: #4A4F57">A convex quadratic program: minimize the weighted effort of reductions under the total-time target and per-operation bounds.</p></li>
+      <li class="hx-step" style="border: 1px solid #E3E5E8; background: #FFFFFF; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #2B4EFF">3</span><h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Solve and compare</h3><p style="margin: 0; font-size: 15px; color: #4A4F57">KKT conditions solved and checked with SLSQP, then compared with a proportional rule-of-thumb split.</p></li>
+      <li class="hx-step" style="border: 1px solid #E3E5E8; background: #FFFFFF; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #2B4EFF">4</span><h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Stress-test it</h3><p style="margin: 0; font-size: 15px; color: #4A4F57">5,000 Monte Carlo runs with random variation on every operation time to measure how often the target is met.</p></li>
+      <li class="hx-step" style="border: 1px solid #E3E5E8; background: #FFFFFF; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #2B4EFF">5</span><h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Turn it into actions</h3><p style="margin: 0; font-size: 15px; color: #4A4F57">Ranked list of operations to work on first, ready for the methods team.</p></li>
+      </ol>
+    </div>
+  </section>
+  <section style="background: #F6F7F9">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">03 — Results</span>
+        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">Cheaper than the even split, and robust down to 61 hours</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; max-width: 680px; display: flex; flex-direction: column; gap: 18px; color: #3A3F47">
+        <p style="margin: 0">On the synthetic line (64.52 h → 62 h, 2.52 h to remove out of 4.17 h reducible), the optimal allocation costs 0.1046 against 0.1312 for the proportional heuristic: about 20% less effort for the same target.</p><p style="margin: 0">The Monte Carlo check shows how far the plan can be pushed before it stops being credible.</p>
+<figure style="margin: 0; background: #FFFFFF; border: 1px solid #ECEDEF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 18px">
+<figcaption style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 19px; font-weight: 600; letter-spacing: -0.015em; color: #0A0A0A">Probability of meeting the target</span><span style="font-size: 15px; color: #6A6F78">Share of 5,000 simulated runs where total time stays under the target</span></figcaption>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #0A0A0A">
+<div style="display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr) 64px; align-items: center; gap: 12px"><span style="font-weight: 600; color: #2B4EFF">62 h (plan)</span><div style="height: 14px; background: #ECEDEF; border-radius: 4px"><div class="hx-bar" style="width: 100.0%; height: 100%; background: #2B4EFF; border-radius: 4px"></div></div><span style="text-align: right; font-weight: 600">100%</span></div>
+<div style="display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr) 64px; align-items: center; gap: 12px"><span>61.5 h</span><div style="height: 14px; background: #ECEDEF; border-radius: 4px"><div class="hx-bar" style="width: 99.8%; height: 100%; background: #0A0A0A; border-radius: 4px"></div></div><span style="text-align: right; font-weight: 600">99.8%</span></div>
+<div style="display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr) 64px; align-items: center; gap: 12px"><span>61 h</span><div style="height: 14px; background: #ECEDEF; border-radius: 4px"><div class="hx-bar" style="width: 94.3%; height: 100%; background: #0A0A0A; border-radius: 4px"></div></div><span style="text-align: right; font-weight: 600">94.3%</span></div>
+<div style="display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr) 64px; align-items: center; gap: 12px"><span>60.5 h</span><div style="height: 14px; background: #ECEDEF; border-radius: 4px"><div class="hx-bar" style="width: 63.8%; height: 100%; background: #0A0A0A; border-radius: 4px"></div></div><span style="text-align: right; font-weight: 600">63.8%</span></div>
+</div><p style="margin: 0; font-size: 15px; color: #3A3F47">Below 61 h the plan stops being reliable: a useful limit to know before promising more to the customer.</p>
+</figure>
+      </div>
+    </div>
+  </section>
+  <section style="">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">04 — Day to day</span>
+        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">Tooling methods work on a live line</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; max-width: 680px; display: flex; flex-direction: column; gap: 18px; color: #3A3F47">
+        <p style="margin: 0">Next to the model, the internship was hands-on methods work for the line.</p><ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px"><li>Handled tooling requests: specifications, CAD and follow-up with the shop floor.</li><li>Followed non-conformities and rated workstation postures on the line.</li><li>Reorganized the team&#x27;s shared channel so requests and drawings were easier to find.</li><li>R&amp;D on curing a shimming compound with radiant lamps instead of an 8-hour wait — later extended into a 3D thermal model (see the curing case study).</li></ul>
+      </div>
+    </div>
+  </section>
+  <section style="background: #0A0A0A; color: #FFFFFF">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+        <span style="font-size: 15px; font-weight: 600; color: #8FA2FF">What I take away</span>
+        <p style="margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.35; letter-spacing: -0.02em">An optimization is only useful on a shop floor if you can say how often it fails. The Monte Carlo step is what turned a nice result into a plan people could discuss.</p>
+      </div>
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px; font-size: 16px; color: #C9CCD2">
+        <h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">What comes next</h3>
+        <p style="margin: 0">Calibrate the model on real routing data with the methods team.</p><p style="margin: 0">Add precedence constraints between operations.</p><p style="margin: 0">Link the reduction cost to concrete actions (tooling, layout, training).</p>
+      </div>
+    </div>
+  </section>
+  <section aria-label="Tools" style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+    <span style="font-size: 15px; font-weight: 600; margin-right: 8px">Tools</span>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; font-weight: 500"><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Python</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">SciPy · SLSQP</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Monte Carlo</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">SAP</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">CAD</span></div>
+  </section>
+  <section aria-label="Photos" style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 0">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px"><div style="aspect-ratio: 4 / 3; border-radius: 18px; background: #F2F3F5; border: 1px dashed #C9CCD2; display: flex; align-items: center; justify-content: center; padding: 16px; text-align: center; font-size: 15px; color: #6A6F78">[Photo — me on the line (to add)]</div><div style="aspect-ratio: 4 / 3; border-radius: 18px; background: #F2F3F5; border: 1px dashed #C9CCD2; display: flex; align-items: center; justify-content: center; padding: 16px; text-align: center; font-size: 15px; color: #6A6F78">[Photo — tooling (to add)]</div></div>
+  </section>
+  <section style="max-width: 1160px; margin: 0 auto; padding: 96px 24px 40px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding-top: 32px; border-top: 1px solid #ECEDEF">
+      <a class="hx-link" href="index.html#projects" style="text-decoration: none; font-size: 17px; font-weight: 500; padding: 10px 0">← All projects</a>
+      <a href="Curing.html" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; background: #0A0A0A; color: #FFFFFF; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 16px">Next: 3D curing model →</a>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 40px; font-size: 15px; color: #6A6F78">
+      <span>© 2026 Hamza Houir Alami</span>
+      <span>Arts et Métiers · Lille → Paris</span>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study — Radiant curing model</title>
+<meta name="description" content="Engineering portfolio of Hamza Houir Alami — Arts et Métiers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#0A0A0A}a:hover{color:#2B4EFF}
+@keyframes hx-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hx-up{animation:hx-up .8s cubic-bezier(.2,.8,.2,1) both}
+.hx-link{background-image:linear-gradient(currentColor,currentColor);background-size:0 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .3s ease}
+.hx-link:hover{background-size:100% 1.5px}
+.hx-zoom{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.hx-media:hover .hx-zoom{transform:scale(1.03)}
+@keyframes hx-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.hx-bar{transform-origin:left center;animation:hx-grow 1s cubic-bezier(.2,.8,.2,1) both}
+.hx-step{transition:transform .25s ease,border-color .25s ease}
+.hx-step:hover{transform:translateY(-4px);border-color:#2B4EFF}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>html,body{overflow-x:clip}</style>
+</head>
+<body>
+<div style="background: #FFFFFF; color: #0A0A0A; font-family: 'Geist', system-ui, sans-serif; font-size: 18px; line-height: 1.65; -webkit-font-smoothing: antialiased">
+
+  <header style="border-bottom: 1px solid #ECEDEF">
+    <nav aria-label="Case study" style="max-width: 1160px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px">
+      <a class="hx-link" href="index.html#projects" style="text-decoration: none; font-size: 16px; font-weight: 500; padding: 10px 0">← All projects</a>
+      <a href="index.html" style="text-decoration: none; font-weight: 600; font-size: 17px; letter-spacing: -0.01em">Hamza Houir Alami</a>
+    </nav>
+  </header>
+
+  <section style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 48px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+    <div class="hx-up" style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">Personal research · follow-up to Safran · 2026</span>
+      <h1 style="margin: 0; font-weight: 600; font-size: clamp(38px, 5vw, 64px); line-height: 1.04; letter-spacing: -0.045em">A 3D heat model to shorten a radiant-lamp curing cycle</h1>
+      <p style="margin: 0; font-size: 21px; line-height: 1.5; color: #3A3F47; max-width: 620px">At Safran, a shimming compound needed about 8 hours to cure. I tested radiant lamps on the line, then built a model to find a lamp cycle that cures the bonded zone fast without overheating the part.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; color: #6A6F78"><span>Heat transfer · cure kinetics</span><span>Finite differences · SLSQP</span><span>Synthetic, not yet validated</span></div>
+    </div>
+    <div class="hx-up hx-media" style="flex: 1 1 340px; max-width: 480px; aspect-ratio: 3 / 2; border-radius: 22px; overflow: hidden; background: #FFFFFF; animation-delay: .1s">
+      <img class="hx-zoom" src="assets/2e37f26a31c9c773e89c5f136a3259c8.png" alt="Map of degree of cure on the top layer, with the bonded zone outlined" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 50% 50%">
+    </div>
+  </section>
+  <section aria-label="Key figures" style="max-width: 1160px; margin: 0 auto; padding: 0 24px 72px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: #ECEDEF; border: 1px solid #ECEDEF; border-radius: 20px; overflow: hidden">
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">44.5 min</span><span style="font-size: 15px; color: #4A4F57">optimized lamp cycle</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">0.893</span><span style="font-size: 15px; color: #4A4F57">degree of cure, bonded zone</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">114.9 °C</span><span style="font-size: 15px; color: #4A4F57">peak temperature</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; color: #2B4EFF;">≤ 2.69 MPa</span><span style="font-size: 15px; color: #4A4F57">residual stress</span></div>
+    </div>
+  </section>
+  <section style="background: #F6F7F9">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">01 — The model</span>
+        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">Heat, then chemistry, in three dimensions</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; max-width: 680px; display: flex; flex-direction: column; gap: 18px; color: #3A3F47">
+        <p style="margin: 0">A 120 × 80 mm composite plate is heated from above by a radiant lamp. Heat diffuses through the thickness with different conductivities in-plane and through-plane (orthotropic). The resin cures following Kamal–Sourour kinetics, which also releases heat.</p><p style="margin: 0">I solved it with explicit finite differences, with the time step held under the stability limit (Δt ≤ 2.39 s), and checked the result on three meshes (480, 1,152 and 1,960 cells).</p><div style="background: #0A0A0A; color: #FFFFFF; border-radius: 16px; padding: 22px 24px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 15px; line-height: 1.8; overflow-x: auto"><div>ρc ∂T/∂t = ∇·(K ∇T) + ρ H_r dα/dt</div><div>dα/dt = (k₁ + k₂ αᵐ)(1 − α)ⁿ ,  kᵢ = Aᵢ exp(−Eᵢ / RT)</div><p style="margin: 10px 0 0; font-size: 14px; color: #6A6F78; font-family: 'Geist', sans-serif">Orthotropic heat equation coupled with Kamal–Sourour cure kinetics.</p></div>
+      </div>
+    </div>
+  </section>
+  <section style="">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">02 — Optimization</span>
+        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">Cure where it matters, protect the rest</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; max-width: 680px; display: flex; flex-direction: column; gap: 18px; color: #3A3F47">
+        <p style="margin: 0">The lamp flux over time was optimized with SLSQP (16 iterations) to maximize cure inside the 41 × 27 mm bonded ellipse, under limits on peak temperature, thermal gradient and residual stress.</p><p style="margin: 0">Result: a 44.5-minute cycle with a peak flux of 4,095 W/m². The bonded zone reaches 0.893 cure while the edges stay at 0.631. The binding constraint is the thermal gradient (19.95 °C against a 20 °C limit) — it, not temperature, decides how fast you can go.</p><figure style="margin: 0"><div class="hx-media" style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #FFFFFF"><img class="hx-zoom" src="assets/2e37f26a31c9c773e89c5f136a3259c8.png" alt="Cure map" style="display: block; width: 100%; height: auto"></div><figcaption style="padding: 12px 4px 0; font-size: 14px; color: #6A6F78">Degree of cure on the top layer after the optimized cycle. Dashed: bonded zone.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+  <section style="background: #F6F7F9">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">03 — Honest status</span>
+        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">A model, not yet a process</h2>
+        <p style="margin: 0; color: #3A3F47">Material data and lamp parameters are literature values, so the numbers are a first estimate. The validation plan:</p>
+      </div>
+      <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+      <li class="hx-step" style="border: 1px solid #E3E5E8; background: #FFFFFF; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #2B4EFF">1</span><h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Thermocouples</h3><p style="margin: 0; font-size: 15px; color: #4A4F57">Measure temperature on a test plate under the lamp.</p></li>
+      <li class="hx-step" style="border: 1px solid #E3E5E8; background: #FFFFFF; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #2B4EFF">2</span><h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Calibrate</h3><p style="margin: 0; font-size: 15px; color: #4A4F57">Fit lamp flux and absorptivity to the measurements.</p></li>
+      <li class="hx-step" style="border: 1px solid #E3E5E8; background: #FFFFFF; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #2B4EFF">3</span><h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">DSC</h3><p style="margin: 0; font-size: 15px; color: #4A4F57">Measure the real cure kinetics of the compound.</p></li>
+      <li class="hx-step" style="border: 1px solid #E3E5E8; background: #FFFFFF; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #2B4EFF">4</span><h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Cure check</h3><p style="margin: 0; font-size: 15px; color: #4A4F57">Compare predicted and measured degree of cure.</p></li>
+      <li class="hx-step" style="border: 1px solid #E3E5E8; background: #FFFFFF; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #2B4EFF">5</span><h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Line trial</h3><p style="margin: 0; font-size: 15px; color: #4A4F57">Test the cycle on a real part with the methods team.</p></li>
+      </ol>
+    </div>
+  </section>
+  <section style="background: #0A0A0A; color: #FFFFFF">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+        <span style="font-size: 15px; font-weight: 600; color: #8FA2FF">What I take away</span>
+        <p style="margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.35; letter-spacing: -0.02em">The constraint that limits the cycle is the gradient, not the peak temperature. I would not have guessed it without the model.</p>
+      </div>
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px; font-size: 16px; color: #C9CCD2">
+        <h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">What comes next</h3>
+        <p style="margin: 0">Run the thermocouple test and calibrate the lamp model.</p><p style="margin: 0">Replace literature kinetics with DSC data.</p><p style="margin: 0">Prepare a poster on the method.</p>
+      </div>
+    </div>
+  </section>
+  <section aria-label="Tools" style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+    <span style="font-size: 15px; font-weight: 600; margin-right: 8px">Tools</span>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; font-weight: 500"><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Python</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">NumPy</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">SciPy · SLSQP</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Finite differences</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Heat transfer</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Cure kinetics</span></div>
+  </section>
+  <section style="max-width: 1160px; margin: 0 auto; padding: 96px 24px 40px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding-top: 32px; border-top: 1px solid #ECEDEF">
+      <a class="hx-link" href="index.html#projects" style="text-decoration: none; font-size: 17px; font-weight: 500; padding: 10px 0">← All projects</a>
+      <a href="DeskBuddy.html" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; background: #0A0A0A; color: #FFFFFF; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 16px">Next: DeskBuddy →</a>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 40px; font-size: 15px; color: #6A6F78">
+      <span>© 2026 Hamza Houir Alami</span>
+      <span>Arts et Métiers · Lille → Paris</span>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

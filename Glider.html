@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study — Glider wing</title>
+<meta name="description" content="Engineering portfolio of Hamza Houir Alami — Arts et Métiers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#0A0A0A}a:hover{color:#2B4EFF}
+@keyframes hx-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hx-up{animation:hx-up .8s cubic-bezier(.2,.8,.2,1) both}
+.hx-link{background-image:linear-gradient(currentColor,currentColor);background-size:0 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .3s ease}
+.hx-link:hover{background-size:100% 1.5px}
+.hx-zoom{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.hx-media:hover .hx-zoom{transform:scale(1.03)}
+@keyframes hx-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.hx-bar{transform-origin:left center;animation:hx-grow 1s cubic-bezier(.2,.8,.2,1) both}
+.hx-step{transition:transform .25s ease,border-color .25s ease}
+.hx-step:hover{transform:translateY(-4px);border-color:#2B4EFF}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>html,body{overflow-x:clip}</style>
+</head>
+<body>
+<div style="background: #FFFFFF; color: #0A0A0A; font-family: 'Geist', system-ui, sans-serif; font-size: 18px; line-height: 1.65; -webkit-font-smoothing: antialiased">
+
+  <header style="border-bottom: 1px solid #ECEDEF">
+    <nav aria-label="Case study" style="max-width: 1160px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px">
+      <a class="hx-link" href="index.html#projects" style="text-decoration: none; font-size: 16px; font-weight: 500; padding: 10px 0">← All projects</a>
+      <a href="index.html" style="text-decoration: none; font-weight: 600; font-size: 17px; letter-spacing: -0.01em">Hamza Houir Alami</a>
+    </nav>
+  </header>
+
+  <section style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 48px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+    <div class="hx-up" style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">Arts et Métiers · Aerodynamics &amp; structures · Nov — Dec 2025</span>
+      <h1 style="margin: 0; font-weight: 600; font-size: clamp(38px, 5vw, 64px); line-height: 1.04; letter-spacing: -0.045em">Designing a glider wing: airfoil, flow and spar</h1>
+      <p style="margin: 0; font-size: 21px; line-height: 1.5; color: #3A3F47; max-width: 620px">With Étienne Roy, supervised by Prof. Antoine Dazin and Francesco Romano: choose an airfoil, check it in CFD, then size the spar that carries the load — and make sure it fits inside the wing.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; color: #6A6F78"><span>Team of 2</span><span>CFD · beam theory · FE</span><span>CFD · Python · Abaqus</span></div>
+    </div>
+    <div class="hx-up hx-media" style="flex: 1 1 340px; max-width: 480px; aspect-ratio: 4 / 3; border-radius: 22px; overflow: hidden; background: #E9EBEF; animation-delay: .1s">
+      <img class="hx-zoom" src="assets/f958541f640c353b63f5af39fabdf117.png" alt="Velocity field around the Clark Y airfoil" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%">
+    </div>
+  </section>
+  <section aria-label="Key figures" style="max-width: 1160px; margin: 0 auto; padding: 0 24px 72px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: #ECEDEF; border: 1px solid #ECEDEF; border-radius: 20px; overflow: hidden">
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">Clark Y</span><span style="font-size: 15px; color: #4A4F57">selected airfoil</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">≈111</span><span style="font-size: 15px; color: #4A4F57">max lift-to-drag ratio</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">3</span><span style="font-size: 15px; color: #4A4F57">meshes for the CFD check</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; color: #2B4EFF;">5</span><span style="font-size: 15px; color: #4A4F57">spar materials compared</span></div>
+    </div>
+  </section>
+  <section style="background: #F6F7F9">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">01 — Airfoil</span>
+        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">Clark Y over RAF 27</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; max-width: 680px; display: flex; flex-direction: column; gap: 18px; color: #3A3F47">
+        <p style="margin: 0">We compared candidate airfoils on lift-to-drag ratio, the key figure for a glider. Clark Y reached a maximum L/D of about 111, against about 70 for the RAF 27, with a flat bottom that also makes it easier to build.</p>
+      </div>
+    </div>
+  </section>
+  <section style="">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">02 — CFD</span>
+        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">A result that holds across meshes and models</h2>
+        <p style="margin: 0; color: #3A3F47">We ran the airfoil on three meshes (50, 100 and 150 cells along the chord) and with Euler, laminar and k-ε models. At 7°, the lift coefficient stays at 1.075–1.10 across meshes; stall starts around 15°.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 24px; align-items: start"><figure style="margin: 0"><div class="hx-media" style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #FFFFFF"><img class="hx-zoom" src="assets/95621991bce01e7a8fda6a41e72b3161.png" alt="Pressure field" style="display: block; width: 100%; height: auto"></div><figcaption style="padding: 12px 4px 0; font-size: 14px; color: #6A6F78">Pressure field around the airfoil.</figcaption></figure><figure style="margin: 0"><div class="hx-media" style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #FFFFFF"><img class="hx-zoom" src="assets/088ce0ef364ea259624eb22bdfd92711.png" alt="Lift coefficient versus angle of attack" style="display: block; width: 100%; height: auto"></div><figcaption style="padding: 12px 4px 0; font-size: 14px; color: #6A6F78">Lift coefficient against angle of attack, Clark Y.</figcaption></figure></div>
+    </div>
+  </section>
+  <section style="background: #F6F7F9">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">03 — Structure</span>
+        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">Sizing the spar, then making it fit</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; max-width: 680px; display: flex; flex-direction: column; gap: 18px; color: #3A3F47">
+        <p style="margin: 0">The spar was sized with Euler–Bernoulli beam theory. A Python sweep compared five materials on mass and deflection; carbon fibre came out best. The result was checked in Abaqus.</p><p style="margin: 0">Then a packaging check: the first spar section assumed 0.30 m of height, but the Clark Y profile only leaves 0.146 m inside. We revised the section to a thin circular tube (R = 0.40 m, e = 1 mm) — with a section that fits, every material remains feasible and carbon fibre stays the lightest.</p>
+      </div>
+    </div>
+  </section>
+  <section style="background: #0A0A0A; color: #FFFFFF">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+        <span style="font-size: 15px; font-weight: 600; color: #8FA2FF">What I take away</span>
+        <p style="margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.35; letter-spacing: -0.02em">The aerodynamics and the structure were right on their own. The real lesson came from putting them together: the spar has to fit in the airfoil.</p>
+      </div>
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px; font-size: 16px; color: #C9CCD2">
+        <h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">What comes next</h3>
+        <p style="margin: 0">Extend the CFD to 3D with a finite wing and tip effects.</p><p style="margin: 0">Optimize the spar section along the span.</p>
+      </div>
+    </div>
+  </section>
+  <section aria-label="Tools" style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+    <span style="font-size: 15px; font-weight: 600; margin-right: 8px">Tools</span>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; font-weight: 500"><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">CFD</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Python</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Abaqus</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Beam theory</span></div>
+  </section>
+  <section style="max-width: 1160px; margin: 0 auto; padding: 96px 24px 40px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding-top: 32px; border-top: 1px solid #ECEDEF">
+      <a class="hx-link" href="index.html#projects" style="text-decoration: none; font-size: 17px; font-weight: 500; padding: 10px 0">← All projects</a>
+      <a href="Speech.html" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; background: #0A0A0A; color: #FFFFFF; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 16px">Next: Spoken-number recognition →</a>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 40px; font-size: 15px; color: #6A6F78">
+      <span>© 2026 Hamza Houir Alami</span>
+      <span>Arts et Métiers · Lille → Paris</span>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

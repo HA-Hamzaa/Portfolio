@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hamza Houir Alami</title>
+<meta name="description" content="Engineering portfolio of Hamza Houir Alami — Arts et Métiers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#0A0A0A}a:hover{color:#2B4EFF}
+@keyframes hx-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes hx-words{0%,18%{transform:translateY(0)}25%,43%{transform:translateY(-25%)}50%,68%{transform:translateY(-50%)}75%,93%{transform:translateY(-75%)}100%{transform:translateY(0)}}
+.hx-up{animation:hx-up .8s cubic-bezier(.2,.8,.2,1) both}
+.hx-words{animation:hx-words 10s cubic-bezier(.7,0,.3,1) infinite}
+.hx-link{background-image:linear-gradient(currentColor,currentColor);background-size:0 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .3s ease}
+.hx-link:hover{background-size:100% 1.5px}
+.hx-row{transition:background .2s ease}
+.hx-row:hover{background:#F6F7F9}
+.hx-proj{animation:hx-up .45s ease both}
+.hx-proj .hx-img{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.hx-proj:hover .hx-img{transform:scale(1.03)}
+@keyframes hx-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes hx-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes hx-pulse{0%,100%{box-shadow:0 0 0 0 rgba(30,158,90,.5)}70%{box-shadow:0 0 0 8px rgba(30,158,90,0)}}
+.hx-float{animation:hx-float 5s ease-in-out infinite}
+.hx-marquee{animation:hx-marquee 40s linear infinite}
+.hx-pulse{animation:hx-pulse 2s ease-out infinite}
+.hx-card{transition:transform .25s ease,box-shadow .25s ease}
+.hx-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(10,10,10,.08)}
+.hx-focus{transition:background .3s ease,color .3s ease,transform .3s ease}
+.hx-focus:hover{background:#2B4EFF!important;color:#FFFFFF;transform:translateY(-4px)}
+.hx-focus:hover .hx-focus-n,.hx-focus:hover .hx-focus-p{color:#FFFFFF!important}
+@keyframes hx-hl{from{background-size:0 .12em}to{background-size:100% .12em}}
+.hx-hl{background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:0 92%;background-size:0 .12em;animation:hx-hl .7s cubic-bezier(.2,.8,.2,1) .6s forwards}
+.hx-feat{transition:transform .3s ease,box-shadow .3s ease}
+.hx-feat:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(10,10,10,.08)}
+.hx-feat .hx-img{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.hx-feat:hover .hx-img{transform:scale(1.04)}
+.hx-brand{transition:color .25s ease}
+.hx-brand:hover{color:#0A0A0A}
+.hx-zoom{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.hx-focus:hover .hx-zoom,.hx-exp:hover .hx-zoom{transform:scale(1.05)}
+.hx-exp{transition:box-shadow .3s ease,border-color .3s ease}
+.hx-exp:hover{box-shadow:0 18px 40px rgba(10,10,10,.07);border-color:#E0E2E6}
+.hx-logo{opacity:.72;filter:grayscale(1);transition:opacity .25s ease,filter .25s ease}
+.hx-logo:hover{opacity:1;filter:grayscale(0)}
+.hx-tile:hover .hx-zoom,.hx-proj:hover .hx-img{transform:scale(1.05)}
+.hx-tile{transition:transform .3s ease}
+.hx-tile:hover{transform:translateY(-4px)}
+@keyframes hx-marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hx-marq{animation:hx-marq 36s linear infinite}
+.hx-fade:hover .hx-marq{animation-play-state:paused}
+.hx-fade{-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>html,body{overflow-x:clip}</style>
+</head>
+<body>
+<div style="background: #FFFFFF; color: #0A0A0A; font-family: 'Geist', system-ui, sans-serif; font-size: 18px; line-height: 1.65; -webkit-font-smoothing: antialiased">
+
+  <!-- NAV -->
+  <header style="border-bottom: 1px solid #ECEDEF">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px">
+      <a href="#top" style="text-decoration: none; font-weight: 600; font-size: 17px; letter-spacing: -0.01em">Hamza Houir Alami</a>
+      <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 15px; font-weight: 500; color: #4A4F57">
+        <a class="hx-link" href="#experience" style="text-decoration: none; padding: 10px 0; color: #4A4F57">Experience</a>
+        <a class="hx-link" href="#projects" style="text-decoration: none; padding: 10px 0; color: #4A4F57">Projects</a>
+        <a class="hx-link" href="#about" style="text-decoration: none; padding: 10px 0; color: #4A4F57">About</a>
+        <a class="hx-link" href="#education" style="text-decoration: none; padding: 10px 0; color: #4A4F57">Education</a>
+        <a href="downloads/Hamza_Houir_Alami_CV.pdf" style="display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border: 1px solid #0A0A0A; border-radius: 999px; text-decoration: none; color: #0A0A0A">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="max-width: 1160px; margin: 0 auto; padding: 96px 24px 72px">
+    <div style="display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+      <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 30px">
+        <span class="hx-up" style="display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; color: #4A4F57">
+          <span class="hx-pulse" aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #1E9E5A"></span>
+          Open to Summer 2027 research &amp; industry roles
+        </span>
+        <h1 style="margin: 0; font-weight: 600; font-size: clamp(40px, 5.2vw, 74px); line-height: 1.04; letter-spacing: -0.045em">
+          <span class="hx-up" style="display: block; animation-delay: .08s">I <span class="hx-hl" style="color: #2B4EFF">model</span>, <span class="hx-hl" style="color: #2B4EFF; animation-delay: .9s">optimize</span>, and <span class="hx-hl" style="color: #2B4EFF; animation-delay: 1.3s">build</span></span>
+          <span class="hx-up" style="display: block; animation-delay: .16s">engineering systems —</span>
+          <span class="hx-up" style="display: block; color: #8A8F98; animation-delay: .24s">from production lines to autonomous robots.</span>
+        </h1>
+        <p class="hx-up" style="margin: 0; max-width: 560px; font-size: 20px; color: #3A3F47; animation-delay: .34s">I'm Hamza, an industrial &amp; mechanical engineering student at Arts et Métiers. I work on manufacturing systems, optimization and robotics, and I test every model against the people who will use it.</p>
+        <div class="hx-up" style="display: flex; flex-wrap: wrap; gap: 12px; animation-delay: .42s">
+          <a href="#projects" style="display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 26px; background: #0A0A0A; color: #FFFFFF; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 16px">See my projects <span aria-hidden="true">→</span></a>
+          <a href="downloads/Hamza_Houir_Alami_CV.pdf" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; border: 1px solid #D5D7DB; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 16px">Download CV</a>
+        </div>
+      </div>
+
+      <figure class="hx-up" style="flex: 1 1 320px; max-width: 420px; margin: 0 auto; position: relative; animation-delay: .3s">
+        <div aria-hidden="true" style="position: absolute; inset: 28px -20px -20px 28px; background: #2B4EFF; border-radius: 28px; opacity: 0.12"></div>
+        <img src="assets/c410f3c0f3fb22e47ac50467d8feb1d7.jpg" alt="Hamza Houir Alami in the Arts et Métiers traditional uniform" style="position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 16%; border-radius: 24px">
+        <span class="hx-float" style="position: absolute; top: 28px; left: -36px; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background: #FFFFFF; border-radius: 999px; box-shadow: 0 10px 30px rgba(10,10,10,0.12); font-size: 14px; font-weight: 500; white-space: nowrap"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #2B4EFF"></span>Arts et Métiers · Lille → Paris</span>
+        <span class="hx-float" style="position: absolute; top: 46%; right: -40px; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background: #FFFFFF; border-radius: 999px; box-shadow: 0 10px 30px rgba(10,10,10,0.12); font-size: 14px; font-weight: 500; white-space: nowrap; animation-delay: -1.5s"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #0A0A0A"></span>Safran · UM6P</span>
+        <span class="hx-float" style="position: absolute; bottom: 36px; left: -28px; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background: #0A0A0A; color: #FFFFFF; border-radius: 999px; box-shadow: 0 10px 30px rgba(10,10,10,0.18); font-size: 14px; font-weight: 500; white-space: nowrap; animation-delay: -3s">Football on weekends</span>
+        <figcaption style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Hamza Houir Alami</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- LOGOS -->
+  <section aria-label="Where I trained and worked" style="border-top: 1px solid #ECEDEF; border-bottom: 1px solid #ECEDEF; padding: 30px 0 34px; display: flex; flex-direction: column; gap: 22px; overflow: hidden">
+    <span style="max-width: 1160px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; font-size: 15px; font-weight: 500; color: #6A6F78">Trained and worked at</span>
+    <div class="hx-fade" style="overflow: hidden">
+      <ul class="hx-marq" style="list-style: none; margin: 0; padding: 0; display: flex; align-items: center; width: max-content"><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/a16625fba4a06c605aabc7dccb939a15.png" alt="Safran" style="display: block; height: 56px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/6f5e8504fdbb2b8552bd9a920d443cc3.png" alt="UM6P" style="display: block; height: 64px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/6e81ef53815c470c3bbb3ed07a64ec78.png" alt="Decathlon" style="display: block; height: 64px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/15e1a34db094200f69490997dbafa77a.png" alt="Arts et Métiers" style="display: block; height: 60px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/727dae820983078f9a37e59c40c5a786.png" alt="AMJE Lille" style="display: block; height: 48px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/a16625fba4a06c605aabc7dccb939a15.png" alt="" style="display: block; height: 56px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/6f5e8504fdbb2b8552bd9a920d443cc3.png" alt="" style="display: block; height: 64px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/6e81ef53815c470c3bbb3ed07a64ec78.png" alt="" style="display: block; height: 64px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/15e1a34db094200f69490997dbafa77a.png" alt="" style="display: block; height: 60px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/727dae820983078f9a37e59c40c5a786.png" alt="" style="display: block; height: 48px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/a16625fba4a06c605aabc7dccb939a15.png" alt="" style="display: block; height: 56px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/6f5e8504fdbb2b8552bd9a920d443cc3.png" alt="" style="display: block; height: 64px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/6e81ef53815c470c3bbb3ed07a64ec78.png" alt="" style="display: block; height: 64px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/15e1a34db094200f69490997dbafa77a.png" alt="" style="display: block; height: 60px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/727dae820983078f9a37e59c40c5a786.png" alt="" style="display: block; height: 48px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/a16625fba4a06c605aabc7dccb939a15.png" alt="" style="display: block; height: 56px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/6f5e8504fdbb2b8552bd9a920d443cc3.png" alt="" style="display: block; height: 64px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/6e81ef53815c470c3bbb3ed07a64ec78.png" alt="" style="display: block; height: 64px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/15e1a34db094200f69490997dbafa77a.png" alt="" style="display: block; height: 60px; width: auto; border-radius: 8px"></li><li class="hx-logo" style="flex: 0 0 auto; padding: 0 44px"><img src="assets/727dae820983078f9a37e59c40c5a786.png" alt="" style="display: block; height: 48px; width: auto; border-radius: 8px"></li></ul>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" style="max-width: 1160px; margin: 0 auto; padding: 96px 24px 96px; display: flex; flex-direction: column; gap: 28px">
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">01 — Experience</span>
+      <h2 style="margin: 0; font-weight: 600; font-size: clamp(34px, 4vw, 52px); line-height: 1.08; letter-spacing: -0.04em">Where I've worked.</h2>
+    </div>
+
+    <article class="hx-exp" style="display: flex; flex-wrap: wrap; gap: 28px 40px; padding: 28px; border: 1px solid #ECEDEF; border-radius: 22px">
+      <div style="flex: 1 1 260px; max-width: 320px; aspect-ratio: 4 / 3; border-radius: 14px; overflow: hidden; background: #E9EBEF"><img class="hx-zoom" src="assets/396142f270d99700382102233805edee.jpg" alt="Hamza at the UM6P campus in front of the university sign" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 30% 45%"></div>
+      <div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 14px; color: #6A6F78">Jul — Aug 2026 · Rabat, Morocco</span>
+        <h3 style="margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.025em">AI &amp; Operations Research Intern <span style="color: #8A8F98; font-weight: 500">· UM6P, IT Department</span></h3>
+        <ul style="margin: 4px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 16px; color: #3A3F47">
+          <li>Built a Python/FastAPI decision-support system for IT equipment: data-quality checks, demand forecasting, inventory-policy simulation and recommendations.</li>
+          <li>Benchmarked 9 forecasting models and 6 stock policies on 60 equipment–department series; in simulation, about 21% lower total cost than corrective purchasing.</li>
+          <li>Proposed the tool to the IT department, which adopted it.</li>
+        </ul>
+        <a class="hx-link" href="UM6P.html" style="align-self: flex-start; text-decoration: none; font-size: 15px; font-weight: 600; color: #2B4EFF; padding: 6px 0">Read the case study →</a>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; font-size: 13px; font-weight: 500"><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Forecasting</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">MILP</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Simulation</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Python · FastAPI</span></div>
+      </div>
+    </article>
+
+    <article class="hx-exp" style="display: flex; flex-wrap: wrap; gap: 28px 40px; padding: 28px; border: 1px solid #ECEDEF; border-radius: 22px">
+      <div style="flex: 1 1 260px; max-width: 320px; aspect-ratio: 4 / 3; border-radius: 14px; overflow: hidden; background: #E9EBEF"><img class="hx-zoom" src="assets/9fe53bb7f426e5b8f2e4610f47da6852.jpg" alt="Technicians working on a nacelle assembly line at Safran" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%"></div>
+      <div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 14px; color: #6A6F78">Jun — Jul 2026 · Casablanca, Morocco</span>
+        <h3 style="margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.025em">Operations &amp; Manufacturing Intern <span style="color: #8A8F98; font-weight: 500">· Safran Nacelles</span></h3>
+        <ul style="margin: 4px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 16px; color: #3A3F47">
+          <li>Gulfstream G700 nacelle line: worked on the line's routing-time target (148 h → 146 h per nacelle), modeling 36 operations from SAP data and shop-floor observation.</li>
+          <li>Allocated the time reduction with a convex quadratic program and tested it with 5,000 Monte Carlo runs.</li>
+          <li>Tooling methods: tooling requests, specifications and CAD; R&amp;D on radiant adhesive curing, later extended into a 3D thermal model.</li>
+        </ul>
+        <a class="hx-link" href="Safran.html" style="align-self: flex-start; text-decoration: none; font-size: 15px; font-weight: 600; color: #2B4EFF; padding: 6px 0">Read the case study →</a>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; font-size: 13px; font-weight: 500"><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Assembly methods</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Tooling</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">CATIA</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Optimization</span></div>
+      </div>
+    </article>
+
+    <article class="hx-exp" style="display: flex; flex-wrap: wrap; gap: 28px 40px; padding: 28px; border: 1px solid #ECEDEF; border-radius: 22px">
+      <div style="flex: 1 1 260px; max-width: 320px; aspect-ratio: 4 / 3; border-radius: 14px; overflow: hidden; background: #E9EBEF"><img class="hx-zoom" src="assets/1c8d83e0f7ba68dda4b7f966e6965a8a.jpg" alt="The AMJE Lille 2026–2027 board in Arts et Métiers uniform" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%"></div>
+      <div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 14px; color: #6A6F78">Dec 2025 — Present · Lille, France</span>
+        <h3 style="margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.025em">Head of Business Development &amp; Partnerships <span style="color: #8A8F98; font-weight: 500">· AMJE Lille</span></h3>
+        <p style="margin: 0; font-size: 15px; color: #6A6F78">Business Manager, Dec 2025 — May 2026 · Head of Business Development &amp; Partnerships, since May 2026</p>
+        <ul style="margin: 4px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 16px; color: #3A3F47">
+          <li>Lead 15 business managers in the school's student-run consulting firm.</li>
+          <li>+80% revenue over the first six months of our mandate, with 10 signed contracts.</li>
+          <li>Grew the prospecting database from about 600 to 1,600 qualified contacts.</li>
+          <li>Represented AMJE with MEDEF, PwC, EY, Alten, BNP Paribas, Bpifrance, the CCI, EuraTechnologies and the Lille metropolis (MEL).</li>
+        </ul>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; font-size: 13px; font-weight: 500"><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Leadership</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Business development</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Consulting</span></div>
+      </div>
+    </article>
+
+    <article class="hx-exp" style="display: flex; flex-wrap: wrap; gap: 28px 40px; padding: 28px; border: 1px solid #ECEDEF; border-radius: 22px">
+      <div style="flex: 1 1 260px; max-width: 320px; aspect-ratio: 4 / 3; border-radius: 14px; overflow: hidden; background: #3643BA; display: flex; align-items: center; justify-content: center"><img src="assets/6e81ef53815c470c3bbb3ed07a64ec78.png" alt="Decathlon logo" style="display: block; height: 78%; width: auto"></div>
+      <div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 14px; color: #6A6F78">Jul 2026 — Present · Lille, France · via AMJE Lille</span>
+        <h3 style="margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.025em">Data Consultant <span style="color: #8A8F98; font-weight: 500">· Decathlon</span></h3>
+        <p style="margin: 0; display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; padding: 6px 12px; background: #F2F3F5; border-radius: 999px; font-size: 14px; color: #3A3F47"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>Domain: data · client details confidential</p>
+        <ul style="margin: 4px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 16px; color: #3A3F47">
+          <li>Technical consultant on a data project for one of Europe's largest sporting-goods retailers.</li>
+          <li>Work with the client's teams on structuring and organizing business data at scale.</li>
+          <li>Two engagements so far; scope, data and results stay confidential.</li>
+        </ul>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; font-size: 13px; font-weight: 500"><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Data</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Consulting</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Client delivery</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" style="background: #F6F7F9">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 112px 24px; display: flex; flex-direction: column; gap: 36px">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px">
+        <div style="display: flex; flex-direction: column; gap: 16px"><span style="font-size: 15px; font-weight: 600; color: #2B4EFF">02 — Projects</span><h2 style="margin: 0; font-weight: 600; font-size: clamp(34px, 4vw, 52px); line-height: 1.08; letter-spacing: -0.04em">What I build.</h2></div>
+        <div role="group" aria-label="Filter projects" style="display: flex; flex-wrap: wrap; gap: 6px; padding: 4px; background: #FFFFFF; border: 1px solid #E3E5E8; border-radius: 999px">
+          <button data-filter="all" class="pf-tab" type="button" aria-pressed="true" style="height: 40px; padding: 0 16px; border: 0; border-radius: 999px; background: #0A0A0A; color: #FFFFFF; font-family: 'Geist', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer">All</button>
+<button data-filter="robotics" class="pf-tab" type="button" aria-pressed="false" style="height: 40px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent; color: #3A3F47; font-family: 'Geist', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer">Design &amp; robotics</button>
+<button data-filter="mfg" class="pf-tab" type="button" aria-pressed="false" style="height: 40px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent; color: #3A3F47; font-family: 'Geist', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer">Manufacturing</button>
+<button data-filter="opt" class="pf-tab" type="button" aria-pressed="false" style="height: 40px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent; color: #3A3F47; font-family: 'Geist', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer">Optimization</button>
+<button data-filter="ai" class="pf-tab" type="button" aria-pressed="false" style="height: 40px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent; color: #3A3F47; font-family: 'Geist', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer">AI</button>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px">
+        
+          <article data-cat="opt" class="hx-proj" style="display: flex; flex-direction: column; gap: 16px">
+            <div style="overflow: hidden; border-radius: 14px; background: #E9EBEF">
+              <img class="hx-img" src="assets/a7fd8286c21421fa0ac2081a337a0c03.jpg" alt="Decision-support dashboard comparing inventory policies" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 0% 0%; background: #FFFFFF">
+              
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span style="font-size: 14px; color: #6A6F78">UM6P · Internship · Operations research</span>
+              <h3 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">IT equipment decision support</h3>
+              <p style="margin: 2px 0 0; font-size: 16px; color: #4A4F57">Forecasting, stock-policy simulation and recommendations for a university IT department.</p>
+              <a class="hx-link" href="UM6P.html" style="align-self: flex-start; margin-top: 6px; text-decoration: none; font-size: 15px; font-weight: 600; color: #2B4EFF; padding: 6px 0">Read the case study →</a>
+            </div>
+          </article>
+        
+          <article data-cat="mfg" class="hx-proj" style="display: flex; flex-direction: column; gap: 16px">
+            <div style="overflow: hidden; border-radius: 14px; background: #E9EBEF">
+              <img class="hx-img" src="assets/9fe53bb7f426e5b8f2e4610f47da6852.jpg" alt="Nacelle assembly line at Safran" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 50%; background: #FFFFFF">
+              
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span style="font-size: 14px; color: #6A6F78">Safran Nacelles · Internship · Manufacturing</span>
+              <h3 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">Assembly line optimization</h3>
+              <p style="margin: 2px 0 0; font-size: 16px; color: #4A4F57">Allocating a routing-time target across the 36 operations of a Gulfstream G700 nacelle line.</p>
+              <a class="hx-link" href="Safran.html" style="align-self: flex-start; margin-top: 6px; text-decoration: none; font-size: 15px; font-weight: 600; color: #2B4EFF; padding: 6px 0">Read the case study →</a>
+            </div>
+          </article>
+        
+          <article data-cat="robotics" class="hx-proj" style="display: flex; flex-direction: column; gap: 16px">
+            <div style="overflow: hidden; border-radius: 14px; background: #E9EBEF">
+              <img class="hx-img" src="assets/253b08f2a211ab0a93eb2f709a433337.jpg" alt="DeskBuddy robot render" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 55%; background: #FFFFFF">
+              
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span style="font-size: 14px; color: #6A6F78">Personal · Robotics</span>
+              <h3 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">DeskBuddy</h3>
+              <p style="margin: 2px 0 0; font-size: 16px; color: #4A4F57">A desk-cleaning robot with a voice, designed end to end in Fusion: air path, sensors, 26 printed parts.</p>
+              <a class="hx-link" href="DeskBuddy.html" style="align-self: flex-start; margin-top: 6px; text-decoration: none; font-size: 15px; font-weight: 600; color: #2B4EFF; padding: 6px 0">Read the case study →</a>
+            </div>
+          </article>
+        
+          <article data-cat="mfg" class="hx-proj" style="display: flex; flex-direction: column; gap: 16px">
+            <div style="overflow: hidden; border-radius: 14px; background: #E9EBEF">
+              <img class="hx-img" src="assets/2e37f26a31c9c773e89c5f136a3259c8.png" alt="Map of degree of cure on a composite plate" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 50%; background: #FFFFFF">
+              
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span style="font-size: 14px; color: #6A6F78">Safran Nacelles · Thermal modeling</span>
+              <h3 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">3D thermal curing model</h3>
+              <p style="margin: 2px 0 0; font-size: 16px; color: #4A4F57">A 3D heat model coupled to cure kinetics, used to optimize a radiant-lamp curing cycle.</p>
+              <a class="hx-link" href="Curing.html" style="align-self: flex-start; margin-top: 6px; text-decoration: none; font-size: 15px; font-weight: 600; color: #2B4EFF; padding: 6px 0">Read the case study →</a>
+            </div>
+          </article>
+        
+          <article data-cat="robotics" class="hx-proj" style="display: flex; flex-direction: column; gap: 16px">
+            <div style="overflow: hidden; border-radius: 14px; background: #E9EBEF">
+              <img class="hx-img" src="assets/21f560d497fa33f1e5180606b53d21b9.png" alt="Cross-section of a glenoid implant concept" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 50%; background: #FFFFFF">
+              
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span style="font-size: 14px; color: #6A6F78">Team project · Biomechanics</span>
+              <h3 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">Shoulder prosthesis</h3>
+              <p style="margin: 2px 0 0; font-size: 16px; color: #4A4F57">Five-member team with the Georges Charpak Institute: literature review, implant concept and shoulder kinematics.</p>
+              <a class="hx-link" href="Prosthesis.html" style="align-self: flex-start; margin-top: 6px; text-decoration: none; font-size: 15px; font-weight: 600; color: #2B4EFF; padding: 6px 0">Read the case study →</a>
+            </div>
+          </article>
+        
+          <article data-cat="robotics" class="hx-proj" style="display: flex; flex-direction: column; gap: 16px">
+            <div style="overflow: hidden; border-radius: 14px; background: #E9EBEF">
+              <img class="hx-img" src="assets/b165c0e6252c22eac4e0d6ddeb6753b4.jpg" alt="Formula Student car CAD in 3DEXPERIENCE" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 50%; background: #FFFFFF">
+              
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span style="font-size: 14px; color: #6A6F78">Formula Student · FSAM</span>
+              <h3 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">Formula Student car</h3>
+              <p style="margin: 2px 0 0; font-size: 16px; color: #4A4F57">Full-vehicle bill of materials (about 380 references) and stock management.</p>
+              <a class="hx-link" href="FSAM.html" style="align-self: flex-start; margin-top: 6px; text-decoration: none; font-size: 15px; font-weight: 600; color: #2B4EFF; padding: 6px 0">Read the case study →</a>
+            </div>
+          </article>
+        
+          <article data-cat="robotics" class="hx-proj" style="display: flex; flex-direction: column; gap: 16px">
+            <div style="overflow: hidden; border-radius: 14px; background: #E9EBEF">
+              <img class="hx-img" src="assets/25405877ef27160e54f905122feb4e67.jpg" alt="CFD velocity field around a glider wing profile" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 50%; background: #FFFFFF">
+              
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span style="font-size: 14px; color: #6A6F78">Team project · Aero &amp; structures</span>
+              <h3 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">Glider wing study</h3>
+              <p style="margin: 2px 0 0; font-size: 16px; color: #4A4F57">Clark Y airfoil, CFD on three meshes and a five-material spar sweep checked in Abaqus.</p>
+              <a class="hx-link" href="Glider.html" style="align-self: flex-start; margin-top: 6px; text-decoration: none; font-size: 15px; font-weight: 600; color: #2B4EFF; padding: 6px 0">Read the case study →</a>
+            </div>
+          </article>
+        
+          <article data-cat="ai" class="hx-proj" style="display: flex; flex-direction: column; gap: 16px">
+            <div style="overflow: hidden; border-radius: 14px; background: #E9EBEF">
+              <img class="hx-img" src="assets/463c65def46fd9a74af26d624c654f9c.jpg" alt="Abstract neural network illustration" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 50%; background: #FFFFFF">
+              
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span style="font-size: 14px; color: #6A6F78">Academic + extension · Machine learning</span>
+              <h3 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">Spoken-number recognition</h3>
+              <p style="margin: 2px 0 0; font-size: 16px; color: #4A4F57">French numbers 0–99 learned from 23 synthetic words: 86.7% on real speakers. Preprint in preparation.</p>
+              <a class="hx-link" href="Speech.html" style="align-self: flex-start; margin-top: 6px; text-decoration: none; font-size: 15px; font-weight: 600; color: #2B4EFF; padding: 6px 0">Read the case study →</a>
+            </div>
+          </article>
+        
+          <article data-cat="opt" class="hx-proj" style="display: flex; flex-direction: column; gap: 16px">
+            <div style="overflow: hidden; border-radius: 14px; background: #E9EBEF">
+              <img class="hx-img" src="assets/e951f7abde1b60451b454b1f5d9d56ae.jpg" alt="Flywheel shape optimization cover" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 30% 50%; background: #FFFFFF">
+              
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <span style="font-size: 14px; color: #6A6F78">TIPE → research · Optimization</span>
+              <h3 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">Flywheel rotor optimization</h3>
+              <p style="margin: 2px 0 0; font-size: 16px; color: #4A4F57">From a TIPE braking experiment to stress-limited, printable rotors: 2.2× the energy per kilogram of a uniform disk.</p>
+              <a class="hx-link" href="Flywheel.html" style="align-self: flex-start; margin-top: 6px; text-decoration: none; font-size: 15px; font-weight: 600; color: #2B4EFF; padding: 6px 0">Read the case study →</a>
+            </div>
+          </article>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="max-width: 1160px; margin: 0 auto; padding: 112px 24px 56px; display: flex; flex-wrap: wrap; gap: 56px">
+    <div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 16px">
+      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">03 — About</span>
+      <h2 style="margin: 0; font-weight: 600; font-size: clamp(34px, 4vw, 52px); line-height: 1.08; letter-spacing: -0.04em">Engineering that holds up on the shop floor.</h2>
+    </div>
+    <div style="flex: 999 1 480px; min-width: 0; max-width: 640px; display: flex; flex-direction: column; gap: 20px">
+      <p style="margin: 0; font-size: 22px; line-height: 1.5; letter-spacing: -0.01em">I like problems where mathematics meets machines: an assembly sequence to shorten, a stock policy to make robust, a robot to design from a blank CAD file.</p>
+      <p style="margin: 0; color: #3A3F47">My training mixes mechanics, manufacturing and operations research. My internships at Safran and UM6P added one lesson: a model is only as good as its fit with the people who run the system, so I go to the floor before I trust the numbers. Outside of work: football, robotics, and mentoring Moroccan students arriving in France.</p>
+    </div>
+  </section>
+
+  <!-- FOCUS -->
+  <section aria-label="What I work on" style="max-width: 1160px; margin: 0 auto; padding: 8px 24px 96px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px">
+      <a class="hx-tile" href="#projects" style="position: relative; display: block; aspect-ratio: 4 / 5; border-radius: 20px; overflow: hidden; text-decoration: none; color: #FFFFFF; background: #222">
+        <img class="hx-zoom" src="assets/d559e6085f3dab6ff8d56693caa11f10.jpg" alt="Illustration of a supply network" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%">
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.72) 100%)"></div>
+        <div style="position: absolute; left: 22px; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; opacity: 0.85">01</span><h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em">Industrial systems</h3><p style="margin: 0; font-size: 15px; line-height: 1.45; opacity: 0.9">Supply chains, inventory and decisions under uncertainty.</p></div>
+      </a>
+      <a class="hx-tile" href="#projects" style="position: relative; display: block; aspect-ratio: 4 / 5; border-radius: 20px; overflow: hidden; text-decoration: none; color: #FFFFFF; background: #222">
+        <img class="hx-zoom" src="assets/c033d423105c992a99ecf455ba25e0df.jpg" alt="Illustration of interlocking gears" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%">
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.72) 100%)"></div>
+        <div style="position: absolute; left: 22px; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; opacity: 0.85">02</span><h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em">Manufacturing</h3><p style="margin: 0; font-size: 15px; line-height: 1.45; opacity: 0.9">Assembly lines, tooling and the operators who run them.</p></div>
+      </a>
+      <a class="hx-tile" href="#projects" style="position: relative; display: block; aspect-ratio: 4 / 5; border-radius: 20px; overflow: hidden; text-decoration: none; color: #FFFFFF; background: #FFFFFF">
+        <img class="hx-zoom" src="assets/5d4ee6150738ff1c5d562f78bcf11b76.jpg" alt="Illustration of a robotic arm" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%">
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.72) 100%)"></div>
+        <div style="position: absolute; left: 22px; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; opacity: 0.85">03</span><h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em">Robotics &amp; design</h3><p style="margin: 0; font-size: 15px; line-height: 1.45; opacity: 0.9">CAD, prototyping and simulation.</p></div>
+      </a>
+      <a class="hx-tile" href="#projects" style="position: relative; display: block; aspect-ratio: 4 / 5; border-radius: 20px; overflow: hidden; text-decoration: none; color: #FFFFFF; background: #EEF1F5">
+        <img class="hx-zoom" src="assets/1f6ecf1c9f2256ba64d81b5790d0fd01.jpg" alt="Illustration of a neural network" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%">
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,20,60,0) 35%, rgba(10,20,60,0.78) 100%)"></div>
+        <div style="position: absolute; left: 22px; right: 22px; bottom: 22px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; opacity: 0.85">04</span><h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em">Applied AI</h3><p style="margin: 0; font-size: 15px; line-height: 1.45; opacity: 0.9">Models that support human judgment, not replace it.</p></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <section style="max-width: 1160px; margin: 0 auto; padding: 24px 24px 56px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+      <div class="hx-card" style="padding: 28px; border: 1px solid #ECEDEF; border-radius: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 52px; font-weight: 600; letter-spacing: -0.05em; line-height: 1">2</span><span style="font-size: 15px; color: #4A4F57">industry internships, Safran Nacelles and UM6P</span></div>
+      <div class="hx-card" style="padding: 28px; border: 1px solid #ECEDEF; border-radius: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 52px; font-weight: 600; letter-spacing: -0.05em; line-height: 1">15</span><span style="font-size: 15px; color: #4A4F57">business managers led at AMJE Lille</span></div>
+      <div class="hx-card" style="padding: 28px; border: 1px solid #ECEDEF; border-radius: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 52px; font-weight: 600; letter-spacing: -0.05em; line-height: 1">10</span><span style="font-size: 15px; color: #4A4F57">students tutored in maths and physics</span></div>
+      <div class="hx-card" style="padding: 28px; border: 1px solid #ECEDEF; border-radius: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 52px; font-weight: 600; letter-spacing: -0.05em; line-height: 1; color: #2B4EFF">3.89</span><span style="font-size: 15px; color: #4A4F57">GPA / 4.0, converted from the French scale</span></div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 112px; display: flex; flex-direction: column; gap: 36px">
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">04 — Education</span>
+      <h2 style="margin: 0; font-weight: 600; font-size: clamp(34px, 4vw, 52px); line-height: 1.08; letter-spacing: -0.04em">Morocco → Lille → Paris.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+      <article class="hx-exp" style="border: 1px solid #ECEDEF; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+        <div style="aspect-ratio: 16 / 10; overflow: hidden; background: #E9EBEF"><img class="hx-zoom" src="assets/a53e19bd48328ecd60881d891777d8e8.jpg" alt="Groupe Scolaire La Résidence, main building" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%"></div>
+        <div style="padding: 24px 26px 28px; display: flex; flex-direction: column; gap: 8px">
+          <span style="font-size: 14px; color: #6A6F78">2020 — 2023 · Morocco</span>
+          <h3 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">Groupe Scolaire La Résidence</h3>
+          <p style="margin: 0; font-size: 16px; color: #3A3F47">French Baccalaureate, Mathematics and Physics, with Expert Mathematics. Highest honors (mention Très Bien), top 5% of the school.</p>
+        </div>
+      </article>
+      <article class="hx-exp" style="border: 1px solid #ECEDEF; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+        <div style="aspect-ratio: 16 / 10; overflow: hidden; background: #E9EBEF"><img class="hx-zoom" src="assets/ee6438cf991ad923bd948d9a02172b53.jpg" alt="Lycée Faidherbe, Lille" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%"></div>
+        <div style="padding: 24px 26px 28px; display: flex; flex-direction: column; gap: 8px">
+          <span style="font-size: 14px; color: #6A6F78">2023 — 2025 · Lille</span>
+          <h3 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">Lycée Faidherbe — Classes préparatoires</h3>
+          <p style="margin: 0; font-size: 16px; color: #3A3F47">PCSI → PSI*: two intensive years of mathematics, physics and engineering science, on the honors track.</p>
+        </div>
+      </article>
+      <article class="hx-exp" style="border: 1px solid #ECEDEF; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+        <div style="aspect-ratio: 16 / 10; overflow: hidden; background: #E9EBEF"><img class="hx-zoom" src="assets/9675fed0623199f7138715def4ee74e7.jpg" alt="Arts et Métiers campus in Lille at sunset" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%"></div>
+        <div style="padding: 24px 26px 28px; display: flex; flex-direction: column; gap: 8px">
+          <span style="font-size: 14px; color: #6A6F78">2025 — Present · Lille → Paris</span>
+          <h3 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">Arts et Métiers Institute of Technology</h3>
+          <p style="margin: 0; font-size: 16px; color: #3A3F47">Integrated B.S./M.S. in Industrial &amp; Mechanical Engineering. U.S.-oriented academic pathway.</p>
+          <p style="margin: 0; font-size: 14px; color: #6A6F78">GPA 3.89 / 4.0, converted from the French scale</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section style="max-width: 1160px; margin: 0 auto; padding: 112px 24px 40px">
+    <div style="background: #2B4EFF; color: #FFFFFF; border-radius: 28px; padding: clamp(40px, 6vw, 80px); display: flex; flex-direction: column; gap: 24px">
+      <span style="font-size: 15px; font-weight: 600; opacity: 0.85">Contact</span>
+      <h2 style="margin: 0; font-weight: 600; font-size: clamp(36px, 5vw, 68px); line-height: 1.05; letter-spacing: -0.045em; max-width: 820px">Let's work on a system worth improving.</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
+        <a href="mailto:h.houir.alami@gmail.com" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; background: #FFFFFF; color: #0A0A0A; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 16px">h.houir.alami@gmail.com</a>
+        <a href="https://www.linkedin.com/in/hamza-houir-alami-016a88372" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; border: 1px solid rgba(255,255,255,0.6); color: #FFFFFF; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 16px">LinkedIn</a>
+        <a href="https://github.com/HA-Hamzaa" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; border: 1px solid rgba(255,255,255,0.6); color: #FFFFFF; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 16px">GitHub</a>
+      </div>
+    </div>
+  </section>
+  <footer style="max-width: 1160px; margin: 0 auto; padding: 0 24px 40px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 20px; font-size: 15px; color: #6A6F78">
+      <span>© 2026 Hamza Houir Alami</span>
+      <span>Arts et Métiers · Lille → Paris</span>
+    </div>
+  </footer>
+
+
+</div>
+
+<script>
+document.querySelectorAll('.pf-tab').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var f = b.getAttribute('data-filter');
+    document.querySelectorAll('.pf-tab').forEach(function (o) {
+      var on = o === b;
+      o.setAttribute('aria-pressed', on ? 'true' : 'false');
+      o.style.background = on ? '#0A0A0A' : 'transparent';
+      o.style.color = on ? '#FFFFFF' : '#3A3F47';
+    });
+    document.querySelectorAll('article[data-cat]').forEach(function (a) {
+      a.style.display = (f === 'all' || a.getAttribute('data-cat') === f) ? '' : 'none';
+    });
+  });
+});
+</script>
+</body>
+</html>

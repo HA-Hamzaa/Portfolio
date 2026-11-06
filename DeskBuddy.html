@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study — DeskBuddy</title>
+<meta name="description" content="Engineering portfolio of Hamza Houir Alami — Arts et Métiers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#0A0A0A}a:hover{color:#2B4EFF}
+@keyframes hx-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hx-up{animation:hx-up .8s cubic-bezier(.2,.8,.2,1) both}
+.hx-link{background-image:linear-gradient(currentColor,currentColor);background-size:0 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .3s ease}
+.hx-link:hover{background-size:100% 1.5px}
+.hx-zoom{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.hx-media:hover .hx-zoom{transform:scale(1.03)}
+@keyframes hx-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.hx-bar{transform-origin:left center;animation:hx-grow 1s cubic-bezier(.2,.8,.2,1) both}
+.hx-step{transition:transform .25s ease,border-color .25s ease}
+.hx-step:hover{transform:translateY(-4px);border-color:#2B4EFF}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>html,body{overflow-x:clip}</style>
+</head>
+<body>
+<div style="background: #FFFFFF; color: #0A0A0A; font-family: 'Geist', system-ui, sans-serif; font-size: 18px; line-height: 1.65; -webkit-font-smoothing: antialiased">
+
+  <header style="border-bottom: 1px solid #ECEDEF">
+    <nav aria-label="Case study" style="max-width: 1160px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px">
+      <a class="hx-link" href="index.html#projects" style="text-decoration: none; font-size: 16px; font-weight: 500; padding: 10px 0">← All projects</a>
+      <a href="index.html" style="text-decoration: none; font-weight: 600; font-size: 17px; letter-spacing: -0.01em">Hamza Houir Alami</a>
+    </nav>
+  </header>
+
+  <section style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 48px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+    <div class="hx-up" style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">Personal project · Product design · 2026</span>
+      <h1 style="margin: 0; font-weight: 600; font-size: clamp(38px, 5vw, 64px); line-height: 1.04; letter-spacing: -0.045em">DeskBuddy, a small robot that cleans your desk and talks back</h1>
+      <p style="margin: 0; font-size: 21px; line-height: 1.5; color: #3A3F47; max-width: 620px">A palm-sized desk robot: it vacuums crumbs and eraser dust, avoids falling off the edge, and answers when you say “hey desk buddy”. Designed end to end in Fusion, from air path to printable parts.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; color: #6A6F78"><span>Product design · CAD</span><span>Fusion · 3D printing</span><span>Electronics integration</span></div>
+    </div>
+    <div class="hx-up hx-media" style="flex: 1 1 340px; max-width: 480px; aspect-ratio: 1 / 1; border-radius: 22px; overflow: hidden; background: #F2F3F5; animation-delay: .1s">
+      <img class="hx-zoom" src="assets/df7a47adb048ea06cb4df86b2b92ae88.png" alt="DeskBuddy robot render" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 50% 50%">
+    </div>
+  </section>
+  <section aria-label="Key figures" style="max-width: 1160px; margin: 0 auto; padding: 0 24px 72px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: #ECEDEF; border: 1px solid #ECEDEF; border-radius: 20px; overflow: hidden">
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">Ø160 mm</span><span style="font-size: 15px; color: #4A4F57">body, 127 mm tall</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">50</span><span style="font-size: 15px; color: #4A4F57">components in the assembly</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">26</span><span style="font-size: 15px; color: #4A4F57">3D-printed parts</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; color: #2B4EFF;">≈73 min</span><span style="font-size: 15px; color: #4A4F57">estimated runtime</span></div>
+    </div>
+  </section>
+  <section style="background: #F6F7F9">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">01 — The idea</span>
+        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">A desk tool, not a toy</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; max-width: 680px; display: flex; flex-direction: column; gap: 18px; color: #3A3F47">
+        <p style="margin: 0">Desk vacuums exist but they are handheld and noisy. I wanted something that runs on its own while you work, and that people actually want on their desk — so it has a face and a voice.</p><p style="margin: 0">The constraints were tight: everything had to fit in a 160 mm body powered by a single 18650 cell, and the robot must never drive off the table.</p><figure style="margin: 0"><div class="hx-media" style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #F2F3F5"><img class="hx-zoom" src="assets/ed6aa5623878b32de8c8f1fd67da9ab0.png" alt="DeskBuddy front face with screen eyes" style="display: block; width: 100%; height: auto"></div><figcaption style="padding: 12px 4px 0; font-size: 14px; color: #6A6F78">The face: a small screen for the eyes, microphone and speaker for the voice assistant.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+  <section style="">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">02 — Engineering</span>
+        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">Air path, sensors and packaging</h2>
+        <p style="margin: 0; color: #3A3F47">A 5015 blower pulls air through an intake under the body into a dust bin. Two N20 motors drive the wheels. Five VL6180X distance sensors watch the table edge. A XiaoZhi voice module handles the wake word and conversation.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 24px; align-items: start"><figure style="margin: 0"><div class="hx-media" style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #FFFFFF"><img class="hx-zoom" src="assets/b0ca675449bdca0f01afbbbfaff47db5.png" alt="Section view of the air path" style="display: block; width: 100%; height: auto"></div><figcaption style="padding: 12px 4px 0; font-size: 14px; color: #6A6F78">Section of the air path: intake, bin and blower.</figcaption></figure><figure style="margin: 0"><div class="hx-media" style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #FFFFFF"><img class="hx-zoom" src="assets/f6261a58ea61ca781a7949e9854275d8.png" alt="Printed parts laid out" style="display: block; width: 100%; height: auto"></div><figcaption style="padding: 12px 4px 0; font-size: 14px; color: #6A6F78">The 26 printed parts, exported as STEP/STL with drawings.</figcaption></figure></div>
+    </div>
+  </section>
+  <section style="background: #F6F7F9">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">03 — Where it stands</span>
+        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">Designed, not built yet</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; max-width: 680px; display: flex; flex-direction: column; gap: 18px; color: #3A3F47">
+        <p style="margin: 0">The full assembly is done: 50 components, 66 bodies, 26 printable parts with drawings. Runtime is estimated at about 73 minutes from the power budget, above my 20–30 minute target.</p><p style="margin: 0">No physical prototype has been tested yet. The next step is printing, wiring and measuring real suction and runtime.</p>
+      </div>
+    </div>
+  </section>
+  <section style="background: #0A0A0A; color: #FFFFFF">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+        <span style="font-size: 15px; font-weight: 600; color: #8FA2FF">What I take away</span>
+        <p style="margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.35; letter-spacing: -0.02em">Packaging was the real design problem: every millimetre of air path competes with the battery, the wheels and the sensors.</p>
+      </div>
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px; font-size: 16px; color: #C9CCD2">
+        <h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">What comes next</h3>
+        <p style="margin: 0">Print and assemble the first prototype.</p><p style="margin: 0">Measure suction, noise and runtime against the estimates.</p><p style="margin: 0">Tune the edge-detection thresholds on real desks.</p>
+      </div>
+    </div>
+  </section>
+  <section aria-label="Tools" style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+    <span style="font-size: 15px; font-weight: 600; margin-right: 8px">Tools</span>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; font-weight: 500"><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Fusion</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">3D printing</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">VL6180X</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Power budget</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Product design</span></div>
+  </section>
+  <section aria-label="Photos" style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 0">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px"><div style="aspect-ratio: 4 / 3; border-radius: 18px; background: #F2F3F5; border: 1px dashed #C9CCD2; display: flex; align-items: center; justify-content: center; padding: 16px; text-align: center; font-size: 15px; color: #6A6F78">[Photo — printed prototype (to add)]</div></div>
+  </section>
+  <section style="max-width: 1160px; margin: 0 auto; padding: 96px 24px 40px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding-top: 32px; border-top: 1px solid #ECEDEF">
+      <a class="hx-link" href="index.html#projects" style="text-decoration: none; font-size: 17px; font-weight: 500; padding: 10px 0">← All projects</a>
+      <a href="Prosthesis.html" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; background: #0A0A0A; color: #FFFFFF; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 16px">Next: Shoulder prosthesis →</a>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 40px; font-size: 15px; color: #6A6F78">
+      <span>© 2026 Hamza Houir Alami</span>
+      <span>Arts et Métiers · Lille → Paris</span>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
