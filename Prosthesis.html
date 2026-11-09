@@ -54,24 +54,60 @@ a{color:#0A0A0A}a:hover{color:#2B4EFF}
     </div>
   </section>
   <section style="background: #F6F7F9">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
-      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
         <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">01 — The problem</span>
         <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">The glenoid side is where implants fail</h2>
+        <p style="margin: 0; color: #3A3F47">In an anatomic shoulder replacement, the humeral head is metal and the glenoid is a thin polyethylene cup cemented into a small bone. Before designing anything, we reviewed the evidence: four experimental studies and five finite-element studies, from Anglin (2000) to Bonnevialle (2022).</p>
       </div>
-      <div style="flex: 999 1 480px; min-width: 0; max-width: 680px; display: flex; flex-direction: column; gap: 18px; color: #3A3F47">
-        <p style="margin: 0">In total shoulder replacement, loosening of the glenoid component accounts for about a third of complications. The implant sits on a small, thin bone and is loaded off-centre at every movement, which rocks it and breaks the fixation over time.</p><p style="margin: 0">We reviewed four biomechanical test protocols and five finite-element studies to understand which design choices reduce this rocking.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
+        <div style="background: #FFFFFF; border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px 20px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 32px; font-weight: 600; letter-spacing: -0.03em">32%</span><span style="font-size: 14px; color: #4A4F57">of total-shoulder complications are glenoid loosening</span><span style="font-size: 12px; color: #8A8F98">Bohsali et al., 2006</span></div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px 20px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 32px; font-weight: 600; letter-spacing: -0.03em">7%</span><span style="font-size: 14px; color: #4A4F57">revision rate linked to glenoid loosening</span><span style="font-size: 12px; color: #8A8F98">Bohsali et al., 2006</span></div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px 20px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 32px; font-weight: 600; letter-spacing: -0.03em">14–33%</span><span style="font-size: 14px; color: #4A4F57">occurrence of loosening across published series</span><span style="font-size: 12px; color: #8A8F98">Abdul Wahab et al., 2017</span></div>
       </div>
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">How it fails</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px">
+          <div style="flex: 1 1 200px; background: #FFFFFF; border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #2B4EFF">1</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Off-centre loading</span><span style="font-size: 14px; color: #4A4F57">The humeral head translates toward the rim of the glenoid.</span></div><span aria-hidden="true" style="align-self: center; color: #C9CCD2; font-size: 22px">→</span>
+          <div style="flex: 1 1 200px; background: #FFFFFF; border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #2B4EFF">2</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Rocking horse</span><span style="font-size: 14px; color: #4A4F57">The opposite rim lifts off; micromotion starts at the interface.</span></div><span aria-hidden="true" style="align-self: center; color: #C9CCD2; font-size: 22px">→</span>
+          <div style="flex: 1 1 200px; background: #FFFFFF; border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #2B4EFF">3</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Interface fatigue</span><span style="font-size: 14px; color: #4A4F57">Cement microcracks, debris, bone loss — then loosening.</span></div>
+        </div>
+      </div>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+        <div style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #FFFFFF; padding: 12px 20px"><img src="assets/6ab06e4047ea676ecf29b5028dc3f04e.jpg" alt="Three glenoid component designs: keeled all-polyethylene, pegged all-polyethylene with a fluted central peg, and metal-backed" style="display: block; width: 100%; height: auto"></div>
+        <figcaption style="font-size: 14px; color: #6A6F78">Common glenoid designs: (a) keeled all-polyethylene, (b) pegged all-polyethylene with a fluted central peg, (c) metal-backed. Figure from Liu, Shi &amp; Amirouche, <em>J Shoulder Elbow Arthroplasty</em> 6 (2022), doi:10.1177/24715492221142856, CC BY-NC 4.0.</figcaption>
+      </figure>
     </div>
   </section>
-  <section style="">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
-      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+  <section>
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 36px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
         <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">02 — Concept</span>
-        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">Fixation that resists rocking</h2>
+        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">Every design choice traced to evidence</h2>
+        <p style="margin: 0; color: #3A3F47">We turned each finding of the review into a requirement, then combined them into one all-polyethylene concept.</p>
       </div>
-      <div style="flex: 999 1 480px; min-width: 0; max-width: 680px; display: flex; flex-direction: column; gap: 18px; color: #3A3F47">
-        <p style="margin: 0">Our concept, in all-polyethylene:</p><ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px"><li>Curved, textured back that matches the bone and spreads the load.</li><li>Four peripheral pegs (Ø ≈ 4 mm) against rotation and lift-off.</li><li>Finned, uncemented central peg for bone ingrowth.</li><li>Rounded edges and 4–6 mm thickness to limit stress peaks.</li></ul><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 20px; align-items: start"><figure style="margin: 0"><div class="hx-media" style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #FFFFFF"><img class="hx-zoom" src="assets/21f560d497fa33f1e5180606b53d21b9.png" alt="Glenoid concept section" style="display: block; width: 100%; height: auto"></div><figcaption style="padding: 12px 4px 0; font-size: 14px; color: #6A6F78">Concept cross-section: back surface, peripheral pegs and central finned peg.</figcaption></figure><figure style="margin: 0"><div class="hx-media" style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #F4F5F7"><img class="hx-zoom" src="assets/4cb03acd89cde5af976886a1010cd04e.jpg" alt="3D model of the part in CATIA 3DEXPERIENCE" style="display: block; width: 100%; height: auto"></div><figcaption style="padding: 12px 4px 0; font-size: 14px; color: #6A6F78">The 3D model in CATIA 3DEXPERIENCE.</figcaption></figure></div>
+      <div style="overflow-x: auto"><table style="width: 100%; min-width: 680px; border-collapse: collapse; font-size: 15px; color: #3A3F47">
+        <thead><tr style="color: #6A6F78; font-size: 13px"><th style="text-align: left; padding: 10px 12px; border-bottom: 1px solid #E3E5E8">What the studies show</th><th style="text-align: left; padding: 10px 12px; border-bottom: 1px solid #E3E5E8">Source</th><th style="text-align: left; padding: 10px 12px; border-bottom: 1px solid #E3E5E8">Our requirement</th></tr></thead>
+        <tbody>
+          <tr><td style="padding: 12px; border-bottom: 1px solid #ECEDEF">A curved back gives about half the rim distraction of a flat back</td><td style="padding: 12px; border-bottom: 1px solid #ECEDEF; color: #8A8F98; font-size: 13px; white-space: nowrap">Anglin 2000</td><td style="padding: 12px; border-bottom: 1px solid #ECEDEF; font-weight: 600; color: #0A0A0A">Curved back, matching the reamed glenoid</td></tr>
+          <tr><td style="padding: 12px; border-bottom: 1px solid #ECEDEF">A smooth back debonds from the first cycle; a grit-blasted one holds over 250,000</td><td style="padding: 12px; border-bottom: 1px solid #ECEDEF; color: #8A8F98; font-size: 13px; white-space: nowrap">Anglin 2000</td><td style="padding: 12px; border-bottom: 1px solid #ECEDEF; font-weight: 600; color: #0A0A0A">Textured back with controlled roughness</td></tr>
+          <tr><td style="padding: 12px; border-bottom: 1px solid #ECEDEF">Cracks start at the inferior rim, where tension peaks</td><td style="padding: 12px; border-bottom: 1px solid #ECEDEF; color: #8A8F98; font-size: 13px; white-space: nowrap">Junaid 2010</td><td style="padding: 12px; border-bottom: 1px solid #ECEDEF; font-weight: 600; color: #0A0A0A">Rounded back edges, sufficient thickness</td></tr>
+          <tr><td style="padding: 12px; border-bottom: 1px solid #ECEDEF">Four peripheral pegs balance cement stress and bone removed</td><td style="padding: 12px; border-bottom: 1px solid #ECEDEF; color: #8A8F98; font-size: 13px; white-space: nowrap">Geraldes 2017 · Abdul Wahab 2017</td><td style="padding: 12px; border-bottom: 1px solid #ECEDEF; font-weight: 600; color: #0A0A0A">Four cemented peripheral pegs</td></tr>
+          <tr><td style="padding: 12px; border-bottom: 1px solid #ECEDEF">Partial cementing cuts micromotion to 6–12 µm vs 21–24 µm fully cemented</td><td style="padding: 12px; border-bottom: 1px solid #ECEDEF; color: #8A8F98; font-size: 13px; white-space: nowrap">Abdul Wahab 2016</td><td style="padding: 12px; border-bottom: 1px solid #ECEDEF; font-weight: 600; color: #0A0A0A">Short finned central peg, uncemented</td></tr>
+          <tr><td style="padding: 12px; border-bottom: 1px solid #ECEDEF">Thickness trades stiffness against wear and space</td><td style="padding: 12px; border-bottom: 1px solid #ECEDEF; color: #8A8F98; font-size: 13px; white-space: nowrap">Geraldes 2017</td><td style="padding: 12px; border-bottom: 1px solid #ECEDEF; font-weight: 600; color: #0A0A0A">4–6 mm thickness</td></tr>
+        </tbody>
+      </table></div>
+      <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: center">
+        <div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+          <h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Why the uncemented central peg</h3>
+          <p style="margin: 0; font-size: 15px; color: #6A6F78">Bone grows onto an implant only if it moves less than about 20 µm. Interface micromotion under eccentric load, from Abdul Wahab et al. (2016):</p>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px">
+            <div style="display: grid; grid-template-columns: minmax(0, 180px) minmax(0, 1fr) 84px; align-items: center; gap: 12px"><span>Fully cemented</span><div style="position: relative; height: 14px; background: #ECEDEF; border-radius: 4px"><div class="hx-bar" style="position: absolute; left: 0; top: 0; width: 87.5%; height: 100%; background: #0A0A0A; border-radius: 4px"></div><div style="position: absolute; left: 83.3%; top: -6px; bottom: -6px; width: 2px; background: #A4501E"></div></div><span style="text-align: right; font-weight: 600">21–24 µm</span></div>
+            <div style="display: grid; grid-template-columns: minmax(0, 180px) minmax(0, 1fr) 84px; align-items: center; gap: 12px"><span style="font-weight: 600; color: #2B4EFF">Finned peg, uncemented</span><div style="position: relative; height: 14px; background: #ECEDEF; border-radius: 4px"><div class="hx-bar" style="position: absolute; left: 0; top: 0; width: 50%; height: 100%; background: #2B4EFF; border-radius: 4px"></div><div style="position: absolute; left: 83.3%; top: -6px; bottom: -6px; width: 2px; background: #A4501E"></div></div><span style="text-align: right; font-weight: 600; color: #2B4EFF">6–12 µm</span></div>
+            <span style="font-size: 13px; color: #A4501E">│ 20 µm bone-ingrowth threshold</span>
+          </div>
+        </div>
+        <div style="flex: 1 1 280px; max-width: 360px"><figure style="margin: 0"><div class="hx-media" style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #F4F5F7"><img class="hx-zoom" src="assets/4cb03acd89cde5af976886a1010cd04e.jpg" alt="3D model of the part in CATIA 3DEXPERIENCE" style="display: block; width: 100%; height: auto"></div><figcaption style="padding: 12px 4px 0; font-size: 14px; color: #6A6F78">The 3D model in CATIA 3DEXPERIENCE.</figcaption></figure></div>
       </div>
     </div>
   </section>
