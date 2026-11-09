@@ -62,7 +62,7 @@ a{color:#0A0A0A}
       <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">Course project → personal research · Speech &amp; machine learning</span>
       <h1 style="margin: 0; font-weight: 600; font-size: clamp(38px, 5.2vw, 66px); line-height: 1.03; letter-spacing: -0.045em">Spoken numbers from 23 synthetic words</h1>
       <p style="margin: 0; font-size: 21px; line-height: 1.5; color: #3A3F47; max-width: 620px">Can a recogniser learn every French number from 0 to 99 when it has only heard the 23 base words, spoken by synthetic voices? I built the recipe, tested it on 45 real people, and wrote up where it fails.</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; color: #6A6F78"><span>Solo study, 2026</span><span>PyTorch · Whisper · CTC</span><span>Exploratory preprint in preparation</span></div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; color: #6A6F78"><span>Course project with Édouard Mercier, extended solo</span><span>PyTorch · Whisper · CTC</span><span>Exploratory preprint in preparation</span></div>
     </div>
     <figure class="hx-up fw-fig" style="flex: 1 1 380px; min-width: 0; max-width: 560px; animation-delay: .1s">
       <div class="fw-frame hx-media" style="background: #FBFAF6"><img class="hx-zoom" src="assets/b851837bd5f9b52c81edd8d431e6da59.png" alt="Bar chart: compound numbers recognised after training on the 23 words only, by encoder and head. Whisper with a transformer head and cross-faded sequences reaches 95% on unseen synthetic voices and 77% on real voices."></div>
@@ -85,11 +85,10 @@ a{color:#0A0A0A}
     <div class="fw-wrap" style="padding-bottom: 24px; display: flex; flex-direction: column; gap: 28px">
       <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">How the project evolved</span>
       <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px">
-        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">Course project</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Digit CNN</span><span style="font-size: 14px; color: #4A4F57">0–9 in English, with Édouard Mercier.</span></li>
-        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">The problem</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">New voices</span><span style="font-size: 14px; color: #4A4F57">95% on known speakers, 65% on new ones.</span></li>
-        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">Extension</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">0–99 in French</span><span style="font-size: 14px; color: #4A4F57">Frozen encoders, synthetic voices.</span></li>
-        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">The question</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Words only</span><span style="font-size: 14px; color: #4A4F57">No compound number in training.</span></li>
-        <li class="hx-step" style="border: 1px solid #C9D3FF; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #2B4EFF">Now</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Audit &amp; preprint</span><span style="font-size: 14px; color: #4A4F57">Cleaned code, 5-page article, limits stated.</span></li>
+        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">May 2026 · course project</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Digit CNN</span><span style="font-size: 14px; color: #4A4F57">0–9 in English, with Édouard Mercier. 95% → 65% on new voices.</span></li>
+        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">Summer 2026 · stage 2</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">22-unit CNN, 0–99</span><span style="font-size: 14px; color: #4A4F57">Silence segmentation + grammar. 93% → 44% on a new voice.</span></li>
+        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">Sept. 2026 · stage 3</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Frozen encoders</span><span style="font-size: 14px; color: #4A4F57">23 synthetic words, tested on 45 real people.</span></li>
+        <li class="hx-step" style="border: 1px solid #C9D3FF; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #2B4EFF">Oct.–Nov. 2026</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Audit &amp; preprint</span><span style="font-size: 14px; color: #4A4F57">Cleaned code, 22 tests, 5-page article, limits stated.</span></li>
       </ol>
     </div>
   </section>
@@ -101,7 +100,8 @@ a{color:#0A0A0A}
         <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">01 — Starting point</span>
         <h2 class="fw-h2">A digit CNN that learned voices, not digits</h2>
         <p class="fw-p">The first-year course project (with Édouard Mercier) trained a CNN on the Free Spoken Digit Dataset. On speakers it had seen, it reached 94.8 ± 0.8%. Leaving each speaker out in turn, the mean fell to 65.0%, between 45.5% and 78.5% depending on who was tested. On my own voice, recorded on a new microphone, it scored 67%.</p>
-        <p class="fw-p">Adding a handful of my recordings to training closed most of the gap: from 57.6% with none to 85.2% with five per digit. That only works if you can record the target speaker. The question I took further was the opposite one: how far can you go without any real recording at all?</p>
+        <p class="fw-p">The 76,874-parameter CNN read 128-band mel-spectrograms. A twin network told the six speakers apart with 94.3% accuracy from the same images — a hint that the features carried the voice as much as the digit. In the course report, a heavier network made things worse on my voice (75% → 65%).</p>
+        <p class="fw-p">Adding a handful of my recordings to training closed most of the gap: from 57.6% with none to 85.2% with five per digit. That only works if you can record the target speaker. The defence ended on an idea I then took further alone: build bigger numbers out of a few reusable words.</p>
       </div>
       <div class="fw-grid">
         <figure class="fw-fig">
@@ -147,11 +147,35 @@ a{color:#0A0A0A}
     </div>
   </section>
 
-  <!-- 03 METHOD -->
+  <!-- STAGE 2 -->
   <section style="background: #F6F7F9">
     <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 40px">
       <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
-        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">03 — The recipe</span>
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">03 — Stage 2</span>
+        <h2 class="fw-h2">A CNN from scratch: 93% that turned into 44%</h2>
+        <p class="fw-p">My first version, over the summer, kept the course CNN and added two pieces: cut each recording at its silences, classify every piece as one of 22 units (0–16 and the tens), then let the grammar choose the number. I generated 500 numbers with five synthetic voices (France, Belgium, Canada), one held out for testing and one for tuning the silence threshold.</p>
+        <p class="fw-p">On new recordings of voices it had trained on, the pipeline got 140 of 150 numbers right. On the held-out Canadian voice it got 44 of 100 — and a plain 100-class CNN got exactly one. Segmentation was not the culprit (3 errors out of 56): the unit classifier simply did not transfer to a new voice.</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start">
+        <figure class="fw-fig" style="flex: 999 1 520px; min-width: 0">
+          <div class="fw-frame" style="background: #FBFAF6"><img src="assets/d30f6d49663d03e4aba5eec9a4bfdfc8.png" alt="Bar chart: 100-class CNN 1% on a held-out voice; 22-unit CNN 24% with naive decoding and 44% with the grammar on the held-out voice; 93.3% on voices seen in training."></div>
+          <figcaption class="fw-cap">Same data, different questions: 150 test files from training voices, 100 from the held-out voice. All five voices are synthetic.</figcaption>
+        </figure>
+        <div class="fw-keep" style="flex: 1 1 300px; background: #FFFFFF; border: 1px solid #ECEDEF; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 14px; font-size: 16px; color: #3A3F47">
+          <h3 style="margin: 0; font-size: 18px; font-weight: 600; color: #0A0A0A; letter-spacing: -0.01em">What I changed for stage 3</h3>
+          <p style="margin: 0"><strong style="color: #0A0A0A">No more cutting at silences.</strong> My stage-2 numbers were synthesised word by word, so they had pauses; real people do not pause between “quatre” and “vingt”. A CTC head reads the whole utterance.</p>
+          <p style="margin: 0"><strong style="color: #0A0A0A">Borrow an ear.</strong> Instead of learning sound from 500 clips, use a speech encoder pretrained on thousands of hours, frozen.</p>
+          <p style="margin: 0"><strong style="color: #0A0A0A">Test on humans.</strong> A synthetic held-out voice is not a person. The final test uses 928 recordings by 45 volunteers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 METHOD -->
+  <section>
+    <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">04 — The recipe</span>
         <h2 class="fw-h2">Fake sequences, with every real number removed</h2>
         <p class="fw-p">Words said alone are slow: in the synthetic corpus, a word on its own lasts a median 1.55 times longer than the same word inside a number. A model trained on isolated words recognises them (96.5%) but only 31.3% of real compounds. So I glue words into random sequences, sped up and cross-faded — and throw away every sequence that happens to contain a real number.</p>
       </div>
@@ -159,6 +183,16 @@ a{color:#0A0A0A}
         <div class="fw-frame" style="background: #FFFFFF; padding: clamp(8px, 2vw, 20px)"><img src="assets/d4806846513df5c08442106e510ce420.png" alt="Four-step pipeline: 23 base words with 8 TTS voices and 4 variants (736 clips); random word sequences, sped up and cross-faded, valid compounds removed; frozen speech encoder with a small CTC head; real-speech evaluation with grammar-constrained decoding."></div>
         <figcaption class="fw-cap">The grammar is used twice: to filter the training sequences and to constrain decoding. The acoustic head never receives a compound number.</figcaption>
       </figure>
+      <div class="fw-keep" style="border: 1px solid #E3E5E8; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+        <span style="font-size: 13px; font-weight: 600; color: #6A6F78">Listen — what the model trains on, and what it is tested on</span>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 20px">
+          <div style="display: flex; flex-direction: column; gap: 8px"><span style="font-size: 16px; font-weight: 600">Four isolated words</span><span style="font-size: 14px; color: #6A6F78">“quatre · vingt · dix · sept”, one synthetic voice. Slow and separated.</span><audio controls preload="none" src="assets/cc4db2f45d202e6dd776deaa41a5d12e.webm" style="width: 100%"></audio></div>
+          <div style="display: flex; flex-direction: column; gap: 8px"><span style="font-size: 16px; font-weight: 600">A training sequence</span><span style="font-size: 14px; color: #6A6F78">“sept trente dix”: sped up ×1.5, 40 ms cross-fades. Not a number, so it is kept.</span><audio controls preload="none" src="assets/ea3a2fada583d8ebeeea5da203ca38c9.webm" style="width: 100%"></audio></div>
+          <div style="display: flex; flex-direction: column; gap: 8px"><span style="font-size: 16px; font-weight: 600">A real speaker: 97</span><span style="font-size: 14px; color: #6A6F78">Lingua Libre, speaker Lepticed7. Never used in training.</span><audio controls preload="none" src="assets/d274752730adf3b2564fbfd30ab5436e.webm" style="width: 100%"></audio></div>
+          <div style="display: flex; flex-direction: column; gap: 8px"><span style="font-size: 16px; font-weight: 600">A real speaker: 21</span><span style="font-size: 14px; color: #6A6F78">Lingua Libre, speaker Poslovitch. “Vingt-et-un” is the hardest form.</span><audio controls preload="none" src="assets/bfe9a83ce4b00d9d11aa1058c3777f52.webm" style="width: 100%"></audio></div>
+        </div>
+        <span style="font-size: 13px; color: #8A8F98">The two synthetic clips were rebuilt for this page from the project’s edge-tts word files with the training recipe. Real recordings: Lingua Libre / Wikimedia Commons, CC BY-SA 4.0.</span>
+      </div>
       <div class="fw-scroll fw-keep" style="background: #FFFFFF; border: 1px solid #ECEDEF; border-radius: 18px; padding: 8px 12px">
         <table class="fw-table">
           <thead><tr><th>Step</th><th>What I did</th><th class="num">Numbers</th></tr></thead>
@@ -177,10 +211,10 @@ a{color:#0A0A0A}
   </section>
 
   <!-- 04 RESULTS -->
-  <section>
+  <section style="background: #F6F7F9">
     <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 40px">
       <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
-        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">04 — Results</span>
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">05 — Results</span>
         <h2 class="fw-h2">The head and the encoder both matter</h2>
         <p class="fw-p">On the 453 real compound recordings, the Whisper + transformer recipe reaches 77.3 ± 1.8% (speaker interval 71.9–82.1%), and 86.7% on all 928 recordings. BiGRU heads fit the synthetic sequences almost perfectly (92–98%) but transfer poorly to real speech, and on Whisper their score depends on the seed (23, 66 and 73%) — so a good validation score did not predict real-world transfer for them.</p>
       </div>
@@ -211,10 +245,10 @@ a{color:#0A0A0A}
   </section>
 
   <!-- 05 ERRORS -->
-  <section style="background: #F6F7F9">
+  <section>
     <div class="fw-wrap" style="display: flex; flex-wrap: wrap; gap: 48px">
       <div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 16px">
-        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">05 — Where it fails</span>
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">06 — Where it fails</span>
         <h2 class="fw-h2">Two groups carry the errors</h2>
         <p class="fw-p">The most frequent confusion over five seeds drops the final “et un”: 21 heard as 20 (41 times), 51 as 50 (30), 31 as 30 (25). Others drop the first word: 19 → 9, 27 → 7, 84 → 4.</p>
         <p class="fw-p">These are exactly the forms that sound least like glued words: in “vingt-et-un” the t of vingt is pronounced and “et un” is reduced; “quatre-vingt” is said as one prosodic block. That is my reading of the pattern, not a tested cause.</p>
@@ -237,10 +271,10 @@ a{color:#0A0A0A}
   </section>
 
   <!-- 06 NOISE + LANGUAGES -->
-  <section>
+  <section style="background: #F6F7F9">
     <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 40px">
       <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
-        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">06 — Stress tests</span>
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">07 — Stress tests</span>
         <h2 class="fw-h2">Noise, and two other languages</h2>
         <p class="fw-p">No noise was used in training. With real background noise (kitchen, café, street) the Whisper models lose 1–7 points at 20–10 dB, and at 0 dB the words-only model (70.6%) is level with the full-number one (71.2%). Competing voices saying numbers are much harder for every model — the interference is in the target vocabulary.</p>
         <p class="fw-p">The same code ran on English (28 words) and Modern Standard Arabic (30 words) by changing the word list, the composition rule and the voices. English reached 96.0% on 249 real recordings, but its compounds come from only three speakers. The Arabic test has 15 compound recordings and varies from 27% to 73% across seeds: it supports no conclusion.</p>
@@ -265,10 +299,10 @@ a{color:#0A0A0A}
   </section>
 
   <!-- 07 LIMITS -->
-  <section style="background: #F6F7F9">
+  <section>
     <div class="fw-wrap" style="display: flex; flex-wrap: wrap; gap: 48px">
       <div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 16px">
-        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">07 — Limits</span>
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">08 — Limits</span>
         <h2 class="fw-h2">What these numbers do not prove</h2>
         <p class="fw-p">Before writing the article I audited my own pipeline: fixed file lists, hashed caches, per-file prediction IDs, isolated runs, and 22 unit tests. What it cannot fix, the paper states.</p>
       </div>
@@ -283,7 +317,7 @@ a{color:#0A0A0A}
   </section>
 
   <!-- TAKEAWAY -->
-  <section>
+  <section style="background: #F6F7F9">
     <div class="fw-wrap" style="display: flex; flex-wrap: wrap; gap: 48px">
       <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
         <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">What I take away</span>
@@ -302,7 +336,7 @@ a{color:#0A0A0A}
     <span style="font-size: 15px; font-weight: 600; margin-right: 8px">Tools</span>
     <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; font-weight: 500"><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Python</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">PyTorch</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Whisper-base</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">wav2vec 2.0 (LeBenchmark)</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">CTC</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">edge-tts</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Keras (digit CNN)</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Bootstrap statistics</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">LaTeX</span></div>
   </section>
-  <p style="max-width: 1160px; margin: 0 auto; padding: 20px 24px 0; font-size: 13px; color: #8A8F98">Real recordings: Lingua Libre volunteers (CC BY-SA). Noise: DEMAND. Digits: Free Spoken Digit Dataset. All figures are my own. AI assistants were used for code and manuscript revision; study design, decisions and claims are mine.</p>
+  <p style="max-width: 1160px; margin: 0 auto; padding: 20px 24px 0; font-size: 13px; color: #8A8F98">Real recordings: Lingua Libre volunteers (CC BY-SA 4.0). Noise: DEMAND. Digits: Free Spoken Digit Dataset. All figures are my own. AI assistants were used for code and manuscript revision; study design, decisions and claims are mine.</p>
 
   <!-- FOOTER -->
   <section style="max-width: 1160px; margin: 0 auto; padding: 80px 24px 40px">
