@@ -6,109 +6,220 @@
 <title>Case study — Radiant curing model</title>
 <meta name="description" content="Engineering portfolio of Hamza Houir Alami — Arts et Métiers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
 <style>
 body{margin:0;background:#FFFFFF}
-a{color:#0A0A0A}a:hover{color:#2B4EFF}
+a{color:#0A0A0A}
 @keyframes hx-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .hx-up{animation:hx-up .8s cubic-bezier(.2,.8,.2,1) both}
 .hx-link{background-image:linear-gradient(currentColor,currentColor);background-size:0 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .3s ease}
 .hx-link:hover{background-size:100% 1.5px}
 .hx-zoom{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-.hx-media:hover .hx-zoom{transform:scale(1.03)}
+.hx-media:hover .hx-zoom{transform:scale(1.02)}
 @keyframes hx-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .hx-bar{transform-origin:left center;animation:hx-grow 1s cubic-bezier(.2,.8,.2,1) both}
 .hx-step{transition:transform .25s ease,border-color .25s ease}
 .hx-step:hover{transform:translateY(-4px);border-color:#2B4EFF}
+.hx-dl{transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.hx-dl:hover{transform:translateY(-3px);border-color:#2B4EFF;background:#F7F8FF}
+.fw-wrap{max-width:1160px;margin:0 auto;padding:96px 24px}
+.fw-h2{margin:0;font-weight:600;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-0.035em}
+.fw-p{margin:0;color:#3A3F47;max-width:680px}
+.fw-fig{margin:0;display:flex;flex-direction:column;gap:12px}
+.fw-frame{border-radius:18px;overflow:hidden;border:1px solid #ECEDEF;background:#FFFFFF}
+.fw-frame img,.fw-frame video{display:block;width:100%;height:auto}
+.fw-cap{font-size:14px;color:#6A6F78;line-height:1.5}
+.fw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;align-items:start}
+.fw-table{width:100%;border-collapse:collapse;font-size:15px}
+.fw-table th{text-align:left;font-weight:600;color:#6A6F78;font-size:13px;padding:10px 12px;border-bottom:1px solid #E3E5E8}
+.fw-table td{padding:12px;border-bottom:1px solid #ECEDEF;font-variant-numeric:tabular-nums}
+.fw-table td.num,.fw-table th.num{text-align:right}
+.fw-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+@media print{
+  @page{size:A4;margin:14mm}
+  .fw-noprint{display:none!important}
+  .fw-wrap{padding:36px 0}
+  section,figure,table,.fw-keep{break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;animation:none!important}
+}
 </style>
 <style>html,body{overflow-x:clip}</style>
 </head>
 <body>
 <div style="background: #FFFFFF; color: #0A0A0A; font-family: 'Geist', system-ui, sans-serif; font-size: 18px; line-height: 1.65; -webkit-font-smoothing: antialiased">
 
-  <header style="border-bottom: 1px solid #ECEDEF">
+  <header class="fw-noprint" style="border-bottom: 1px solid #ECEDEF">
     <nav aria-label="Case study" style="max-width: 1160px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px">
       <a class="hx-link" href="index.html#projects" style="text-decoration: none; font-size: 16px; font-weight: 500; padding: 10px 0">← All projects</a>
       <a href="index.html" style="text-decoration: none; font-weight: 600; font-size: 17px; letter-spacing: -0.01em">Hamza Houir Alami</a>
     </nav>
   </header>
 
-  <section style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 48px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
-    <div class="hx-up" style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">Personal research · follow-up to Safran · 2026</span>
-      <h1 style="margin: 0; font-weight: 600; font-size: clamp(38px, 5vw, 64px); line-height: 1.04; letter-spacing: -0.045em">A 3D heat model to shorten a radiant-lamp curing cycle</h1>
-      <p style="margin: 0; font-size: 21px; line-height: 1.5; color: #3A3F47; max-width: 620px">At Safran, a shimming compound needed about 8 hours to cure. I tested radiant lamps on the line, then built a model to find a lamp cycle that cures the bonded zone fast without overheating the part.</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; color: #6A6F78"><span>Heat transfer · cure kinetics</span><span>Finite differences · SLSQP</span><span>Synthetic, not yet validated</span></div>
+  <!-- HERO -->
+  <section style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+    <div class="hx-up" style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">Personal project · follow-up to my Safran internship · July 2026</span>
+      <h1 style="margin: 0; font-weight: 600; font-size: clamp(38px, 5.2vw, 66px); line-height: 1.03; letter-spacing: -0.045em">A 3D heat model to shorten a radiant-lamp curing cycle</h1>
+      <p style="margin: 0; font-size: 21px; line-height: 1.5; color: #3A3F47; max-width: 620px">On the G700 nacelle line, a shimming compound needed about 8 hours to cure, and the methods team was looking at a radiant lamp to speed it up. Back home, I wrote the physics in Python to see how fast a lamp can cure a bonded patch without overheating it.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; color: #6A6F78"><span>Solo, 3 versions</span><span>Python · NumPy · SciPy</span><span>Synthetic parameters, not validated</span></div>
+      <div class="fw-noprint" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
+        <a href="downloads/Radiant_curing_3D_report_EN.pdf" download style="display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 26px; background: #0A0A0A; color: #FFFFFF; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 16px">Technical report <span style="opacity: .6; font-size: 14px">PDF · 12 p.</span></a>
+      </div>
     </div>
-    <div class="hx-up hx-media" style="flex: 1 1 340px; max-width: 480px; aspect-ratio: 3 / 2; border-radius: 22px; overflow: hidden; background: #FFFFFF; animation-delay: .1s">
-      <img class="hx-zoom" src="assets/2e37f26a31c9c773e89c5f136a3259c8.png" alt="Map of degree of cure on the top layer, with the bonded zone outlined" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 50% 50%">
-    </div>
+    <figure class="hx-up fw-fig" style="flex: 1 1 380px; min-width: 0; max-width: 560px; animation-delay: .1s">
+      <div class="fw-frame hx-media" style="background: #F4F5F7"><img class="hx-zoom" src="assets/83507e910913bf6e3d52730d0653ca00.png" alt="Computed degree of cure on the top surface of a 120 by 80 mm plate after the optimized lamp cycle, highest in the centre, with the bonded zone outlined"></div>
+      <figcaption class="fw-cap">Degree of cure on the top surface after the optimized cycle. Dashed: the bonded zone, fixed before any simulation.</figcaption>
+    </figure>
   </section>
-  <section aria-label="Key figures" style="max-width: 1160px; margin: 0 auto; padding: 0 24px 72px">
+
+  <!-- KEY FIGURES -->
+  <section aria-label="Key figures" style="max-width: 1160px; margin: 0 auto; padding: 16px 24px 0">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: #ECEDEF; border: 1px solid #ECEDEF; border-radius: 20px; overflow: hidden">
-      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">44.5 min</span><span style="font-size: 15px; color: #4A4F57">optimized lamp cycle</span></div>
-      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">0.893</span><span style="font-size: 15px; color: #4A4F57">degree of cure, bonded zone</span></div>
-      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">114.9 °C</span><span style="font-size: 15px; color: #4A4F57">peak temperature</span></div>
-      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; color: #2B4EFF;">≤ 2.69 MPa</span><span style="font-size: 15px; color: #4A4F57">residual stress</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; color: #2B4EFF">44.5 min</span><span style="font-size: 15px; color: #4A4F57">lamp cycle found by SLSQP, vs 52.5 min for the best grid point</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05">0.893</span><span style="font-size: 15px; color: #4A4F57">lowest degree of cure in the bonded zone (target 0.86)</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05">19.9 °C</span><span style="font-size: 15px; color: #4A4F57">top–bottom gradient, against a 20 °C limit: the binding constraint</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05">115 °C</span><span style="font-size: 15px; color: #4A4F57">peak temperature, well under the 130 °C cap</span></div>
     </div>
   </section>
-  <section style="background: #F6F7F9">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
-      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
-        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">01 — The model</span>
-        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">Heat, then chemistry, in three dimensions</h2>
-      </div>
-      <div style="flex: 999 1 480px; min-width: 0; max-width: 680px; display: flex; flex-direction: column; gap: 18px; color: #3A3F47">
-        <p style="margin: 0">A 120 × 80 mm composite plate is heated from above by a radiant lamp. Heat diffuses through the thickness with different conductivities in-plane and through-plane (orthotropic). The resin cures following Kamal–Sourour kinetics, which also releases heat.</p><p style="margin: 0">I solved it with explicit finite differences, with the time step held under the stability limit (Δt ≤ 2.39 s), and checked the result on three meshes (480, 1,152 and 1,960 cells).</p><div style="background: #0A0A0A; color: #FFFFFF; border-radius: 16px; padding: 22px 24px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 15px; line-height: 1.8; overflow-x: auto"><div>ρc ∂T/∂t = ∇·(K ∇T) + ρ H_r dα/dt</div><div>dα/dt = (k₁ + k₂ αᵐ)(1 − α)ⁿ ,  kᵢ = Aᵢ exp(−Eᵢ / RT)</div><p style="margin: 10px 0 0; font-size: 14px; color: #6A6F78; font-family: 'Geist', sans-serif">Orthotropic heat equation coupled with Kamal–Sourour cure kinetics.</p></div>
-      </div>
-    </div>
-  </section>
-  <section style="">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
-      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
-        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">02 — Optimization</span>
-        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">Cure where it matters, protect the rest</h2>
-      </div>
-      <div style="flex: 999 1 480px; min-width: 0; max-width: 680px; display: flex; flex-direction: column; gap: 18px; color: #3A3F47">
-        <p style="margin: 0">The lamp flux over time was optimized with SLSQP (16 iterations) to maximize cure inside the 41 × 27 mm bonded ellipse, under limits on peak temperature, thermal gradient and residual stress.</p><p style="margin: 0">Result: a 44.5-minute cycle with a peak flux of 4,095 W/m². The bonded zone reaches 0.893 cure while the edges stay at 0.631. The binding constraint is the thermal gradient (19.95 °C against a 20 °C limit) — it, not temperature, decides how fast you can go.</p><figure style="margin: 0"><div class="hx-media" style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #FFFFFF"><img class="hx-zoom" src="assets/2e37f26a31c9c773e89c5f136a3259c8.png" alt="Cure map" style="display: block; width: 100%; height: auto"></div><figcaption style="padding: 12px 4px 0; font-size: 14px; color: #6A6F78">Degree of cure on the top layer after the optimized cycle. Dashed: bonded zone.</figcaption></figure>
-      </div>
-    </div>
-  </section>
-  <section style="background: #F6F7F9">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
-      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 720px">
-        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">03 — Honest status</span>
-        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">A model, not yet a process</h2>
-        <p style="margin: 0; color: #3A3F47">Material data and lamp parameters are literature values, so the numbers are a first estimate. The validation plan:</p>
-      </div>
-      <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
-      <li class="hx-step" style="border: 1px solid #E3E5E8; background: #FFFFFF; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #2B4EFF">1</span><h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Thermocouples</h3><p style="margin: 0; font-size: 15px; color: #4A4F57">Measure temperature on a test plate under the lamp.</p></li>
-      <li class="hx-step" style="border: 1px solid #E3E5E8; background: #FFFFFF; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #2B4EFF">2</span><h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Calibrate</h3><p style="margin: 0; font-size: 15px; color: #4A4F57">Fit lamp flux and absorptivity to the measurements.</p></li>
-      <li class="hx-step" style="border: 1px solid #E3E5E8; background: #FFFFFF; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #2B4EFF">3</span><h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">DSC</h3><p style="margin: 0; font-size: 15px; color: #4A4F57">Measure the real cure kinetics of the compound.</p></li>
-      <li class="hx-step" style="border: 1px solid #E3E5E8; background: #FFFFFF; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #2B4EFF">4</span><h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Cure check</h3><p style="margin: 0; font-size: 15px; color: #4A4F57">Compare predicted and measured degree of cure.</p></li>
-      <li class="hx-step" style="border: 1px solid #E3E5E8; background: #FFFFFF; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #2B4EFF">5</span><h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Line trial</h3><p style="margin: 0; font-size: 15px; color: #4A4F57">Test the cycle on a real part with the methods team.</p></li>
+
+  <!-- VERSIONS -->
+  <section aria-label="How the model evolved">
+    <div class="fw-wrap" style="padding-bottom: 24px; display: flex; flex-direction: column; gap: 28px">
+      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">How the model evolved — add a dimension only when an assumption breaks</span>
+      <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
+        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">v0 · 1D</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Through the thickness</span><span style="font-size: 14px; color: #4A4F57">A 3 mm slab: lamp on top, losses, Kamal–Sourour kinetics. Explains the gradient, but not the corners.</span></li>
+        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">v1 · 3D</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">A real plate</span><span style="font-size: 14px; color: #4A4F57">120 × 80 × 6 mm, lamp footprint, losses on every face, grid search over flux and time.</span></li>
+        <li class="hx-step" style="border: 1px solid #C9D3FF; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #2B4EFF">v2 · 3D, checked</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Fixes from review</span><span style="font-size: 14px; color: #4A4F57">Bonded zone fixed in advance, mesh convergence, SLSQP refinement, a first residual-stress indicator.</span></li>
       </ol>
     </div>
   </section>
-  <section style="background: #0A0A0A; color: #FFFFFF">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
-      <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-        <span style="font-size: 15px; font-weight: 600; color: #8FA2FF">What I take away</span>
-        <p style="margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.35; letter-spacing: -0.02em">The constraint that limits the cycle is the gradient, not the peak temperature. I would not have guessed it without the model.</p>
+
+  <!-- 01 MODEL -->
+  <section style="background: #F6F7F9">
+    <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">01 — The model</span>
+        <h2 class="fw-h2">A lamp, a heat equation, and a chemical clock</h2>
+        <p class="fw-p">Reaching a set temperature is not the same as curing. A point can get hot and still be under-cured if it stays hot too briefly, and the surface can overheat while the bottom lags. So the model follows both fields — temperature T and degree of cure α — everywhere in the plate, and lets them feed each other.</p>
       </div>
-      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px; font-size: 16px; color: #C9CCD2">
-        <h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">What comes next</h3>
-        <p style="margin: 0">Run the thermocouple test and calibrate the lamp model.</p><p style="margin: 0">Replace literature kinetics with DSC data.</p><p style="margin: 0">Prepare a poster on the method.</p>
+      <div class="fw-keep" style="background: #FFFFFF; border: 1px solid #E3E5E8; border-radius: 20px; padding: clamp(18px, 3vw, 28px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 14px; align-items: stretch">
+        <div style="border: 1px solid #F1D9C4; background: #FFF8F1; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #A4501E">1 · Lamp</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px">q = η q₀ f(x, y)</span><span style="font-size: 14px; color: #4A4F57">72% of the incident flux absorbed on the top face; convection and σ(T⁴ − T∞⁴) radiation lost on every face.</span></div>
+        <div style="border: 1px solid #D5DCFF; background: #F5F7FF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #2B4EFF">2 · Heat</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px">ρc<sub>p</sub> ∂T/∂t = ∇·(K∇T) + q̇<sub>rxn</sub></span><span style="font-size: 14px; color: #4A4F57">Orthotropic: k<sub>x</sub> = k<sub>y</sub> = 0.55, k<sub>z</sub> = 0.42 W/m·K. Heat spreads sideways more easily than down.</span></div>
+        <div style="border: 1px solid #CDE7DA; background: #F3FAF6; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #1E7A4C">3 · Cure</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px">α̇ = (k₁ + k₂αᵐ)(1 − α)ⁿ</span><span style="font-size: 14px; color: #4A4F57">Kamal–Sourour, k<sub>j</sub> = A<sub>j</sub> e<sup>−E<sub>j</sub>/RT</sup>. The reaction releases heat, which goes back into step 2.</span></div>
+        <div style="border: 1px solid #E3E5E8; background: #FAFAFB; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #4A4F57">4 · Stress risk</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px">σ ∝ E(α) (ε<sub>free</sub> − ⟨ε<sub>free</sub>⟩)</span><span style="font-size: 14px; color: #4A4F57">Thermal expansion plus cure shrinkage, with a stiffness that grows after gelation (CHILE-like).</span></div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: center">
+        <div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+          <h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Solved by hand, kept stable</h3>
+          <p style="margin: 0; font-size: 16px; color: #3A3F47">Explicit finite differences on a 16 × 12 × 6 grid. An explicit scheme blows up if the time step is too long, so I derived the 3D limit and stayed under it: Δt = 1.8 s against 2.39 s.</p>
+          <div style="background: #FFFFFF; border: 1px solid #E3E5E8; border-radius: 14px; padding: 16px 20px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 15px; overflow-x: auto">Δt ≤ 1 / [2(a<sub>x</sub>/Δx² + a<sub>y</sub>/Δy² + a<sub>z</sub>/Δz²)] ≈ 2.39 s</div>
+          <p style="margin: 0; font-size: 15px; color: #6A6F78">The bonded zone — a 82 × 54 mm ellipse in the centre — is written into the code before any run, so the success criterion cannot be bent to fit the result. That was the main criticism of v1.</p>
+        </div>
+        <figure class="fw-fig" style="flex: 1 1 300px; max-width: 420px">
+          <div class="fw-frame" style="background: #FFFFFF"><img src="assets/289e28dbc4eab09411ea72bb2f4602b6.png" alt="Map of the normalised lamp flux over the plate, strongest in the centre, with the bonded-zone ellipse drawn in white"></div>
+          <figcaption class="fw-cap">Lamp footprint and the bonded zone. The flux at the corners is only about 15% below the centre.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
+
+  <!-- 02 OPTIMIZATION -->
+  <section>
+    <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">02 — Optimization</span>
+        <h2 class="fw-h2">Too little flux under-cures, too much cracks the gradient</h2>
+        <p class="fw-p">Two knobs: lamp flux q₀ and lamp-on time. The goal is the shortest cycle, with small penalties on energy and on the stress indicator, under four limits: mean cure ≥ 0.90, cure in the bonded zone ≥ 0.86, peak ≤ 130 °C, top–bottom gradient ≤ 20 °C.</p>
+        <p class="fw-p">A 63-point grid maps the feasible window; SLSQP then starts from the best grid point and slides along its edge. In 16 iterations it cuts the cycle from 52.5 to 44.5 min and the absorbed energy from 9,072 to 7,871 kJ/m².</p>
+      </div>
+      <figure class="fw-fig" style="max-width: 820px">
+        <div class="fw-frame" style="background: #FFFFFF"><img src="assets/5bf98c5aba2cead913978941550dd041.png" alt="Grid of flux versus lamp-on time: low flux points are under-cured, the highest flux column violates the gradient limit, a band of feasible points in between; the SLSQP path goes from the best grid point at 52.5 minutes to the optimum at 44.5 minutes"></div>
+        <figcaption class="fw-cap">The feasible window (15 of 63 grid points) is squeezed between under-cure on the left and the gradient limit on the right. SLSQP runs on the coarse mesh; the final cycle is re-simulated on the medium one.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 03 RESULTS -->
+  <section style="background: #F6F7F9">
+    <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">03 — What the cycle does</span>
+        <h2 class="fw-h2">The gradient, not the temperature, sets the pace</h2>
+        <p class="fw-p">The top heats first; the gradient hits 20 °C within two minutes and stays pinned there for the whole cycle, while the peak never gets close to 130 °C. Pushing harder would not overheat the part — it would split it into a hot skin and a cold core.</p>
+      </div>
+      <figure class="fw-fig">
+        <div class="fw-frame" style="background: #FFFFFF"><img src="assets/4fb65d1549b7d6e4a975a1b0a2da4459.png" alt="Three time plots over the 44.5-minute cycle: centre temperatures at top, mid-plane and bottom rising to about 115, 103 and 95 degrees; the top-bottom gradient jumping to the 20-degree limit and staying there; degree of cure rising to 0.90 on average and 0.89 in the bonded zone, but only 0.63 at the coldest corner"></div>
+        <figcaption class="fw-cap">Optimized cycle, centre of the plate. Shaded: lamp on. Dotted line on the right: the 0.86 target for the bonded zone.</figcaption>
+      </figure>
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
+        <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em">The corners never catch up</h3>
+        <p style="margin: 0; font-size: 16px; color: #3A3F47">The bonded zone ends at 0.893, the coldest corner at 0.631. The lamp is only slightly weaker there; the corners lose heat through two side faces as well. This is why the criterion is the zone that is actually bonded, not the whole plate — and why I fixed that zone before running anything.</p>
+      </div>
+      <figure class="fw-fig">
+        <div class="fw-frame" style="background: #FFFFFF"><img src="assets/f00f0d32792eeca710cdaba28256da8f.png" alt="Three maps of the mid-plane at lamp-off: temperature from about 70 degrees at the corners to 100 in the centre; degree of cure from 0.72 to 0.94; residual-stress indicator close to zero inside the bonded zone and up to about 1.7 megapascals at the edges"></div>
+        <figcaption class="fw-cap">Mid-plane at lamp-off. The stress indicator measures mismatch with the bonded zone's average strain, so it is near zero inside the ellipse by construction and peaks at the edges. Over the cycle it never exceeds 2.7 MPa.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 04 CHECKS & LIMITS -->
+  <section>
+    <div class="fw-wrap" style="display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">04 — Checks</span>
+        <h2 class="fw-h2">Does the mesh change the answer?</h2>
+        <p class="fw-p">The same cycle on three meshes. Peak temperature and mean cure barely move. The corner minimum keeps dropping as the mesh gets finer — another reason not to judge the cure on the corners.</p>
+        <div class="fw-scroll fw-keep" style="border: 1px solid #ECEDEF; border-radius: 18px; padding: 8px 12px">
+          <table class="fw-table">
+            <thead><tr><th>Mesh</th><th class="num">Δt</th><th class="num">T<sub>max</sub></th><th class="num">ᾱ</th><th class="num">α zone min</th><th class="num">α corner</th></tr></thead>
+            <tbody>
+              <tr><td>12 × 8 × 5</td><td class="num">2.6 s</td><td class="num">115.0 °C</td><td class="num">0.900</td><td class="num">0.899</td><td class="num">0.661</td></tr>
+              <tr><td style="font-weight: 600">16 × 12 × 6</td><td class="num">1.8 s</td><td class="num">114.9 °C</td><td class="num">0.902</td><td class="num" style="color: #2B4EFF; font-weight: 600">0.893</td><td class="num">0.631</td></tr>
+              <tr><td>20 × 14 × 7</td><td class="num">1.0 s</td><td class="num">114.9 °C</td><td class="num">0.903</td><td class="num">0.898</td><td class="num">0.620</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin: 0; font-size: 15px; color: #6A6F78">The bonded-zone minimum is not monotonic (0.899 → 0.893 → 0.898); it stays above target, but a finer study would be needed for a formal error estimate.</p>
+      </div>
+      <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">Honest status</span>
+        <h2 class="fw-h2">A method, not a process</h2>
+        <p class="fw-p">Every parameter is synthetic and non-confidential: no Safran geometry, material card or process data is in the model. The kinetics are not fitted to the real compound, so the minutes are illustrative; what transfers is the reasoning.</p>
+        <ol style="list-style: none; margin: 0; padding: 0; display: grid; gap: 10px">
+          <li style="border: 1px solid #E3E5E8; border-radius: 14px; padding: 14px 16px; display: flex; gap: 12px"><span style="font-weight: 600; color: #2B4EFF">1</span><span style="font-size: 15px; color: #3A3F47">Thermocouples at surface and depth plus an infrared camera, on an inert plate: calibrate η, h and the footprint.</span></li>
+          <li style="border: 1px solid #E3E5E8; border-radius: 14px; padding: 14px 16px; display: flex; gap: 12px"><span style="font-weight: 600; color: #2B4EFF">2</span><span style="font-size: 15px; color: #3A3F47">DSC on the real compound: fit the Kamal–Sourour parameters and the exotherm.</span></li>
+          <li style="border: 1px solid #E3E5E8; border-radius: 14px; padding: 14px 16px; display: flex; gap: 12px"><span style="font-weight: 600; color: #2B4EFF">3</span><span style="font-size: 15px; color: #3A3F47">DMA and dilatometry for shrinkage and modulus, then lap-shear and warpage against the stress indicator.</span></li>
+          <li style="border: 1px solid #E3E5E8; border-radius: 14px; padding: 14px 16px; display: flex; gap: 12px"><span style="font-weight: 600; color: #2B4EFF">4</span><span style="font-size: 15px; color: #3A3F47">Check the hand-written solver against Abaqus or COMSOL on a simple case.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAKEAWAY -->
+  <section style="background: #F6F7F9">
+    <div class="fw-wrap" style="display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">What I take away</span>
+        <p style="margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.35; letter-spacing: -0.02em">A set-point does not qualify a cure; the local thermal history does. And the limit I expected — temperature — was not the one that mattered.</p>
+      </div>
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px; font-size: 16px; color: #3A3F47">
+        <h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #0A0A0A">What comes next</h3>
+        <p style="margin: 0">Optimize a power profile q₀(t) instead of a constant flux: ramp hard, then back off as the gradient builds.</p>
+        <p style="margin: 0">Add a sensitivity study on the kinetic parameters.</p>
+        <p style="margin: 0">Calibrate against a thermocouple test.</p>
+      </div>
+    </div>
+  </section>
+
   <section aria-label="Tools" style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
     <span style="font-size: 15px; font-weight: 600; margin-right: 8px">Tools</span>
-    <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; font-weight: 500"><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Python</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">NumPy</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">SciPy · SLSQP</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Finite differences</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Heat transfer</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Cure kinetics</span></div>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; font-weight: 500"><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Python</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">NumPy</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">SciPy · SLSQP</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Finite differences</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Heat transfer</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Cure kinetics</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">LaTeX</span></div>
   </section>
-  <section style="max-width: 1160px; margin: 0 auto; padding: 96px 24px 40px">
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding-top: 32px; border-top: 1px solid #ECEDEF">
+
+  <!-- FOOTER -->
+  <section style="max-width: 1160px; margin: 0 auto; padding: 80px 24px 40px">
+    <div class="fw-noprint" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding-top: 32px; border-top: 1px solid #ECEDEF">
       <a class="hx-link" href="index.html#projects" style="text-decoration: none; font-size: 17px; font-weight: 500; padding: 10px 0">← All projects</a>
       <a href="DeskBuddy.html" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; background: #0A0A0A; color: #FFFFFF; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 16px">Next: DeskBuddy →</a>
     </div>
@@ -117,6 +228,7 @@ a{color:#0A0A0A}a:hover{color:#2B4EFF}
       <span>Arts et Métiers · Lille → Paris</span>
     </div>
   </section>
+
 </div>
 
 </body>
