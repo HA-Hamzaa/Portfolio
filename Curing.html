@@ -59,38 +59,35 @@ a{color:#0A0A0A}
   <!-- HERO -->
   <section style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
     <div class="hx-up" style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
-      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">Personal project · follow-up to my Safran internship · July 2026</span>
-      <h1 style="margin: 0; font-weight: 600; font-size: clamp(38px, 5.2vw, 66px); line-height: 1.03; letter-spacing: -0.045em">A 3D heat model to shorten a radiant-lamp curing cycle</h1>
-      <p style="margin: 0; font-size: 21px; line-height: 1.5; color: #3A3F47; max-width: 620px">On the G700 nacelle line, a shimming compound needed about 8 hours to cure, and the methods team was looking at a radiant lamp to speed it up. Back home, I wrote the physics in Python to see how fast a lamp can cure a bonded patch without overheating it.</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; color: #6A6F78"><span>Solo, 3 versions</span><span>Python · NumPy · SciPy</span><span>Synthetic parameters, not validated</span></div>
-      <div class="fw-noprint" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
-        <a href="downloads/Radiant_curing_3D_report_EN.pdf" download style="display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 26px; background: #0A0A0A; color: #FFFFFF; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 16px">Technical report <span style="opacity: .6; font-size: 14px">PDF · 12 p.</span></a>
-      </div>
+      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">Personal research · follow-up to my Safran internship · July 2026</span>
+      <h1 style="margin: 0; font-weight: 600; font-size: clamp(38px, 5.2vw, 66px); line-height: 1.03; letter-spacing: -0.045em">Modelling how a radiant lamp cures a bonded patch</h1>
+      <p style="margin: 0; font-size: 21px; line-height: 1.5; color: #3A3F47; max-width: 620px">On the G700 nacelle line, a shimming compound took about 8 hours to cure, and the methods team was studying a radiant lamp to speed it up. I wanted to understand what actually limits that kind of heating, so I wrote a 3D heat-and-cure model from scratch in Python.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; color: #6A6F78"><span>Solo, 3 model versions</span><span>Python · NumPy</span><span>Synthetic parameters, not validated</span></div>
     </div>
-    <figure class="hx-up fw-fig" style="flex: 1 1 380px; min-width: 0; max-width: 560px; animation-delay: .1s">
-      <div class="fw-frame hx-media" style="background: #F4F5F7"><img class="hx-zoom" src="assets/83507e910913bf6e3d52730d0653ca00.png" alt="Computed degree of cure on the top surface of a 120 by 80 mm plate after the optimized lamp cycle, highest in the centre, with the bonded zone outlined"></div>
-      <figcaption class="fw-cap">Degree of cure on the top surface after the optimized cycle. Dashed: the bonded zone, fixed before any simulation.</figcaption>
+    <figure class="hx-up fw-fig" style="flex: 1 1 380px; min-width: 0; max-width: 540px; animation-delay: .1s">
+      <div class="fw-frame hx-media" style="background: #F4F5F7"><img class="hx-zoom" src="assets/cc2615061195728bac15fc9673c41f40.png" alt="Isometric view of the modelled plate under a lamp: the top face coloured by degree of cure, darkest inside the dashed bonded zone; the side faces coloured by temperature, hottest near the top"></div>
+      <figcaption class="fw-cap">Model output at the end of heating. Top face: degree of cure, dashed line = bonded zone. Sides: temperature through the thickness (drawn 3.5× thicker).</figcaption>
     </figure>
   </section>
 
   <!-- KEY FIGURES -->
   <section aria-label="Key figures" style="max-width: 1160px; margin: 0 auto; padding: 16px 24px 0">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: #ECEDEF; border: 1px solid #ECEDEF; border-radius: 20px; overflow: hidden">
-      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; color: #2B4EFF">44.5 min</span><span style="font-size: 15px; color: #4A4F57">lamp cycle found by SLSQP, vs 52.5 min for the best grid point</span></div>
-      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05">0.893</span><span style="font-size: 15px; color: #4A4F57">lowest degree of cure in the bonded zone (target 0.86)</span></div>
-      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05">19.9 °C</span><span style="font-size: 15px; color: #4A4F57">top–bottom gradient, against a 20 °C limit: the binding constraint</span></div>
-      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05">115 °C</span><span style="font-size: 15px; color: #4A4F57">peak temperature, well under the 130 °C cap</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05">1D → 3D</span><span style="font-size: 15px; color: #4A4F57">three versions, each adding what the previous one could not explain</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05">≈ 20 °C</span><span style="font-size: 15px; color: #4A4F57">between the top and bottom of a 6 mm plate under the lamp</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05">0.89 / 0.63</span><span style="font-size: 15px; color: #4A4F57">degree of cure: worst point of the bonded zone vs the plate corner</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05">3 meshes</span><span style="font-size: 15px; color: #4A4F57">peak temperature moves by 0.1 °C between them</span></div>
     </div>
   </section>
 
   <!-- VERSIONS -->
   <section aria-label="How the model evolved">
     <div class="fw-wrap" style="padding-bottom: 24px; display: flex; flex-direction: column; gap: 28px">
-      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">How the model evolved — add a dimension only when an assumption breaks</span>
+      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">How the model grew — one dimension at a time, only when an assumption broke</span>
       <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
-        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">v0 · 1D</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Through the thickness</span><span style="font-size: 14px; color: #4A4F57">A 3 mm slab: lamp on top, losses, Kamal–Sourour kinetics. Explains the gradient, but not the corners.</span></li>
-        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">v1 · 3D</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">A real plate</span><span style="font-size: 14px; color: #4A4F57">120 × 80 × 6 mm, lamp footprint, losses on every face, grid search over flux and time.</span></li>
-        <li class="hx-step" style="border: 1px solid #C9D3FF; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #2B4EFF">v2 · 3D, checked</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Fixes from review</span><span style="font-size: 14px; color: #4A4F57">Bonded zone fixed in advance, mesh convergence, SLSQP refinement, a first residual-stress indicator.</span></li>
+        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">v0 · 1D</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Through the thickness</span><span style="font-size: 14px; color: #4A4F57">A 3 mm slab heated from one side. It showed the top-to-bottom gradient, but could say nothing about edges or corners.</span></li>
+        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">v1 · 3D</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">A real plate</span><span style="font-size: 14px; color: #4A4F57">120 × 80 × 6 mm, a lamp footprint, heat lost on every face. Cure now varies across the plate.</span></li>
+        <li class="hx-step" style="border: 1px solid #C9D3FF; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #2B4EFF">v2 · 3D, checked</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Made defensible</span><span style="font-size: 14px; color: #4A4F57">Bonded zone fixed before any run, consistent orthotropic properties, a three-mesh convergence check.</span></li>
       </ol>
     </div>
   </section>
@@ -100,43 +97,70 @@ a{color:#0A0A0A}
     <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 40px">
       <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
         <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">01 — The model</span>
-        <h2 class="fw-h2">A lamp, a heat equation, and a chemical clock</h2>
-        <p class="fw-p">Reaching a set temperature is not the same as curing. A point can get hot and still be under-cured if it stays hot too briefly, and the surface can overheat while the bottom lags. So the model follows both fields — temperature T and degree of cure α — everywhere in the plate, and lets them feed each other.</p>
+        <h2 class="fw-h2">Temperature and cure, solved together</h2>
+        <p class="fw-p">Reaching a set temperature is not the same as curing: a point can get hot and stay under-cured if it does not stay hot long enough. So the model follows two fields everywhere in the plate — temperature T and degree of cure α — and couples them, because the curing resin also releases heat.</p>
       </div>
-      <div class="fw-keep" style="background: #FFFFFF; border: 1px solid #E3E5E8; border-radius: 20px; padding: clamp(18px, 3vw, 28px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 14px; align-items: stretch">
-        <div style="border: 1px solid #F1D9C4; background: #FFF8F1; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #A4501E">1 · Lamp</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px">q = η q₀ f(x, y)</span><span style="font-size: 14px; color: #4A4F57">72% of the incident flux absorbed on the top face; convection and σ(T⁴ − T∞⁴) radiation lost on every face.</span></div>
-        <div style="border: 1px solid #D5DCFF; background: #F5F7FF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #2B4EFF">2 · Heat</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px">ρc<sub>p</sub> ∂T/∂t = ∇·(K∇T) + q̇<sub>rxn</sub></span><span style="font-size: 14px; color: #4A4F57">Orthotropic: k<sub>x</sub> = k<sub>y</sub> = 0.55, k<sub>z</sub> = 0.42 W/m·K. Heat spreads sideways more easily than down.</span></div>
-        <div style="border: 1px solid #CDE7DA; background: #F3FAF6; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #1E7A4C">3 · Cure</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px">α̇ = (k₁ + k₂αᵐ)(1 − α)ⁿ</span><span style="font-size: 14px; color: #4A4F57">Kamal–Sourour, k<sub>j</sub> = A<sub>j</sub> e<sup>−E<sub>j</sub>/RT</sup>. The reaction releases heat, which goes back into step 2.</span></div>
-        <div style="border: 1px solid #E3E5E8; background: #FAFAFB; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #4A4F57">4 · Stress risk</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px">σ ∝ E(α) (ε<sub>free</sub> − ⟨ε<sub>free</sub>⟩)</span><span style="font-size: 14px; color: #4A4F57">Thermal expansion plus cure shrinkage, with a stiffness that grows after gelation (CHILE-like).</span></div>
-      </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: center">
-        <div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
-          <h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Solved by hand, kept stable</h3>
-          <p style="margin: 0; font-size: 16px; color: #3A3F47">Explicit finite differences on a 16 × 12 × 6 grid. An explicit scheme blows up if the time step is too long, so I derived the 3D limit and stayed under it: Δt = 1.8 s against 2.39 s.</p>
-          <div style="background: #FFFFFF; border: 1px solid #E3E5E8; border-radius: 14px; padding: 16px 20px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 15px; overflow-x: auto">Δt ≤ 1 / [2(a<sub>x</sub>/Δx² + a<sub>y</sub>/Δy² + a<sub>z</sub>/Δz²)] ≈ 2.39 s</div>
-          <p style="margin: 0; font-size: 15px; color: #6A6F78">The bonded zone — a 82 × 54 mm ellipse in the centre — is written into the code before any run, so the success criterion cannot be bent to fit the result. That was the main criticism of v1.</p>
+      <figure class="fw-fig">
+        <div class="fw-frame fw-keep" style="background: #FFFFFF; padding: clamp(12px, 2.5vw, 28px)">
+          <svg viewBox="0 0 900 360" role="img" aria-label="Cross-section of the model: a lamp above a plate sends radiant flux to the top face; heat conducts sideways with conductivity kx and downwards with kz; every face loses heat by convection and radiation; the bonded zone is the central part of the plate" style="display: block; width: 100%; height: auto; font-family: Geist, system-ui, sans-serif">
+            <defs>
+              <marker id="ar-o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#E8590C"/></marker>
+              <marker id="ar-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2B4EFF"/></marker>
+              <marker id="ar-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8A8F98"/></marker>
+              <linearGradient id="gT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F08C4A"/><stop offset="1" stop-color="#FFE3C7"/></linearGradient>
+            </defs>
+            <rect x="350" y="24" width="200" height="30" rx="6" fill="#3A3F47"/>
+            <text x="450" y="44" text-anchor="middle" font-size="14" fill="#FFFFFF" font-weight="600">radiant lamp</text>
+            <g stroke="#E8590C" stroke-width="2" marker-end="url(#ar-o)" fill="none">
+              <line x1="390" y1="58" x2="250" y2="168"/><line x1="420" y1="58" x2="360" y2="168"/><line x1="450" y1="58" x2="450" y2="168"/><line x1="480" y1="58" x2="540" y2="168"/><line x1="510" y1="58" x2="650" y2="168"/>
+            </g>
+            <text x="640" y="96" font-size="14" fill="#C2410C">q = η q₀ f(x, y)</text>
+            <text x="640" y="114" font-size="12.5" fill="#6A6F78">72% absorbed, strongest in the centre</text>
+            <rect x="120" y="176" width="660" height="96" rx="4" fill="url(#gT)" stroke="#C9CDD3"/>
+            <rect x="270" y="176" width="360" height="96" fill="none" stroke="#0A0A0A" stroke-dasharray="6 5" stroke-width="1.5"/>
+            <text x="450" y="296" text-anchor="middle" font-size="13" fill="#0A0A0A">bonded zone (fixed before simulation)</text>
+            <g stroke="#2B4EFF" stroke-width="2" marker-end="url(#ar-b)"><line x1="450" y1="214" x2="560" y2="214"/><line x1="450" y1="214" x2="340" y2="214"/><line x1="450" y1="196" x2="450" y2="256"/></g>
+            <text x="468" y="205" font-size="13" fill="#2B4EFF">k<tspan baseline-shift="sub" font-size="10">x</tspan> = k<tspan baseline-shift="sub" font-size="10">y</tspan> = 0.55</text>
+            <text x="468" y="254" font-size="13" fill="#2B4EFF">k<tspan baseline-shift="sub" font-size="10">z</tspan> = 0.42 W/m·K</text>
+            <g stroke="#8A8F98" stroke-width="1.6" marker-end="url(#ar-g)"><line x1="160" y1="172" x2="160" y2="132"/><line x1="740" y1="172" x2="740" y2="132"/><line x1="116" y1="224" x2="70" y2="224"/><line x1="784" y1="224" x2="830" y2="224"/><line x1="200" y1="276" x2="200" y2="316"/><line x1="700" y1="276" x2="700" y2="316"/></g>
+            <text x="24" y="96" font-size="12.5" fill="#6A6F78">losses on every face:</text>
+            <text x="24" y="114" font-size="12.5" fill="#6A6F78">h(T − T∞) + εσ(T⁴ − T∞⁴)</text>
+            <text x="790" y="186" font-size="12.5" fill="#6A6F78">6 mm</text>
+            <text x="120" y="344" font-size="12.5" fill="#8A8F98">Section through the 120 × 80 × 6 mm plate (not to scale)</text>
+          </svg>
         </div>
-        <figure class="fw-fig" style="flex: 1 1 300px; max-width: 420px">
-          <div class="fw-frame" style="background: #FFFFFF"><img src="assets/289e28dbc4eab09411ea72bb2f4602b6.png" alt="Map of the normalised lamp flux over the plate, strongest in the centre, with the bonded-zone ellipse drawn in white"></div>
-          <figcaption class="fw-cap">Lamp footprint and the bonded zone. The flux at the corners is only about 15% below the centre.</figcaption>
-        </figure>
+      </figure>
+      <div class="fw-keep" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 14px">
+        <div style="background: #FFFFFF; border: 1px solid #E3E5E8; border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 13px; font-weight: 600; color: #6A6F78">Heat</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 15px">ρc<sub>p</sub> ∂T/∂t = ∇·(K∇T) + w<sub>r</sub>ΔH ρ α̇</span><span style="font-size: 14px; color: #4A4F57">Orthotropic conduction (K diagonal, k<sub>x</sub> = k<sub>y</sub> ≠ k<sub>z</sub>) plus the heat released by the reaction.</span></div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E5E8; border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 13px; font-weight: 600; color: #6A6F78">Cure</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 15px">α̇ = (k₁ + k₂αᵐ)(1 − α)ⁿ, k<sub>j</sub> = A<sub>j</sub>e<sup>−E<sub>j</sub>/RT</sup></span><span style="font-size: 14px; color: #4A4F57">Kamal–Sourour kinetics: the reaction speeds up with temperature and with its own progress.</span></div>
       </div>
     </div>
   </section>
 
-  <!-- 02 OPTIMIZATION -->
+  <!-- 02 NUMERICS -->
   <section>
-    <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 40px">
-      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
-        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">02 — Optimization</span>
-        <h2 class="fw-h2">Too little flux under-cures, too much cracks the gradient</h2>
-        <p class="fw-p">Two knobs: lamp flux q₀ and lamp-on time. The goal is the shortest cycle, with small penalties on energy and on the stress indicator, under four limits: mean cure ≥ 0.90, cure in the bonded zone ≥ 0.86, peak ≤ 130 °C, top–bottom gradient ≤ 20 °C.</p>
-        <p class="fw-p">A 63-point grid maps the feasible window; SLSQP then starts from the best grid point and slides along its edge. In 16 iterations it cuts the cycle from 52.5 to 44.5 min and the absorbed energy from 9,072 to 7,871 kJ/m².</p>
+    <div class="fw-wrap" style="display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">02 — Numerics</span>
+        <h2 class="fw-h2">Can the numbers be trusted?</h2>
+        <p class="fw-p">I discretised the plate with finite differences and stepped forward in time explicitly. That scheme is simple but blows up if the time step is too long, so I derived its 3D stability limit and stayed below it.</p>
+        <div style="background: #F6F7F9; border: 1px solid #E3E5E8; border-radius: 14px; padding: 16px 20px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 15px; overflow-x: auto">Δt ≤ 1 / [2(a<sub>x</sub>/Δx² + a<sub>y</sub>/Δy² + a<sub>z</sub>/Δz²)] ≈ 2.39 s<br><span style="color: #6A6F78">used: Δt = 1.8 s on the 16 × 12 × 6 grid</span></div>
+        <p style="margin: 0; font-size: 15px; color: #6A6F78">The bonded zone (an 82 × 54 mm ellipse) is written into the code before any run, so the criterion cannot be adjusted to the result. Version 1 had defined it after the fact; fixing that was the main correction in v2.</p>
       </div>
-      <figure class="fw-fig" style="max-width: 820px">
-        <div class="fw-frame" style="background: #FFFFFF"><img src="assets/5bf98c5aba2cead913978941550dd041.png" alt="Grid of flux versus lamp-on time: low flux points are under-cured, the highest flux column violates the gradient limit, a band of feasible points in between; the SLSQP path goes from the best grid point at 52.5 minutes to the optimum at 44.5 minutes"></div>
-        <figcaption class="fw-cap">The feasible window (15 of 63 grid points) is squeezed between under-cure on the left and the gradient limit on the right. SLSQP runs on the coarse mesh; the final cycle is re-simulated on the medium one.</figcaption>
-      </figure>
+      <div style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+        <h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Same heating, three meshes</h3>
+        <div class="fw-scroll fw-keep" style="border: 1px solid #ECEDEF; border-radius: 18px; padding: 8px 12px">
+          <table class="fw-table">
+            <thead><tr><th>Mesh</th><th class="num">Δt</th><th class="num">T<sub>max</sub></th><th class="num">mean α</th><th class="num">zone min α</th><th class="num">corner α</th></tr></thead>
+            <tbody>
+              <tr><td>12 × 8 × 5</td><td class="num">2.6 s</td><td class="num">115.0 °C</td><td class="num">0.900</td><td class="num">0.899</td><td class="num">0.661</td></tr>
+              <tr><td style="font-weight: 600">16 × 12 × 6</td><td class="num">1.8 s</td><td class="num">114.9 °C</td><td class="num">0.902</td><td class="num">0.893</td><td class="num">0.631</td></tr>
+              <tr><td>20 × 14 × 7</td><td class="num">1.0 s</td><td class="num">114.9 °C</td><td class="num">0.903</td><td class="num">0.898</td><td class="num">0.620</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin: 0; font-size: 15px; color: #3A3F47">Peak temperature and mean cure are stable. The corner value keeps falling as the mesh resolves the edges better, and the bonded-zone minimum is not monotonic (0.899 → 0.893 → 0.898): good enough to compare trends, not to quote a third decimal.</p>
+      </div>
     </div>
   </section>
 
@@ -144,77 +168,81 @@ a{color:#0A0A0A}
   <section style="background: #F6F7F9">
     <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 40px">
       <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
-        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">03 — What the cycle does</span>
-        <h2 class="fw-h2">The gradient, not the temperature, sets the pace</h2>
-        <p class="fw-p">The top heats first; the gradient hits 20 °C within two minutes and stays pinned there for the whole cycle, while the peak never gets close to 130 °C. Pushing harder would not overheat the part — it would split it into a hot skin and a cold core.</p>
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">03 — What the model shows</span>
+        <h2 class="fw-h2">The gradient, not the temperature, is the limit</h2>
+        <p class="fw-p">For a reference cycle — 4,095 W/m² for 44.5 min, chosen to respect all four limits I set (mean α ≥ 0.90, bonded zone ≥ 0.86, peak ≤ 130 °C, top–bottom difference ≤ 20 °C) — the top face heats first and the difference across the thickness reaches 20 °C within two minutes. It stays there for the whole cycle, while the peak never gets near 130 °C.</p>
       </div>
       <figure class="fw-fig">
-        <div class="fw-frame" style="background: #FFFFFF"><img src="assets/4fb65d1549b7d6e4a975a1b0a2da4459.png" alt="Three time plots over the 44.5-minute cycle: centre temperatures at top, mid-plane and bottom rising to about 115, 103 and 95 degrees; the top-bottom gradient jumping to the 20-degree limit and staying there; degree of cure rising to 0.90 on average and 0.89 in the bonded zone, but only 0.63 at the coldest corner"></div>
-        <figcaption class="fw-cap">Optimized cycle, centre of the plate. Shaded: lamp on. Dotted line on the right: the 0.86 target for the bonded zone.</figcaption>
+        <div class="fw-frame" style="background: #FFFFFF"><img src="assets/cfdc1978fee4f9f6623e0ce447c4724d.png" alt="Two plots over the heating time: top and bottom temperatures at the centre rise to about 115 and 95 degrees with a gap of about 20 degrees; the degree of cure rises to 0.89 at the worst point of the bonded zone but only 0.63 at the plate corner"></div>
+        <figcaption class="fw-cap">Reference cycle, lamp on throughout.</figcaption>
       </figure>
       <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
         <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em">The corners never catch up</h3>
-        <p style="margin: 0; font-size: 16px; color: #3A3F47">The bonded zone ends at 0.893, the coldest corner at 0.631. The lamp is only slightly weaker there; the corners lose heat through two side faces as well. This is why the criterion is the zone that is actually bonded, not the whole plate — and why I fixed that zone before running anything.</p>
+        <p style="margin: 0; font-size: 16px; color: #3A3F47">The lamp is only about 15% weaker at the corners, yet they end at α = 0.63 against 0.89 in the bonded zone: they also lose heat through two side faces. Judged on the whole plate, every cycle would look like a failure; judged on the zone that is actually bonded, the question becomes meaningful.</p>
       </div>
       <figure class="fw-fig">
-        <div class="fw-frame" style="background: #FFFFFF"><img src="assets/f00f0d32792eeca710cdaba28256da8f.png" alt="Three maps of the mid-plane at lamp-off: temperature from about 70 degrees at the corners to 100 in the centre; degree of cure from 0.72 to 0.94; residual-stress indicator close to zero inside the bonded zone and up to about 1.7 megapascals at the edges"></div>
-        <figcaption class="fw-cap">Mid-plane at lamp-off. The stress indicator measures mismatch with the bonded zone's average strain, so it is near zero inside the ellipse by construction and peaks at the edges. Over the cycle it never exceeds 2.7 MPa.</figcaption>
+        <div class="fw-frame" style="background: #FFFFFF"><img src="assets/90f1166ef0920299f365afc7dd8a30f4.png" alt="Two maps of the plate mid-plane at the end of heating: temperature from about 69 degrees at the corners to 100 in the centre, and degree of cure from 0.70 at the corners to 0.94 in the centre, with the bonded zone outlined"></div>
+        <figcaption class="fw-cap">Mid-plane at the end of heating, with isolines. Dashed: bonded zone.</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- 04 CHECKS & LIMITS -->
+  <!-- 04 WINDOW -->
   <section>
-    <div class="fw-wrap" style="display: flex; flex-wrap: wrap; gap: 48px">
-      <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">04 — Checks</span>
-        <h2 class="fw-h2">Does the mesh change the answer?</h2>
-        <p class="fw-p">The same cycle on three meshes. Peak temperature and mean cure barely move. The corner minimum keeps dropping as the mesh gets finer — another reason not to judge the cure on the corners.</p>
-        <div class="fw-scroll fw-keep" style="border: 1px solid #ECEDEF; border-radius: 18px; padding: 8px 12px">
-          <table class="fw-table">
-            <thead><tr><th>Mesh</th><th class="num">Δt</th><th class="num">T<sub>max</sub></th><th class="num">ᾱ</th><th class="num">α zone min</th><th class="num">α corner</th></tr></thead>
-            <tbody>
-              <tr><td>12 × 8 × 5</td><td class="num">2.6 s</td><td class="num">115.0 °C</td><td class="num">0.900</td><td class="num">0.899</td><td class="num">0.661</td></tr>
-              <tr><td style="font-weight: 600">16 × 12 × 6</td><td class="num">1.8 s</td><td class="num">114.9 °C</td><td class="num">0.902</td><td class="num" style="color: #2B4EFF; font-weight: 600">0.893</td><td class="num">0.631</td></tr>
-              <tr><td>20 × 14 × 7</td><td class="num">1.0 s</td><td class="num">114.9 °C</td><td class="num">0.903</td><td class="num">0.898</td><td class="num">0.620</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p style="margin: 0; font-size: 15px; color: #6A6F78">The bonded-zone minimum is not monotonic (0.899 → 0.893 → 0.898); it stays above target, but a finer study would be needed for a formal error estimate.</p>
+    <div class="fw-wrap" style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+      <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">04 — Exploring the model</span>
+        <h2 class="fw-h2">A narrow window between two failures</h2>
+        <p class="fw-p">Running the model over 63 combinations of lamp flux and time maps where a lamp could work. Too little flux, and the bonded zone does not cure in time. Too much, and the top races ahead of the bottom. Only 15 combinations satisfy everything.</p>
+        <p style="margin: 0; font-size: 15px; color: #6A6F78">The shape of the window is the result, not the exact minutes: with synthetic kinetics, the numbers would move once fitted to the real compound.</p>
       </div>
-      <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">Honest status</span>
-        <h2 class="fw-h2">A method, not a process</h2>
-        <p class="fw-p">Every parameter is synthetic and non-confidential: no Safran geometry, material card or process data is in the model. The kinetics are not fitted to the real compound, so the minutes are illustrative; what transfers is the reasoning.</p>
-        <ol style="list-style: none; margin: 0; padding: 0; display: grid; gap: 10px">
-          <li style="border: 1px solid #E3E5E8; border-radius: 14px; padding: 14px 16px; display: flex; gap: 12px"><span style="font-weight: 600; color: #2B4EFF">1</span><span style="font-size: 15px; color: #3A3F47">Thermocouples at surface and depth plus an infrared camera, on an inert plate: calibrate η, h and the footprint.</span></li>
-          <li style="border: 1px solid #E3E5E8; border-radius: 14px; padding: 14px 16px; display: flex; gap: 12px"><span style="font-weight: 600; color: #2B4EFF">2</span><span style="font-size: 15px; color: #3A3F47">DSC on the real compound: fit the Kamal–Sourour parameters and the exotherm.</span></li>
-          <li style="border: 1px solid #E3E5E8; border-radius: 14px; padding: 14px 16px; display: flex; gap: 12px"><span style="font-weight: 600; color: #2B4EFF">3</span><span style="font-size: 15px; color: #3A3F47">DMA and dilatometry for shrinkage and modulus, then lap-shear and warpage against the stress indicator.</span></li>
-          <li style="border: 1px solid #E3E5E8; border-radius: 14px; padding: 14px 16px; display: flex; gap: 12px"><span style="font-weight: 600; color: #2B4EFF">4</span><span style="font-size: 15px; color: #3A3F47">Check the hand-written solver against Abaqus or COMSOL on a simple case.</span></li>
-        </ol>
+      <figure class="fw-fig" style="flex: 999 1 480px; min-width: 0; max-width: 680px">
+        <div class="fw-frame" style="background: #FFFFFF"><img src="assets/cd142f585579c70420c868b7874adbe0.png" alt="Grid of lamp flux against heating time: low-flux points are not cured enough, the highest-flux column exceeds the 20-degree gradient limit, and a band of 15 points in between meets all limits"></div>
+        <figcaption class="fw-cap">Each point is one full 3D simulation on the coarse mesh.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 05 LIMITS -->
+  <section style="background: #F6F7F9">
+    <div class="fw-wrap" style="display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">05 — Limits</span>
+        <h2 class="fw-h2">A model, not a process</h2>
+        <p class="fw-p">Every parameter is synthetic and non-confidential: no Safran geometry, material or process data is in the model, and none of it has been measured. What it offers is a way of reasoning about the problem, not a cycle to run.</p>
+      </div>
+      <div style="flex: 999 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px">
+        <div style="background: #FFFFFF; border: 1px solid #E3E5E8; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-size: 15px; font-weight: 600">What is simplified</span>
+          <span style="font-size: 15px; color: #3A3F47">Constant thermal properties; a smooth lamp footprint, not optics; no contact with tooling; kinetics not fitted to DSC data. A first residual-stress indicator exists in v2 but is too rough to quote.</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E5E8; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-size: 15px; font-weight: 600">How I would validate it</span>
+          <span style="font-size: 15px; color: #3A3F47">Thermocouples and an infrared camera on an inert plate to calibrate the lamp and losses; DSC on the real compound for the kinetics; then a cured coupon checked for degree of cure; and the solver compared with Abaqus on a simple case.</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- TAKEAWAY -->
-  <section style="background: #F6F7F9">
+  <section>
     <div class="fw-wrap" style="display: flex; flex-wrap: wrap; gap: 48px">
       <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
         <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">What I take away</span>
-        <p style="margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.35; letter-spacing: -0.02em">A set-point does not qualify a cure; the local thermal history does. And the limit I expected — temperature — was not the one that mattered.</p>
+        <p style="margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.35; letter-spacing: -0.02em">I expected temperature to be the limit. The model said it was the difference between two faces 6 mm apart — something I would not have looked for on the line.</p>
       </div>
       <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px; font-size: 16px; color: #3A3F47">
         <h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #0A0A0A">What comes next</h3>
-        <p style="margin: 0">Optimize a power profile q₀(t) instead of a constant flux: ramp hard, then back off as the gradient builds.</p>
-        <p style="margin: 0">Add a sensitivity study on the kinetic parameters.</p>
-        <p style="margin: 0">Calibrate against a thermocouple test.</p>
+        <p style="margin: 0">Calibrate the lamp and losses against a thermocouple test.</p>
+        <p style="margin: 0">Fit the kinetics to DSC data, then test how sensitive the window is to them.</p>
+        <p style="margin: 0">Check the hand-written solver against Abaqus.</p>
       </div>
     </div>
   </section>
 
   <section aria-label="Tools" style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
     <span style="font-size: 15px; font-weight: 600; margin-right: 8px">Tools</span>
-    <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; font-weight: 500"><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Python</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">NumPy</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">SciPy · SLSQP</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Finite differences</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Heat transfer</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Cure kinetics</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">LaTeX</span></div>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; font-weight: 500"><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Python</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">NumPy</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Finite differences</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Heat transfer</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Cure kinetics</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">LaTeX</span></div>
   </section>
 
   <!-- FOOTER -->
