@@ -116,7 +116,7 @@ a{color:#0A0A0A}a:hover{color:#2B4EFF}
       <div style="display: flex; flex-direction: column; gap: 16px; max-width: 720px">
         <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">03 — Validation &amp; kinematics</span>
         <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">From concept to evidence</h2>
-        <p style="margin: 0; color: #3A3F47">Six steps from concept to evidence. Two of them already have data: real shoulder kinematics, below, and a first bench test, in the next section.</p>
+        <p style="margin: 0; color: #3A3F47">Six steps from concept to evidence. Two of them already have data: real shoulder kinematics, below, and a first bench test, in the next section. The FE model those steps rely on is being calibrated in section 05.</p>
       </div>
       <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
       <li class="hx-step" style="border: 1px solid #E3E5E8; background: #FFFFFF; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 14px; font-weight: 600; color: #2B4EFF">1</span><h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">FE screening</h3><p style="margin: 0; font-size: 15px; color: #4A4F57">Compare design variants on a single bone model.</p></li>
@@ -140,7 +140,7 @@ a{color:#0A0A0A}a:hover{color:#2B4EFF}
               <li style="display: flex; gap: 12px"><span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E3E5E8; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #2B4EFF">3</span><span style="font-size: 15px; color: #3A3F47">Calibrate: link each anatomical frame to its sensor at t = 0, so the sensors can carry the frames during motion.</span></li>
               <li style="display: flex; gap: 12px"><span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E3E5E8; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #2B4EFF">4</span><span style="font-size: 15px; color: #3A3F47">Chain the matrices at every sample and decompose the result into three joint angles.</span></li>
             </ol>
-            <div style="background: #0A0A0A; color: #FFFFFF; border-radius: 14px; padding: 16px 20px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; line-height: 1.8; overflow-x: auto">
+            <div style="background: #FFFFFF; color: #0A0A0A; border: 1px solid #E3E5E8; border-radius: 14px; padding: 16px 20px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; line-height: 1.8; overflow-x: auto">
               <div>R<sub>scap→hum</sub>(t) = R<sub>scap→s1</sub> · R<sub>s1→s2</sub>(t) · R<sub>s2→hum</sub></div>
               <div style="color: #8A8F98">calibrated at t = 0 · tracked · calibrated at t = 0</div>
             </div>
@@ -171,7 +171,7 @@ a{color:#0A0A0A}a:hover{color:#2B4EFF}
         <div style="display: flex; flex-direction: column; gap: 14px">
           <h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Choosing where to push</h3>
           <p style="margin: 0; font-size: 16px; color: #3A3F47">The machine has a single actuator, so it cannot alternate between the two rims like a humeral head does. The implant's double symmetry leaves three candidate points; only one, beyond the tapered end of the keel, lets the implant tip over. We loaded there, 5 mm from the rim, normal to the articular surface:</p>
-          <div style="background: #0A0A0A; color: #FFFFFF; border-radius: 14px; padding: 16px 20px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 15px">α = arcsin(d / R) = arcsin(10 / 27) ≈ 21.8°</div>
+          <div style="background: #FFFFFF; color: #0A0A0A; border: 1px solid #E3E5E8; border-radius: 14px; padding: 16px 20px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 15px">α = arcsin(d / R) = arcsin(10 / 27) ≈ 21.8°</div>
         </div>
         <div style="display: flex; flex-direction: column; gap: 14px">
           <h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Protocol</h3>
@@ -204,8 +204,55 @@ a{color:#0A0A0A}a:hover{color:#2B4EFF}
 
   <section style="background: #F6F7F9">
     <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
+        <div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+          <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">05 — Finite-element model</span>
+          <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">Matching a test in Abaqus: the supports decide</h2>
+          <p style="margin: 0; color: #3A3F47">Before modelling the implant in bone, the model has to reproduce the implant alone. The reference: a keeled glenoid printed in Zortrax Resin Basic, resting by its rim on an aluminium block and pushed on the keel by an aluminium cylinder up to 200 N at 1 mm/min. A camera tracks a black dot on the short side: <strong style="color: #0A0A0A">0.228 mm at 150 N</strong>.</p>
+          <p style="margin: 0; color: #3A3F47">I imported the CAD part into Abaqus, modelled it as linear-elastic, ramped the load on the keel face, and replaced the cylinder and the block by a load and boundary conditions. This was an individual assignment within the project.</p>
+        </div>
+        <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px; flex: 1 1 340px; max-width: 460px"><div style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #F4F5F7"><img src="assets/888b1b539896f934040e00f4818a1810.jpg" alt="Reference test: resin glenoid implant pushed by an aluminium cylinder against an aluminium block; close-up of the tracked black dot" style="display: block; width: 100%; height: auto"></div><figcaption style="font-size: 14px; color: #6A6F78">Reference test from the assignment brief, with the tracked dot on the close-up.</figcaption></figure>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 20px; align-items: start">
+        <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #F4F5F7"><img src="assets/d0f3a5bb2a53fdc77854001bf6f4497f.png" alt="Abaqus model: pressure load applied on the flat end of the keel" style="display: block; width: 100%; height: auto"></div><figcaption style="font-size: 14px; color: #6A6F78">Load: 200 N on the flat end of the keel, ramped over the step (150 N at t = 0.75).</figcaption></figure>
+        <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #F4F5F7"><img src="assets/049e20d8e3f75b5aad6f0ea64bb42d06.png" alt="Abaqus model: two short support arcs partitioned on the rim of the plate" style="display: block; width: 100%; height: auto"></div><figcaption style="font-size: 14px; color: #6A6F78">Supports: two short arcs cut on the rim with Partition Edge, instead of the whole contour.</figcaption></figure>
+        <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #F4F5F7"><img src="assets/46ec7e1b1795dec136dcde4075095cab.png" alt="Displacement field along the load direction on the implant, tetrahedral mesh, maximum on the keel" style="display: block; width: 100%; height: auto"></div><figcaption style="font-size: 14px; color: #6A6F78">Displacement along the load at 200 N (0.8 mm mesh series): 0 at the supports, 0.37 mm on the keel. Deformation ×2.</figcaption></figure>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Six attempts, one lesson</h3>
+        <p style="margin: 0; font-size: 16px; color: #3A3F47; max-width: 760px">Fixing two vertices let the part rotate: 0.45 mm, twice the test. Fixing the whole rim made it far too stiff: 0.045 mm. The truth sat between, so I cut short contact arcs on the rim and made their length a parameter. Supports moved the answer by a factor of 10; the mesh by less than 6%.</p>
+        <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #F4F5F7"><img src="assets/7a37abd55ac69252ce82808b4c231039.png" alt="Left: horizontal bars of displacement at 150 N for five support hypotheses, from 0.450 to 0.233 mm, against the 0.228 mm test. Right: displacement versus element size from 0.9 to 0.6 mm, between 0.274 and 0.289 mm." style="display: block; width: 100%; height: auto"></div><figcaption style="font-size: 14px; color: #6A6F78">Values read from Abaqus curves at 150 N; the attempts do not all track the same component, so they show the reasoning, not a ranking.</figcaption></figure>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px; align-items: start">
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Mistakes that taught me something</h3>
+          <p style="margin: 0; font-size: 15px; color: #3A3F47"><strong style="color: #0A0A0A">A measuring point that moved.</strong> I first read the displacement on a mesh node; after remeshing, the node changed. The dot is now a geometric vertex, and the output request is rebuilt after each remesh.</p>
+          <p style="margin: 0; font-size: 15px; color: #3A3F47"><strong style="color: #0A0A0A">Constraints that did nothing.</strong> Solid elements have no rotational degrees of freedom, so the rotation boxes I ticked were inactive — Abaqus warned about it. A run that finishes is not a model that is right.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">Closing the gap</h3>
+          <div style="overflow-x: auto"><table style="width: 100%; border-collapse: collapse; font-size: 15px; background: #FFFFFF; border-radius: 12px">
+            <thead><tr style="color: #6A6F78; font-size: 13px"><th style="text-align: left; padding: 10px 12px; border-bottom: 1px solid #E3E5E8">E · ν</th><th style="text-align: left; padding: 10px 12px; border-bottom: 1px solid #E3E5E8">Change</th><th style="text-align: right; padding: 10px 12px; border-bottom: 1px solid #E3E5E8">At 150 N</th></tr></thead>
+            <tbody>
+              <tr><td style="padding: 10px 12px; border-bottom: 1px solid #ECEDEF">1,900 MPa · 0.38</td><td style="padding: 10px 12px; border-bottom: 1px solid #ECEDEF">—</td><td style="padding: 10px 12px; border-bottom: 1px solid #ECEDEF; text-align: right">0.338 mm</td></tr>
+              <tr><td style="padding: 10px 12px; border-bottom: 1px solid #ECEDEF">2,150 MPa · 0.33</td><td style="padding: 10px 12px; border-bottom: 1px solid #ECEDEF">—</td><td style="padding: 10px 12px; border-bottom: 1px solid #ECEDEF; text-align: right">0.293 mm</td></tr>
+              <tr><td style="padding: 10px 12px; border-bottom: 1px solid #ECEDEF">2,150 MPa · 0.33</td><td style="padding: 10px 12px; border-bottom: 1px solid #ECEDEF">h = 0.5 mm, wider arcs</td><td style="padding: 10px 12px; border-bottom: 1px solid #ECEDEF; text-align: right; font-weight: 600; color: #2B4EFF">0.233 mm</td></tr>
+            </tbody>
+          </table></div>
+          <p style="margin: 0; font-size: 15px; color: #3A3F47">The best model lands 2% from the test. But material, supports and mesh changed together, so I report it as a calibration, not a validation.</p>
+        </div>
+      </div>
+      <div style="border-left: 3px solid #D5D8DD; padding: 4px 0 4px 18px; display: flex; flex-direction: column; gap: 6px; max-width: 760px">
+        <span style="font-size: 15px; font-weight: 600; color: #0A0A0A">To call it validated</span>
+        <span style="font-size: 15px; color: #3A3F47">Export exact XY data instead of reading curves; redo the mesh study on the final supports (0.6, 0.5, 0.4 mm); change one parameter at a time; check against the 200 N point and the crosshead curve as well.</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
       <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
-        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">05 — Materials</span>
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">06 — Materials</span>
         <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">What is a real implant made of?</h2>
         <p style="margin: 0; color: #3A3F47">In a polymer characterisation lab, we identified the material of a commercial prosthesis component, then worked back to how it was made.</p>
       </div>
@@ -239,15 +286,15 @@ a{color:#0A0A0A}a:hover{color:#2B4EFF}
       </div>
     </div>
   </section>
-  <section style="background: #0A0A0A; color: #FFFFFF">
+  <section style="background: #F6F7F9">
     <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
       <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-        <span style="font-size: 15px; font-weight: 600; color: #8FA2FF">What I take away</span>
-        <p style="margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.35; letter-spacing: -0.02em">Medical design is mostly about evidence. The most useful test was the one built to fail: it showed where the interface gives way, and gave our model something real to match.</p>
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">What I take away</span>
+        <p style="margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.35; letter-spacing: -0.02em">Medical design is mostly about evidence. The most useful test was the one built to fail, and the most useful model was the one that first got it wrong: in both, the boundary conditions mattered more than the details.</p>
       </div>
-      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px; font-size: 16px; color: #C9CCD2">
-        <h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">What comes next</h3>
-        <p style="margin: 0">Validate the FE model of the implant alone, then model it in the bone foam.</p><p style="margin: 0">Re-run the loosening test on new designs and materials.</p><p style="margin: 0">Turn our kinematic measurements into load cases.</p>
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px; font-size: 16px; color: #3A3F47">
+        <h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #0A0A0A">What comes next</h3>
+        <p style="margin: 0">Finish validating the implant-alone model, then put it in the bone foam and compare with our loosening test.</p><p style="margin: 0">Re-run the loosening test on new designs and materials.</p><p style="margin: 0">Turn our kinematic measurements into load cases.</p>
       </div>
     </div>
   </section>
