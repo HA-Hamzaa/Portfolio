@@ -6,103 +6,200 @@
 <title>Case study — Glider wing</title>
 <meta name="description" content="Engineering portfolio of Hamza Houir Alami — Arts et Métiers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
 <style>
 body{margin:0;background:#FFFFFF}
-a{color:#0A0A0A}a:hover{color:#2B4EFF}
+a{color:#0A0A0A}
 @keyframes hx-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .hx-up{animation:hx-up .8s cubic-bezier(.2,.8,.2,1) both}
 .hx-link{background-image:linear-gradient(currentColor,currentColor);background-size:0 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .3s ease}
 .hx-link:hover{background-size:100% 1.5px}
 .hx-zoom{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-.hx-media:hover .hx-zoom{transform:scale(1.03)}
+.hx-media:hover .hx-zoom{transform:scale(1.02)}
 @keyframes hx-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .hx-bar{transform-origin:left center;animation:hx-grow 1s cubic-bezier(.2,.8,.2,1) both}
 .hx-step{transition:transform .25s ease,border-color .25s ease}
 .hx-step:hover{transform:translateY(-4px);border-color:#2B4EFF}
+.hx-dl{transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.hx-dl:hover{transform:translateY(-3px);border-color:#2B4EFF;background:#F7F8FF}
+.fw-wrap{max-width:1160px;margin:0 auto;padding:96px 24px}
+.fw-h2{margin:0;font-weight:600;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-0.035em}
+.fw-p{margin:0;color:#3A3F47;max-width:680px}
+.fw-fig{margin:0;display:flex;flex-direction:column;gap:12px}
+.fw-frame{border-radius:18px;overflow:hidden;border:1px solid #ECEDEF;background:#FFFFFF}
+.fw-frame img,.fw-frame video{display:block;width:100%;height:auto}
+.fw-cap{font-size:14px;color:#6A6F78;line-height:1.5}
+.fw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;align-items:start}
+.fw-table{width:100%;border-collapse:collapse;font-size:15px}
+.fw-table th{text-align:left;font-weight:600;color:#6A6F78;font-size:13px;padding:10px 12px;border-bottom:1px solid #E3E5E8}
+.fw-table td{padding:12px;border-bottom:1px solid #ECEDEF;font-variant-numeric:tabular-nums}
+.fw-table td.num,.fw-table th.num{text-align:right}
+.fw-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+@media print{
+  @page{size:A4;margin:14mm}
+  .fw-noprint{display:none!important}
+  .fw-wrap{padding:36px 0}
+  section,figure,table,.fw-keep{break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;animation:none!important}
+}
 </style>
 <style>html,body{overflow-x:clip}</style>
 </head>
 <body>
 <div style="background: #FFFFFF; color: #0A0A0A; font-family: 'Geist', system-ui, sans-serif; font-size: 18px; line-height: 1.65; -webkit-font-smoothing: antialiased">
 
-  <header style="border-bottom: 1px solid #ECEDEF">
+  <header class="fw-noprint" style="border-bottom: 1px solid #ECEDEF">
     <nav aria-label="Case study" style="max-width: 1160px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px">
       <a class="hx-link" href="index.html#projects" style="text-decoration: none; font-size: 16px; font-weight: 500; padding: 10px 0">← All projects</a>
       <a href="index.html" style="text-decoration: none; font-weight: 600; font-size: 17px; letter-spacing: -0.01em">Hamza Houir Alami</a>
     </nav>
   </header>
 
-  <section style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 48px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
-    <div class="hx-up" style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">Arts et Métiers · Aerodynamics &amp; structures · Nov — Dec 2025</span>
-      <h1 style="margin: 0; font-weight: 600; font-size: clamp(38px, 5vw, 64px); line-height: 1.04; letter-spacing: -0.045em">Designing a glider wing: airfoil, flow and spar</h1>
-      <p style="margin: 0; font-size: 21px; line-height: 1.5; color: #3A3F47; max-width: 620px">With Étienne Roy, supervised by Prof. Antoine Dazin and Francesco Romano: choose an airfoil, check it in CFD, then size the spar that carries the load — and make sure it fits inside the wing.</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; color: #6A6F78"><span>Team of 2</span><span>CFD · beam theory · FE</span><span>CFD · Python · Abaqus</span></div>
+  <!-- HERO -->
+  <section style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+    <div class="hx-up" style="flex: 999 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">Arts et Métiers · Aerodynamics &amp; structures · Nov – Dec 2025</span>
+      <h1 style="margin: 0; font-weight: 600; font-size: clamp(38px, 5.2vw, 66px); line-height: 1.03; letter-spacing: -0.045em">From airfoil to spar: a glider wing at three levels of fidelity</h1>
+      <p style="margin: 0; font-size: 21px; line-height: 1.5; color: #3A3F47; max-width: 620px">With Étienne Roy: choose an airfoil, check it in CFD, size the spar that carries the load — then put the two halves side by side and see whether the spar fits inside the wing.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; color: #6A6F78"><span>Team of 2 · supervised by Prof. Antoine Dazin and Prof. Francesco Romano</span><span>STAR-CCM+ · Python · Abaqus</span></div>
     </div>
-    <div class="hx-up hx-media" style="flex: 1 1 340px; max-width: 480px; aspect-ratio: 4 / 3; border-radius: 22px; overflow: hidden; background: #E9EBEF; animation-delay: .1s">
-      <img class="hx-zoom" src="assets/f958541f640c353b63f5af39fabdf117.png" alt="Velocity field around the Clark Y airfoil" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%">
-    </div>
+    <figure class="hx-up fw-fig" style="flex: 1 1 420px; min-width: 0; max-width: 600px; animation-delay: .1s">
+      <div class="fw-frame hx-media" style="background: #F4F5F7"><img class="hx-zoom" src="assets/720dcf781804fb64c66f818f36832aaa.png" alt="Clark Y airfoil drawn to scale with a 1.25 m chord: the profile offers 0.146 m of height at its thickest point, while the first spar section assumed 0.30 m"></div>
+      <figcaption class="fw-cap">The finding that tied the project together: the first spar section was twice as tall as the wing it had to sit in.</figcaption>
+    </figure>
   </section>
-  <section aria-label="Key figures" style="max-width: 1160px; margin: 0 auto; padding: 0 24px 72px">
+
+  <!-- KEY FIGURES -->
+  <section aria-label="Key figures" style="max-width: 1160px; margin: 0 auto; padding: 16px 24px 0">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: #ECEDEF; border: 1px solid #ECEDEF; border-radius: 20px; overflow: hidden">
-      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">Clark Y</span><span style="font-size: 15px; color: #4A4F57">selected airfoil</span></div>
-      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">≈111</span><span style="font-size: 15px; color: #4A4F57">max lift-to-drag ratio</span></div>
-      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;">3</span><span style="font-size: 15px; color: #4A4F57">meshes for the CFD check</span></div>
-      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; color: #2B4EFF;">5</span><span style="font-size: 15px; color: #4A4F57">spar materials compared</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05">Re ≈ 2.2 × 10⁶</span><span style="font-size: 15px; color: #4A4F57">operating point, 25 m/s on a 1.25 m chord</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05">C<sub>L</sub> ≈ 1.09</span><span style="font-size: 15px; color: #4A4F57">at 7°, identical on three CFD meshes</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05">5</span><span style="font-size: 15px; color: #4A4F57">spar materials swept under strength, stiffness and mass limits</span></div>
+      <div style="background: #FFFFFF; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; color: #2B4EFF">0.146 m</span><span style="font-size: 15px; color: #4A4F57">of height inside the airfoil — the constraint that links both halves</span></div>
     </div>
   </section>
+
+  <!-- CHAIN -->
+  <section aria-label="Modelling chain">
+    <div class="fw-wrap" style="padding-bottom: 24px; display: flex; flex-direction: column; gap: 28px">
+      <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">The chain — each level checks the one before</span>
+      <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px">
+        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">1 · Polars</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Pick the airfoil</span><span style="font-size: 14px; color: #4A4F57">Clark Y vs RAF 27 on glide ratio and stall.</span></li>
+        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">2 · 2D CFD</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Check it</span><span style="font-size: 14px; color: #4A4F57">STAR-CCM+, three meshes, three flow models.</span></li>
+        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">3 · Beam theory</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Size the spar</span><span style="font-size: 14px; color: #4A4F57">Euler–Bernoulli plus a Python sweep over 5 materials.</span></li>
+        <li class="hx-step" style="border: 1px solid #E3E5E8; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #8A8F98">4 · Abaqus</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Second opinion</span><span style="font-size: 14px; color: #4A4F57">A beam FE model of the same spar.</span></li>
+        <li class="hx-step" style="border: 1px solid #C9D3FF; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600; color: #2B4EFF">5 · Integration</span><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Does it fit?</span><span style="font-size: 14px; color: #4A4F57">The spar against the airfoil envelope.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 01 AIRFOIL -->
   <section style="background: #F6F7F9">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
-      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+    <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 32px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
         <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">01 — Airfoil</span>
-        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">Clark Y over RAF 27</h2>
+        <h2 class="fw-h2">Clark Y over RAF 27</h2>
+        <p class="fw-p">For a glider, the figure that matters is how far it travels per metre lost: the lift-to-drag ratio. From the reference polars, Clark Y reaches a maximum of about 109–115 against 69–72 for RAF 27, and stays unstalled over a wider range of angles. Its flat underside is also easier to build. In level flight, the wing needs C<sub>L</sub> ≈ 0.44.</p>
       </div>
-      <div style="flex: 999 1 480px; min-width: 0; max-width: 680px; display: flex; flex-direction: column; gap: 18px; color: #3A3F47">
-        <p style="margin: 0">We compared candidate airfoils on lift-to-drag ratio, the key figure for a glider. Clark Y reached a maximum L/D of about 111, against about 70 for the RAF 27, with a flat bottom that also makes it easier to build.</p>
-      </div>
+      <figure class="fw-fig">
+        <div class="fw-frame" style="background: #FFFFFF"><img src="assets/70ae618bd769484ac5a29e77620d12cb.png" alt="Two bar charts: Clark Y maximum lift-to-drag ratio 108.5 to 114.8 against 69.4 to 71.5 for RAF 27; Clark Y unstalled from minus 14 to 14 degrees against minus 12 to 13 for RAF 27"></div>
+        <figcaption class="fw-cap">Ranges from two polar models at Re = 10⁶ (reference data used in the project).</figcaption>
+      </figure>
     </div>
   </section>
-  <section style="">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
+
+  <!-- 02 CFD -->
+  <section>
+    <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 32px">
       <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
         <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">02 — CFD</span>
-        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">A result that holds across meshes and models</h2>
-        <p style="margin: 0; color: #3A3F47">We ran the airfoil on three meshes (50, 100 and 150 cells along the chord) and with Euler, laminar and k-ε models. At 7°, the lift coefficient stays at 1.075–1.10 across meshes; stall starts around 15°.</p>
+        <h2 class="fw-h2">Which physics, which mesh?</h2>
+        <p class="fw-p">We simulated the Clark Y in 2D in STAR-CCM+, on a C-shaped domain with 50, 100 and 150 cells around the profile, and with three descriptions of the flow. At 7°:</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 24px; align-items: start"><figure style="margin: 0"><div class="hx-media" style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #FFFFFF"><img class="hx-zoom" src="assets/95621991bce01e7a8fda6a41e72b3161.png" alt="Pressure field" style="display: block; width: 100%; height: auto"></div><figcaption style="padding: 12px 4px 0; font-size: 14px; color: #6A6F78">Pressure field around the airfoil.</figcaption></figure><figure style="margin: 0"><div class="hx-media" style="border-radius: 18px; overflow: hidden; border: 1px solid #ECEDEF; background: #FFFFFF"><img class="hx-zoom" src="assets/088ce0ef364ea259624eb22bdfd92711.png" alt="Lift coefficient versus angle of attack" style="display: block; width: 100%; height: auto"></div><figcaption style="padding: 12px 4px 0; font-size: 14px; color: #6A6F78">Lift coefficient against angle of attack, Clark Y.</figcaption></figure></div>
+      <div class="fw-scroll fw-keep" style="border: 1px solid #ECEDEF; border-radius: 18px; padding: 8px 12px; max-width: 760px">
+        <table class="fw-table">
+          <thead><tr><th>Flow model</th><th class="num">50</th><th class="num">100</th><th class="num">150 cells</th><th>Reading</th></tr></thead>
+          <tbody>
+            <tr><td>Inviscid (Euler)</td><td class="num">1.25</td><td class="num">1.25</td><td class="num">1.25</td><td>No viscous losses: lift overestimated</td></tr>
+            <tr><td>Laminar</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>No meaningful lift at this Reynolds number</td></tr>
+            <tr><td style="font-weight: 600">Turbulent, realizable k–ε</td><td class="num" style="color: #2B4EFF; font-weight: 600">1.09</td><td class="num" style="color: #2B4EFF; font-weight: 600">1.09</td><td class="num" style="color: #2B4EFF; font-weight: 600">1.09</td><td>Retained: stable across meshes</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 20px">
+        <figure class="fw-fig"><div class="fw-frame" style="background: #FFFFFF"><img src="assets/42a3fe61d39d7eb942748ce8a5786e7b.png" alt="STAR-CCM+ pressure field around the Clark Y: low pressure over the upper surface, high pressure at the leading edge"></div><figcaption class="fw-cap">Pressure, turbulent model, finest mesh: suction over the upper surface carries the lift.</figcaption></figure>
+        <figure class="fw-fig"><div class="fw-frame" style="background: #FFFFFF"><img src="assets/5148adfda25f4ca222a4877229b864ef.png" alt="STAR-CCM+ velocity vectors around the Clark Y, faster over the upper surface"></div><figcaption class="fw-cap">Velocity: the flow accelerates over the top and leaves a wake behind the trailing edge.</figcaption></figure>
+      </div>
+      <figure class="fw-fig"><div class="fw-frame" style="background: #FFFFFF"><img src="assets/92bd107b23411f3d9275941d53bc2036.png" alt="Three STAR-CCM+ meshes around the airfoil with 50, 100 and 150 subdivisions"></div><figcaption class="fw-cap">The three meshes. Lift changes by less than 1% from 100 to 150 cells, so 100 was used for the rest of the polar. The drag values from this 2D setup were not physically consistent, so we only report lift.</figcaption></figure>
     </div>
   </section>
+
+  <!-- 03 SPAR -->
   <section style="background: #F6F7F9">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
-      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
-        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">03 — Structure</span>
-        <h2 style="margin: 0; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.035em">Sizing the spar, then making it fit</h2>
+    <div class="fw-wrap" style="display: flex; flex-direction: column; gap: 32px">
+      <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+        <div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+          <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">03 — Spar</span>
+          <h2 class="fw-h2">Thin enough to be light, thick enough to hold</h2>
+          <p class="fw-p">The spar is a 10 m cantilever with a hollow elliptical section, loaded by its own weight on the ground and by the lift in flight. Beam theory gives stress, tip deflection and mass as functions of the wall thickness e. I wrote the sizing model in Python and swept e over five orders of magnitude for five materials.</p>
+        </div>
+        <div class="fw-keep" style="flex: 1 1 300px; background: #FFFFFF; border: 1px solid #E3E5E8; border-radius: 14px; padding: 16px 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px">
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace">σ<sub>max</sub> = |q|L²b / 2I &nbsp;·&nbsp; v(L) = |q|L⁴ / 8EI</span>
+          <span style="color: #4A4F57">Four limits at once: stress below strength, tip deflection ≤ 0.30 m on the ground and ≤ 1.50 m in flight, spar mass ≤ 150 kg.</span>
+        </div>
       </div>
-      <div style="flex: 999 1 480px; min-width: 0; max-width: 680px; display: flex; flex-direction: column; gap: 18px; color: #3A3F47">
-        <p style="margin: 0">The spar was sized with Euler–Bernoulli beam theory. A Python sweep compared five materials on mass and deflection; carbon fibre came out best. The result was checked in Abaqus.</p><p style="margin: 0">Then a packaging check: the first spar section assumed 0.30 m of height, but the Clark Y profile only leaves 0.146 m inside. We revised the section to a thin circular tube (R = 0.40 m, e = 1 mm) — with a section that fits, every material remains feasible and carbon fibre stays the lightest.</p>
+      <figure class="fw-fig">
+        <div class="fw-frame" style="background: #FFFFFF"><img src="assets/a190cb9a6e988d2da546fbb60081cc1d.png" alt="Three plots against wall thickness for carbon fibre: bending stress falls and stays under the strength limit, tip deflection falls under its limits, mass rises and crosses 150 kg at about 4 mm; feasible band from 0.10 to 4.0 mm"></div>
+        <figcaption class="fw-cap">Carbon fibre, recomputed from the project script. Thin walls are limited by stiffness and strength, thick ones by mass; the shaded band satisfies all four.</figcaption>
+      </figure>
+      <div style="display: flex; flex-direction: column; gap: 14px; max-width: 760px">
+        <h3 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em">A second opinion in Abaqus</h3>
+        <p style="margin: 0; font-size: 16px; color: #3A3F47">We rebuilt the spar as a beam model in Abaqus. The two models do not agree yet on stress and deflection, and the gap does not scale with the load — which points to how the section or the output was defined, not to the physics. Making both models use strictly the same definitions is the open step; I treat Abaqus here as a check to be reconciled, not as a confirmation.</p>
       </div>
+      <figure class="fw-fig" style="max-width: 560px"><div class="fw-frame" style="background: #F4F5F7"><img src="assets/31ceeab6e735cacbd50ed388c83e8afa.png" alt="Abaqus beam model of the spar coloured by stress, highest at the root"></div><figcaption class="fw-cap">Abaqus beam model, stress highest at the clamped root.</figcaption></figure>
     </div>
   </section>
-  <section style="background: #0A0A0A; color: #FFFFFF">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+
+  <!-- 04 INTEGRATION -->
+  <section>
+    <div class="fw-wrap" style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+      <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">04 — Integration</span>
+        <h2 class="fw-h2">Making the spar fit</h2>
+        <p class="fw-p">Taken separately, each half looked fine. Taken together, the first spar section was 0.30 m tall while the Clark Y offers 0.146 m at its thickest point. A decision made in the aerodynamics phase imposed a geometric limit on the structure.</p>
+        <p class="fw-p">I re-ran our sizing script with a section that fits. Halving the height divides the second moment of area by about 4.5, so every material needs a thicker wall — but all five remain feasible. The constraint reshapes the design window; it does not close it.</p>
+      </div>
+      <figure class="fw-fig" style="flex: 999 1 480px; min-width: 0; max-width: 680px">
+        <div class="fw-frame" style="background: #FFFFFF"><img src="assets/6907dbb411a14ddb737cd49c1bacff54.png" alt="Admissible wall-thickness ranges for five materials, for the first 0.30 m section and for a 0.146 m section that fits: every range shifts towards thicker walls and none disappears"></div>
+        <figcaption class="fw-cap">Admissible wall thickness per material. Grey: first section. Blue: section that fits in the airfoil.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- LIMITS -->
+  <section style="background: #F6F7F9">
+    <div class="fw-wrap" style="display: flex; flex-wrap: wrap; gap: 48px">
       <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-        <span style="font-size: 15px; font-weight: 600; color: #8FA2FF">What I take away</span>
-        <p style="margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.35; letter-spacing: -0.02em">The aerodynamics and the structure were right on their own. The real lesson came from putting them together: the spar has to fit in the airfoil.</p>
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">What I take away</span>
+        <p style="margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.35; letter-spacing: -0.02em">Each model was reasonable on its own. The useful result came from making them talk to each other — and from not hiding where they still disagree.</p>
       </div>
-      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px; font-size: 16px; color: #C9CCD2">
-        <h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">What comes next</h3>
-        <p style="margin: 0">Extend the CFD to 3D with a finite wing and tip effects.</p><p style="margin: 0">Optimize the spar section along the span.</p>
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px; font-size: 16px; color: #3A3F47">
+        <h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #0A0A0A">Assumptions and next steps</h3>
+        <p style="margin: 0">2D steady CFD, uniform load, equivalent isotropic composites; no torsion, gusts or local buckling.</p>
+        <p style="margin: 0">Reconcile the Abaqus and analytical definitions, then add a finite 3D wing and a spanwise lift distribution.</p>
       </div>
     </div>
   </section>
+
   <section aria-label="Tools" style="max-width: 1160px; margin: 0 auto; padding: 72px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
     <span style="font-size: 15px; font-weight: 600; margin-right: 8px">Tools</span>
-    <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; font-weight: 500"><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">CFD</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Python</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Abaqus</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Beam theory</span></div>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; font-weight: 500"><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">STAR-CCM+</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">RANS k–ε</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Python · NumPy</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Beam theory</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">Abaqus</span><span style="padding: 5px 10px; background: #F2F3F5; border-radius: 6px">LaTeX</span></div>
   </section>
-  <section style="max-width: 1160px; margin: 0 auto; padding: 96px 24px 40px">
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding-top: 32px; border-top: 1px solid #ECEDEF">
+
+  <!-- FOOTER -->
+  <section style="max-width: 1160px; margin: 0 auto; padding: 80px 24px 40px">
+    <div class="fw-noprint" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding-top: 32px; border-top: 1px solid #ECEDEF">
       <a class="hx-link" href="index.html#projects" style="text-decoration: none; font-size: 17px; font-weight: 500; padding: 10px 0">← All projects</a>
       <a href="Speech.html" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; background: #0A0A0A; color: #FFFFFF; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 16px">Next: Spoken-number recognition →</a>
     </div>
@@ -111,6 +208,7 @@ a{color:#0A0A0A}a:hover{color:#2B4EFF}
       <span>Arts et Métiers · Lille → Paris</span>
     </div>
   </section>
+
 </div>
 
 </body>
