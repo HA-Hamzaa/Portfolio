@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ThePnLab — AI decision engine</title>
 <meta name="description" content="Engineering portfolio of Hamza Houir Alami — Arts et Métiers.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ThePnLab — AI decision engine">
+<meta property="og:description" content="Engineering portfolio of Hamza Houir Alami — Arts et Métiers.">
+<meta property="og:image" content="https://ha-hamzaa.github.io/Portfolio/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
 <style>
@@ -204,10 +212,6 @@ a{color:#0A0A0A}
           <tr><td>News context never reached the bot in production</td><td>Decisions made without the macro news</td><td><span style="color: #8A8F98; font-weight: 600">Identified</span></td></tr>
         </tbody>
       </table></div>
-      <div class="fw-keep" style="border-left: 3px solid #2B4EFF; padding: 4px 0 4px 18px; display: flex; flex-direction: column; gap: 6px; max-width: 760px">
-        <span style="font-size: 17px; font-weight: 600; color: #0A0A0A">A silent bug: the bot never fired on its own</span>
-        <span style="font-size: 16px; color: #3A3F47">The first scheduler computed the next slot and slept; an early wake-up plus a 60-second sleep made it skip the window every time. I rewrote it as a 20-second heartbeat with an idempotent run key (date + slot), robust to restarts.</span>
-      </div>
     </div>
   </section>
 
@@ -242,13 +246,13 @@ a{color:#0A0A0A}
   </section>
 
   <!-- TAKEAWAY -->
-  <section style="background: #0A0A0A; color: #FFFFFF">
+  <section style="background: #F6F7F9; color: #0A0A0A; border-top: 1px solid #ECEDEF">
     <div class="fw-wrap" style="display: flex; flex-wrap: wrap; gap: 48px">
       <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-        <span style="font-size: 15px; font-weight: 600; color: #8FA2FF">What I take away</span>
+        <span style="font-size: 15px; font-weight: 600; color: #2B4EFF">What I take away</span>
         <p style="margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.35; letter-spacing: -0.02em">Putting an AI in charge of decisions is easy. Making it safe means writing the limits in code, logging every choice, and letting someone else try to break it.</p>
       </div>
-      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px; font-size: 16px; color: #C9CCD2">
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px; font-size: 16px; color: #3A3F47">
         <h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">Status</h3>
         <p style="margin: 0">Paused, with a restart planned. 100% simulation: no real money, no financial advice.</p>
       </div>
